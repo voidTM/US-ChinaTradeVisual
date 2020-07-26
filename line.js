@@ -142,12 +142,12 @@ async function slide1() {
 }
 
 async function clearLines(){
-    d3.select(".container").select("svg").selectAll("#lines").remove();
+    d3.select(".container").select("svg").selectAll("g").selectAll(".line").remove();
 }
 
 async function slide3() {
 
-
+    await clearLines();
 
     var margin = { top: 50, right: 50, bottom: 50, left: 100 }
         , width = window.innerWidth - margin.left - margin.right // Use the window's width 
