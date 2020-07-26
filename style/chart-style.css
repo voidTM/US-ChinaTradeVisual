@@ -1,7 +1,14 @@
 .line {
     fill: none;
-    stroke: #003cff;
+    stroke: steelblue;
     stroke-width: 1.5;
+}
+
+.imports{
+    stroke: red;
+}
+.exports{
+    stroke: green;
 }
 
 .overlay {
@@ -15,7 +22,7 @@
     stroke: #fff;
 }
   
-  .focus circle {
+.focus circle {
   fill: none;
   stroke: steelblue;
 }

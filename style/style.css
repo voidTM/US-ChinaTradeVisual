@@ -1,0 +1,11 @@
+#header {
+    background-image:linear-gradient(rgb(173, 230, 187),white);
+    text-align: center;
+    height: 120px;
+    width: auto;
+}
+
+.container svg{
+    position: fixed;
+    z-index: -1;
+}
