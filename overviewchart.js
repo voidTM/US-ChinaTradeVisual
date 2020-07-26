@@ -1,9 +1,14 @@
 async function overview() {
     const margin = 50;
     const height = 200;
-    const width = 200;
-    const axisticks = [10, 20, 50, 100];
-    const data = await d3.csv("https://flunky.github.io/cars2017.csv");
+    var width = 200;
+    var target = "China"
+  
+    const data = await d3.csv("file://./data/USA-Trade2010.csv", function(data){
+        return d.Country == "China"
+        });
+    console.log(data);
+    console.log(data.Country);
     var scale = d3.scaleLog()
         .base(10)
         .domain([10, 150]);
@@ -28,13 +33,12 @@ async function overview() {
     d3.select('svg')
         .append("g")
         .attr("transform", "translate(" + margin + "," + margin + ")")
-        .selectAll('circle')
+        .selectAll('path')
         .data(data)
         .enter()
-        .append('circle')
-        .attr("cx", function (d) { return xScale(d.AverageCityMPG); })
-        .attr("cy", function (d) { return yScale(d.AverageHighwayMPG); })
-        .attr("r", function (d) { return (parseInt(d.EngineCylinders) + 2); });
+        .append('path')
+        .attr("x", function (d) { return xScale(d.Time); })
+        .attr("y", function (d) { return yScale(d.country); });
 
     d3.select('svg').append("g")
         .attr("transform", "translate(" + margin + "," + margin + ")")
