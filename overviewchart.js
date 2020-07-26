@@ -7,7 +7,7 @@ async function overviewLine() {
 
     // Get data from Only China
     const data = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/USA-Trade2010-v2.csv", function (d) {
-        if (d.Country == "China")
+        if (d.Country == "China" && d.year != 2020)
             return {
                 exports: parseInt(d['Total Exports Value ($US)'].replace(/\,/g, '')),
                 imports: parseInt(d['Customs Import Value (Gen) ($US)'].replace(/\,/g, ''))
