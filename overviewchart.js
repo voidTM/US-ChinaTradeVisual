@@ -38,7 +38,7 @@ async function overviewLine() {
 
     d3.select('svg')
         .append("g")
-        .attr("transform", "translate(" + 100 + "," + margin + ")")
+        .attr("transform", "translate(" + margin + "," + margin + ")")
         .selectAll('path')
         .enter().append('path')
         .datum([data])
