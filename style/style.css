@@ -9,3 +9,12 @@
     position: fixed;
     z-index: -1;
 }
+
+.tooltip {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: 60px; height: 40px;
+    background: white;
+    border: 0px;
+}
