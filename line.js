@@ -92,7 +92,7 @@ async function slide1() {
 
     var margin = { top: 50, right: 50, bottom: 50, left: 100 }
         , width = window.innerWidth - margin.left - margin.right // Use the window's width 
-        , height = (width / 2) - margin.top - margin.bottom; // Use the window's height
+        , height = 600 - margin.top - margin.bottom; // Use the window's height
 
     const data = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/USA-Trade2010-v2.csv", function (d) {
         if (d.Country == "China" && d.Year != 2020)
@@ -119,12 +119,13 @@ async function slide1() {
 
 
     var y = d3.scaleLinear()
-        .domain([d3.min(data, function (d) { return d.balance; }), d3.max(data, function (d) { return d.imports; })])
+        .domain([d3.min(data, function (d) { return d.balance; }), 0])
         .range([height, 0]);
 
     var balanceLine = d3.line()
         .x(function (d, i) { return xTime(monthYear(d.time)); })
-        .y(function (d) { return y(d.balance); }) // set the y values for the line generator 
+        .y(function (d, i) { return y(d.balance)})
+        //.y(function (d) { return y(d.balance); }) // set the y values for the line generator 
 
     var svg = d3.select(".container").append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -139,7 +140,7 @@ async function slide1() {
 
     svg.append("g")
         .attr("class", "y axis")
-        .call(d3.axisLeft(y).ticks(10, "s")); // Create an axis component with d3.axisLeft
+        .call(d3.axisLeft(y).ticks(5, "s")); // Create an axis component with d3.axisLeft
 
     //Draw line imports
 
@@ -152,7 +153,7 @@ async function slide1() {
 async function plotEveryCountry() {
     var margin = { top: 50, right: 50, bottom: 50, left: 100 }
         , width = window.innerWidth - margin.left - margin.right // Use the window's width 
-        , height = (width / 2) - margin.top - margin.bottom; // Use the window's height
+        , height = (width) - margin.top - margin.bottom; // Use the window's height
 
     const data = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/USA-Trade2010-v2.csv", function (d) {
         if (d.Year < 2020)
@@ -385,6 +386,8 @@ async function slide4() {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    var tooltip = d3.select("#tooltip");
+
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
@@ -399,14 +402,17 @@ async function slide4() {
         .attr("class", "line exports") // Assign a class for styling 
         .attr("d", balanceLine); // 11. Calls the line generator */
 
-    
+    svg = svg.append("g").attr("class", "dataLines");
+
     for (commodity in dataByCommodity) {
         svg.append("path")
             .datum(dataByCommodity[commodity]) // 10. Binds data to the line 
             .attr("class", "line exports") // Assign a class for styling 
             .attr("id", commodity)
-            .attr("d", balanceLine); // 11. Calls the line generator 
-
+            .attr("d", balanceLine) // 11. Calls the line generator 
+            .on("mouseover", function (a,b, c) {
+                console.log(a);
+                console.log(this);
+            });
     }
-
 }

@@ -5,9 +5,24 @@
     width: auto;
 }
 
-.container svg{
-    position: fixed;
-    z-index: -1;
+.container{
+    display: grid;
+}
+
+.x-axis{
+    stroke-opacity: 1;
+}
+
+.line.neutral{
+    stroke-opacity: 0.2;
+}
+
+.slide{
+    display: grid
+}
+
+.slide.notes{
+    
 }
 
 .tooltip {
@@ -17,4 +32,21 @@
     width: 60px; height: 40px;
     background: white;
     border: 0px;
+    z-index: 1;
+}
+
+#imports .line{
+    stroke: rgb(223, 63, 63)
+}
+
+#imports .line{
+    stroke: rgb(223, 63, 63)
+}
+
+#balance .line{
+    stroke: blueviolet
+}
+
+#exports .line{
+    stroke: green
 }
