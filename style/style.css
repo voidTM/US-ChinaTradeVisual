@@ -9,8 +9,8 @@
     display: grid;
 }
 
-.x-axis{
-    stroke-opacity: 1;
+.x-axis.bar{
+    font-size: medium;
 }
 
 .line.neutral{
