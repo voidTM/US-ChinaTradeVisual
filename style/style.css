@@ -17,6 +17,11 @@
     stroke-opacity: 0.2;
 }
 
+.grid{
+    stroke-opacity: 0.2;
+    color: slategray;
+}
+
 .slide{
     display: grid
 }
@@ -35,18 +40,19 @@
     z-index: 1;
 }
 
-#imports .line{
+.imports .line{
     stroke: rgb(223, 63, 63)
 }
 
-#imports .line{
-    stroke: rgb(223, 63, 63)
+.imports.bar{
+    stroke: black;
+    fill: rgb(223, 63, 63)
 }
 
-#balance .line{
+.balance .line{
     stroke: blueviolet
 }
 
-#exports .line{
+.exports .line{
     stroke: green
 }
