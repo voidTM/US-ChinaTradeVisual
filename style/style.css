@@ -9,7 +9,7 @@
     display: grid;
     margin-left: 50px;
     margin-right: 50px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 .container.inactive{
@@ -36,27 +36,49 @@
     top: 0px;
     z-index: 90;
 }
+
+
+.title {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    color: #262626;
+    line-height: 1.2em;
+  }
+  
+
+.slide-info{
+    background-color: rgb(187, 223, 238);
+    border-radius: 25px;
+    padding: 5px;
+    margin-bottom: 100px;
+}
     
 .x-axis.bar{
     font-size: medium;
+}
+
+.y-axis {
+    stroke-width: 0;
+}
+.y-axis .tick{
+    stroke-opacity: 0.3;
+    stroke-width: 1;
+    color: grey;
 }
 
 .line.neutral{
     stroke-opacity: 0.2;
 }
 
-.grid{
-    stroke-opacity: 0.2;
-    color: slategray;
-}
 
 .slide{
     display: grid
 }
 
-.slide.notes{
-    
-}
+
 
 .tooltip {
     opacity: 0;
@@ -66,7 +88,9 @@
     background: white;
     border: 0px;
     z-index: 1;
-}
+}  
+
+
 
 .imports .line{
     stroke: rgb(223, 63, 63)

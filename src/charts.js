@@ -1,7 +1,7 @@
 
 
-var margin = { top: 50, right: 50, bottom: 50, left: 100 }
-    ,width = 700 - margin.right - margin.left
+var margin = { top: 10, right: 50, bottom: 50, left: 100 }
+    ,width = 1000 - margin.right - margin.left
     ,height = 500 - margin.top - margin.bottom;
 // Date time format parsers
 var yearDate = d3.timeParse("%Y");
@@ -56,16 +56,15 @@ async function init() {
 }
 
 async function drawChart1() {
-    var width = document.getElementById("slide1").offsetWidth - margin.left - margin.right // Use the window's width 
-    var height = 500 - margin.top - margin.bottom; // Use the window's height
+    //var width = document.getElementById("slide1").offsetWidth - margin.left - margin.right // Use the window's width 
 
     const data = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/Exports-Imports-China-Year.csv", function (d) {
-        if (d.Time < 2019)
+        if (d.Time < 2020)
             return {
                 time: d.Time,
                 exports: parseInt(d['Total Exports Value ($US)']),
                 imports: parseInt(d['Customs Import Value (Gen) ($US)']),
-                balance: Math.abs(parseInt(d['Balance ($US)']))
+                deficit: -parseInt(d['Balance ($US)'])
             }
 
     });
@@ -84,7 +83,7 @@ async function drawChart1() {
 
     var balanceLine = d3.line()
         .x(function (d) { return xTime(yearDate(d.time)); })
-        .y(function (d) { return y(d.balance) })
+        .y(function (d) { return y(d.deficit) })
 
     var importsLine = d3.line()
         .x(function (d, i) { return xTime(yearDate(d.time)); })
@@ -123,7 +122,7 @@ async function drawChart1() {
         .attr("d", exportsLine); // 11. Calls the line generator 
 
 
-    //drawZeroLine();
+    //draw 2018+ fade annotation
 
 }
 
@@ -188,6 +187,7 @@ async function drawChart2() {
         .call(d3.axisBottom(x)) // Create an axis component with d3.axisBottom
         .selectAll("text")
         .attr("y", 20)
+        .style("font-size", "small")
         .call(wrap, x.step());
 
     svg.append("g")
