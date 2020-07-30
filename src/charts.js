@@ -1,38 +1,63 @@
 
-async function drawSVG() {
-    var margin = { top: 50, right: 50, bottom: 50, left: 100 }
-        , width = window.innerWidth - margin.left - margin.right
-        , height = (width / 2) - margin.top - margin.bottom;
 
-    var svg = d3.select(".container").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var margin = { top: 50, right: 50, bottom: 50, left: 100 }
+    ,width = 700 - margin.right - margin.left
+    ,height = 500 - margin.top - margin.bottom;
+// Date time format parsers
+var yearDate = d3.timeParse("%Y");
+var monthYear = d3.timeParse("%B %Y");
+
+var csvData;
+
+function wrap(text, width) {
+    text.each(function () {
+        var text = d3.select(this),
+            words = text.text().split(/\s+/).reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, // ems
+            y = text.attr("y"),
+            dy = parseFloat(text.attr("dy")),
+            tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(" "));
+            if (tspan.node().getComputedTextLength() > width) {
+                line.pop();
+                tspan.text(line.join(" "));
+                line = [word];
+                tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+            }
+        }
+    });
 }
 
-async function resizeSVG() {
-    var margin = { top: 50, right: 50, bottom: 50, left: 100 }
-        , width = window.innerWidth - margin.left - margin.right
-        , height = (width / 2) - margin.top - margin.bottom;
 
-    var svg = d3.select(".container").select("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+function drawAxes(svg, xAxes, yAxes) {
+
+    svg.append("g")
+        .attr("class", "x-axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(xAxes)); // Create an axis component with d3.axisBottom
+
+    svg.append("g")
+        .attr("class", "y-axis")
+        .call(d3.axisLeft(yAxes).tickFormat(function (d) { return d / 1000000 + "M" })); // Create an axis component with d3.axisLeft
 
 }
+
 
 async function init() {
+    // move querying data to here?
+    // and make data global
     drawChart1();
     drawChart2();
 }
 
 async function drawChart1() {
-    var margin = { top: 50, right: 50, bottom: 50, left: 100 }
-        , width = window.innerWidth - margin.left - margin.right // Use the window's width 
-        , height = 500 - margin.top - margin.bottom; // Use the window's height
+    var width = document.getElementById("slide1").offsetWidth - margin.left - margin.right // Use the window's width 
+    var height = 500 - margin.top - margin.bottom; // Use the window's height
 
     const data = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/Exports-Imports-China-Year.csv", function (d) {
         if (d.Time < 2019)
@@ -70,20 +95,11 @@ async function drawChart1() {
         .y(function (d) { return y(d.exports); }) // set the y values for the line generator 
 
     var svg = d3.select("#slide1").select("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    svg.append("g")
-        .attr("class", "x-axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(xTime)); // Create an axis component with d3.axisBottom
 
-    svg.append("g")
-        .attr("class", "y-axis")
-        .call(d3.axisLeft(y).ticks(5, "s")); // Create an axis component with d3.axisLeft
-
+    drawAxes(svg, xTime, y);
     //Draw line imports
 
     svg.append("g")
@@ -111,59 +127,15 @@ async function drawChart1() {
 
 }
 
-function wrap(text, width) {
-    text.each(function() {
-      var text = d3.select(this),
-          words = text.text().split(/\s+/).reverse(),
-          word,
-          line = [],
-          lineNumber = 0,
-          lineHeight = 1.1, // ems
-          y = text.attr("y"),
-          dy = parseFloat(text.attr("dy")),
-          tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-      while (word = words.pop()) {
-        line.push(word);
-        tspan.text(line.join(" "));
-        if (tspan.node().getComputedTextLength() > width) {
-          line.pop();
-          tspan.text(line.join(" "));
-          line = [word];
-          tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-        }
-      }
-    });
-  }
-  
-
-async function drawZeroLine() {
-    var margin = { top: 50, right: 50, bottom: 50, left: 100 }
-        , width = window.innerWidth - margin.left - margin.right // Use the window's width 
-        , height = 500 - margin.top - margin.bottom; // Use the window's height
-
-    var neutralLine = d3.line()
-        .x(function (d) { return d; })
-        .y(function (d) { return height; });
-
-    var basic = [0, width]
-    d3.select("#drawn")
-        .append("path")
-        .datum(basic)
-        .attr("class", "line neutral")
-        .attr("d", neutralLine)
-}
 
 
 async function drawChart2() {
-    var margin = { top: 50, right: 50, bottom: 100, left: 100 }
-        , width = window.innerWidth - margin.left - margin.right // Use the window's width 
-        , height = 600 - margin.top - margin.bottom; // Use the window's height
 
     const data = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/Exports-Imports-China.csv", function (d) {
         if (d.Year == 2018)
             return {
                 commodity: d.Commodity,
-                //exports: parseInt(d['Total Exports Value ($US)']),
+                exports: parseInt(d['Total Exports Value ($US)']),
                 imports: parseInt(d['Customs Import Value (Gen) ($US)']),
                 balance: parseInt(d['Balance ($US)'])
             }
@@ -193,7 +165,7 @@ async function drawChart2() {
     commodityArray.sort(function (a, b) {
         return d3.ascending(a.balance, b.balance);
     });
-    var topDeficits = commodityArray.slice(0,10);
+    var topDeficits = commodityArray.slice(0, 10);
 
     var y = d3.scaleLinear()
         .domain([d3.min(commodityArray, function (d) { return d.imports }), d3.max(commodityArray, function (d) { return d.imports; })])
@@ -207,8 +179,6 @@ async function drawChart2() {
 
 
     var svg = d3.select("#slide2").select("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -219,7 +189,7 @@ async function drawChart2() {
         .selectAll("text")
         .attr("y", 20)
         .call(wrap, x.step());
-    
+
     svg.append("g")
         .attr("class", "y-axis")
         .call(d3.axisLeft(y).ticks(5, "s")); // Create an axis component with d3.axisLeft

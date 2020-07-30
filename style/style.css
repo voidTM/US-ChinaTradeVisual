@@ -7,8 +7,36 @@
 
 .container{
     display: grid;
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
+.container.inactive{
+    display:none
+}
+
+.container .card{
+    grid-column: 1;
+    margin-bottom: 100px;
+    top: 0px;
+    z-index: 90;
+
+}
+
+.visual{
+    grid-column: 2/-1;
+    position: relative;
+}
+
+#sections {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    top: 0px;
+    z-index: 90;
+}
+    
 .x-axis.bar{
     font-size: medium;
 }
