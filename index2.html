@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src='src/charts2.js'></script>
+    <link rel="stylesheet" href="style/chart-style.css" type="text/css">
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+
+<body onload=init()>
+    <div id="header">
+        <h1>US Trade Deficit Visualized</h1>
+    </div>
+    <div class="slidebar"></div>
+    <div class="container">
+        <div class="slides">
+            <section class="slide-info">
+                <div class="title"> Annual US Trade Deficit with China</div>
+                <p>
+                    In the past two decades the US Trade Deficit with China
+                    has soared.
+                </p>
+                
+            </section>
+            <section class="slide-info">
+                <div class="title"> An Increase in Imports</div>
+                <p>
+                    This had largely been fueled by an exponential increase in imports.
+                    While on the other hand imports have only incrased by X%
+                </p>
+            </section>
+            <section class="slide-info">
+                <div class="title"> Major Imports by products </div>
+                <p>
+                    In particular there has been a large demand for electronic goods such as smartphones.
+                </p>
+            </section>
+        </div>
+        <div class="visualization">
+            <div class="tooltip"></div>
+            <svg width=1000 height=500></svg>
+        </div>
+    </div>
+
+</body>
+
+</html>

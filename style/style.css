@@ -29,6 +29,9 @@
     position: relative;
 }
 
+/*
+    Styling for the side infor
+/**/
 #sections {
     position: relative;
     display: inline-block;
@@ -51,60 +54,54 @@
 
 .slide-info{
     background-color: rgb(187, 223, 238);
-    border-radius: 25px;
+    border-radius: 10px;
     padding: 5px;
     margin-bottom: 100px;
 }
-    
-.x-axis.bar{
-    font-size: medium;
-}
-
-.y-axis {
-    stroke-width: 0;
-}
-.y-axis .tick{
-    stroke-opacity: 0.3;
-    stroke-width: 1;
-    color: grey;
-}
-
-.line.neutral{
-    stroke-opacity: 0.2;
-}
 
 
-.slide{
-    display: grid
+.slidebar{
+    position: fixed;
+    right:0;
+    top: 50%;
+    width: 10px;
+    background: grey;
+    z-index: 10;
 }
 
 
 
+/*
+    Styling for inside the visual
+/**/
 .tooltip {
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     text-align: center;
-    width: 60px; height: 40px;
-    background: white;
+    width: 100px;
+    background: slategray;
     border: 0px;
     z-index: 1;
 }  
 
-
-
-.imports .line{
-    stroke: rgb(223, 63, 63)
+.tooltip.hidden{
+    opacity: 0;
 }
 
-.imports.bar{
-    stroke: black;
-    fill: rgb(223, 63, 63)
+.annotations.card{
+    border-radius: 10px;
+    padding: 5px;
+    font-family: Arial;
 }
 
-.balance .line{
-    stroke: blueviolet
+.annotation rect{
+    opacity: 0.2;
+    fill: orange;
+    z-index: -1;
 }
 
-.exports .line{
-    stroke: green
+.annotation text{
+    z-index: -1;
+    font-family: Arial;
+    overflow-wrap: break-word
 }

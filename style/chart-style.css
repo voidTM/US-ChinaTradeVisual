@@ -1,15 +1,50 @@
+
+/* styling for the Charts */
+
 .line {
     fill: none;
-    stroke: steelblue;
     stroke-width: 1.5;
 }
 
-.imports{
-    stroke: red;
+.imports .line{
+  stroke: rgb(223, 63, 63)
 }
-.exports{
-    stroke: green;
+
+.imports.bar{
+  stroke: black;
+  fill: rgb(223, 63, 63)
 }
+
+.balance .line{
+  stroke: blueviolet
+}
+
+.exports .line{
+  stroke: green
+}
+
+.x-axis.bar{
+  font-size: small;
+}
+
+.y-axis {
+  stroke-width: 0;
+}
+.y-axis .tick{
+  stroke-opacity: 0.3;
+  stroke-width: 1;
+  color: grey;
+}
+
+.line.neutral{
+  stroke-opacity: 0.2;
+}
+
+
+.slide{
+  display: grid
+}
+
 
 .overlay {
   fill: none;
