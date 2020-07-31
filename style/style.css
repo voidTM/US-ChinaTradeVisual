@@ -85,7 +85,6 @@
     Styling for inside the visual
 /**/
 .tooltip {
-    opacity: 1;
     position: absolute;
     text-align: center;
     width: 100px;
@@ -94,9 +93,6 @@
     z-index: 1;
 }  
 
-.tooltip.hidden{
-    opacity: 0;
-}
 
 .annotations.card{
     border-radius: 10px;
@@ -107,7 +103,7 @@
 .annotation rect{
     opacity: 0.2;
     fill: orange;
-    z-index: -1;
+    z-index: -2;
 }
 
 .annotation text{
