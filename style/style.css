@@ -86,11 +86,13 @@
 /**/
 .tooltip {
     position: absolute;
-    text-align: center;
+    text-align: justify;
+    text-justify: auto;
     width: 100px;
-    background: slategray;
-    border: 0px;
-    z-index: 1;
+    background: rgb(212, 223, 235);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 2;
 }  
 
 

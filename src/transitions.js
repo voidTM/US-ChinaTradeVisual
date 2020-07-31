@@ -1,6 +1,12 @@
 
 // This file is in charge of transitioning between slides as needed
 
+
+function switchScenes(){
+  
+}
+
+
 function scroller() {
     var container = d3.select('body');
     // event dispatcher

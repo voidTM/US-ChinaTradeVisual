@@ -3,7 +3,7 @@
 
 <head>
     <script src='https://d3js.org/d3.v5.min.js'></script>
-    <script src='src/charts.js'></script>
+    <script src='src/charts2.js'></script>
     <link rel="stylesheet" href="style/chart-style.css" type="text/css">
     <link rel="stylesheet" href="style/style.css" type="text/css">
 </head>
@@ -12,44 +12,48 @@
     <div id="header">
         <h1>US Trade Deficit Visualized</h1>
     </div>
-    
-    <div class="container" id="slide1" >
-        <div class = "card">
-            <p>
-                Since 2002 there has been a gradual increase in the trade deficit with china
-            </p>
+    <div class="slidebar"></div>
+    <div class="container">
+        <div class="slides">
+            <section class="slide-info" id="slide1">
+                <div class="title"> Annual US Trade Deficit with China</div>
+                <p>
+                    In the past two decades the US Trade Deficit with China
+                    has soared.
+                    By 2017 this deficit had ballooned to $375 billion and accounts for 
+                    47% of the US Trade Deficit 
+                </p>
+
+            </section>
+            <section class="slide-info" id="slide2">
+                <div class="title"> An Increase in Imports</div>
+                <p>
+                    This had largely been fueled by an exponential increase in imports.
+                    While on the other hand imports have only incrased by X%
+                </p>
+            </section>
+            <section class="slide-info" id="slide3">
+                <div class="title"> Major Imports by products </div>
+                <p>
+                    In particular there has been a large demand for electronic goods such as smartphones.
+                </p>
+            </section>
+            <section class="slide-info" id="slide4">
+                <div class="title"> Effects of the Trade War </div>
+                <p>
+                    Since the start of the trade war.
+                </p>
+            </section>
         </div>
-        <div class = "visual" id="mainVisual">
-            <div class="tooltip"></div>
-            <svg width=1000 height=500 id="mainSVG"></svg>
-        </div>
-    </div>
-    <div class="container" id="slide2">
-        <div class = "visual" id="visual2">
+        <div class="visualization">
             <div class="tooltip"></div>
             <svg width=1000 height=500></svg>
         </div>
-    </div>
-    <div class="container" id="slide3">
-        <div class = "visual">
-            <div class="tooltip" ></div>
-            <svg width=100% height=500></svg>
-        </div>
-    </div>
-    <div class="container" id="slide4">
-        <div class = "visual">
-            <div class="tooltip" ></div>
-            <svg width=100% height=500></svg>
-        </div>
-    </div>
-    <div class="container" id="slide5">
-        <div class = "visual">
-            <div class="tooltip"></div>
-            <svg width=100% height=500></svg>
+        <div class="legend">
+
         </div>
     </div>
 
-    </div>
 </body>
 
 </html>

@@ -17,19 +17,28 @@ var prevScene = -1;
 // Scales
 var xAnnual = d3.scaleTime()
     .range([0, width]);
-var yAnnual = d3.scaleTime()
+var yAnnual = d3.scaleLinear()
     .range([height, 0]);
 
-var xMonth = d3.scaleTime()
+var xMonthly = d3.scaleTime()
     .range([0, width]);
+var yMonthly = d3.scaleLinear()
+    .range([height, 0]);
 
-var chartSettings = [
-    {
-        x: d3.scaleTime()
-            .domain([new Date("1/1/2002"), new Date("1/1/2020")])
+var sceneParameters = {
+    scene1: {
+        x: xAnnual,
+        y: yAnnual
+
+    },
+    scene2: {
+        x: xAnnual,
+        y: yAnnual
+    },
+    scene3: {
 
     }
-]
+}
 
 
 
@@ -42,11 +51,15 @@ var balanceLine = d3.line()
 
 var importsLine = d3.line()
     .x(function (d, i) { return xAnnual(yearDate(d.time)); })
-    .y(function (d) { return yAnnual(d.imports); }) // set the y values for the line generator 
+    .y(function (d) { return yAnnual(d.imports); })
 
 var exportsLine = d3.line()
     .x(function (d, i) { return xAnnual(yearDate(d.time)); })
-    .y(function (d) { return yAnnual(d.exports); }) // set the y values for the line generator 
+    .y(function (d) { return yAnnual(d.exports); })
+
+var importsLine2 = d3.line()
+    .x(function (d, i) { return xMonthly(monthYear(d.time)); })
+    .y(function (d) { return yMonthly(d.imports); })
 
 // Date time format parsers
 var yearDate = d3.timeParse("%Y");
@@ -102,6 +115,7 @@ function drawAxes(svg, x, y) {
         .call(yAxes); // Create an axis component with d3.axisLeft
 }
 
+
 function annotateArea(svg, note) {
     t = svg.append("g")
         .attr("class", "annotation")
@@ -140,59 +154,79 @@ async function init() {
     monthlyData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/Exports-Imports-China.csv", function (d) {
         return {
             commodity: d.Commodity,
+            time: d.Time,
+            month: d.Month,
             exports: parseInt(d['Total Exports Value ($US)']),
             imports: parseInt(d['Customs Import Value (Gen) ($US)']),
-            balance: parseInt(d['Balance ($US)'])
+            balance: parseInt(d['Balance ($US)']),
+            deficit: -parseInt(d['Balance ($US)'])
         }
     });
 
-
-
-    drawChart1(annualData);
-    drawChart2(monthlyData);
-}
-
-/**
- * Chart1 takes place using annual data of the US Trade deficit
- * Scenes 1 and two take place here
- */
-
-
-async function drawChart1(data) {
+    xMonthly.domain(d3.extent(monthlyData, function (d) { return monthYear(d.time); }));
+    yMonthly.domain([0, d3.max(monthlyData, function (d) { return d.imports; })])
 
     var svg = d3.select(".container").select("svg")
         .append("g")
         .attr("class", "slide-viz") // this classification does nothing atm?
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    var d2 = groupBy(monthlyData, "commodity");
+    var dataArray = Object.values(d2);
+    drawChart1(svg, annualData);
+    drawChart2(svg, dataArray);
+}
 
+
+/**
+ * 
+ * Data filtering and aggregation
+ */
+
+function groupBy(data, key) {
+    return data.reduce(function (obj, value) {
+        var valueKey = value[key];
+        if (obj[valueKey] == null)
+            obj[valueKey] = [value];
+        obj[valueKey].push(value);
+        return obj;
+    }, {});
+}
+
+function aggregateData(data, key) {
+    // aggregates data 
+    var commodityData = data.reduce(function (obj, value) {
+        var valueKey = value[key];
+        if (obj[valueKey] == null)
+            obj[valueKey] = value;
+
+        obj[valueKey]["imports"] += value["imports"] || 0;
+        obj[valueKey]["balance"] += value["balance"] || 0;
+
+        return obj;
+    }, {});
+
+    var commodityArray = Object.values(commodityData);
+    commodityArray.sort(function (a, b) {
+        return d3.ascending(a.balance, b.balance);
+    });
+
+    return commodityArray;
+}
+
+
+function filterBy(data, filter) {
+
+}
+
+/**
+ * Chart1 takes place using annual data of the US Trade deficit
+ * Scenes 1 and 2 take place here
+ */
+
+async function drawChart1(svg, data) {
     drawAxes(svg, xAnnual, yAnnual);
     //Draw line imports
-    /**
-     * Attempt at annotations
-     */
-
-    var notes = svg.append("g")
-        .attr("class", "annotation");
-
-    annotations.push({
-        label: "Financial Recession",
-        y: 0,
-        x: xAnnual(new Date("12/01/2007")), //position the x based on an x scale
-        width: xAnnual(new Date("1/01/2010")) - xAnnual(new Date("12/01/2007")),
-        validScenes: [1, 2, 3]
-    })
-
-    annotations.push({
-        label: "US Trade War with China",
-        y: 0,
-        x: xAnnual(new Date("01/01/2018")), //position the x based on an x scale
-        width: xAnnual(new Date("1/01/2005")),
-        validScenes: [2, 3]
-    })
-
-    annotateArea(svg, annotations[0]);
-    //annotateArea(svg, annotations[1]);
 
     /**
      * Tooltip functions
@@ -201,20 +235,18 @@ async function drawChart1(data) {
         .style("opacity", 0)
 
     var mouseover = function (d, i) {
-        tooltip.style("opacity", 1);
+        tooltip
+            .style("opacity", 1)
+            .html(d.time + " Deficit: <br>$ " + (d.deficit / 1000000000).toFixed(2) + " bn")
+            //Tooltip is center bottom of data point
+            .style("left", ((d3.event.pageX - 50) + "px"))
+            .style("top", ((d3.event.pageY + 10) + "px"));
+
     };
 
-    var mousemove = function (d, i) {
-        console.log(this);
-        console.log(d3.mouse(this)[0]);
-        tooltip
-            .html("Annual Deficit: " + d.deficit)
-            .style("left", (d3.event.pageX + "px")) // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-            .style("top", (d3.event.pageY + "px"));
-    };
-    // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
     var mouseleave = function (d, i) {
-        tooltip.style("opacity", 0);
+        tooltip
+            .style("opacity", 0);
     };
     // Draw Scene1 data
     var scene1 = svg.append("g")
@@ -231,20 +263,16 @@ async function drawChart1(data) {
         .data(data)
         .enter()
         .append("circle")
+        .attr("class", "datapoint")
         .attr("fill", colorScheme["deficit"])
-        .attr("stroke", "none")
         .attr("cx", function (d) { return xAnnual(yearDate(d.time)) })
         .attr("cy", function (d) { return yAnnual(d.deficit) })
-        .attr("r", 5)
+        .attr("r", 8)
         .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
-
     // scene 2 data
     var scene2 = svg.append("g")
         .attr("class", "scene2")
         .attr("opacity", 0);
-
 
     scene2.append("path")
         .datum(data)
@@ -279,10 +307,46 @@ async function drawChart1(data) {
         .attr("r", 5)
 
 
+    svg.on("mouseleave", mouseleave);
+
 }
 
 
-async function drawChart2() {
+async function drawChart2(svg, data) {
+
+    var exportScale = d3.scaleLinear()
+        .domain([0, d3.max(monthlyData, function (d) { return d.exports; })])
+        .range([0, width]);
+
+
+    var colorScale = d3.scaleLinear()
+        .domain(d3.extent(monthlyData, function (d) { return monthYear(d.time); }))
+        .range(["blue", "orange"]);
+    //drawAxes(svg, xMonth, yMonth);
+    var scene3 = svg.append("g")
+        .attr("class", "scene3")
+        .attr("opacity", 0);
+    console.log(data);
+    scene3.selectAll("path")
+        .data(data)
+        .filter(function(d) {return d.commodity == ""})
+        .enter()
+        .append("path")
+        .attr("d", importsLine2)
+        .attr("class", "line imports")
+        .on("mouseover", function(d){console.log(d);})
+
+    /*
+    scene3.selectAll("points")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("fill", "red")
+        .attr("stroke", "none")
+        .attr("cx", function (d) { return })
+        .attr("cy", function (d) { return yMonthly(d.imports) })
+        .attr("r", 5);
+    */
 
 }
 
@@ -369,6 +433,29 @@ async function drawBar() {
         });
 }
 
+function createAnnotations() {
+    var notes = svg.append("g")
+        .attr("class", "annotation");
+
+    annotations.push({
+        label: "Financial Recession",
+        y: 0,
+        x: xAnnual(new Date("12/01/2007")), //position the x based on an x scale
+        width: xAnnual(new Date("1/01/2010")) - xAnnual(new Date("12/01/2007")),
+        validScenes: [1, 2, 3]
+    })
+
+    annotations.push({
+        label: "US Trade War with China",
+        y: 0,
+        x: xAnnual(new Date("01/01/2018")), //position the x based on an x scale
+        width: xAnnual(new Date("1/01/2005")),
+        validScenes: [2, 3]
+    })
+
+    annotateArea(svg, annotations[0]);
+    //annotateArea(svg, annotations[1]);
+}
 
 // Transitions should hide the previous scene and the scene after
 
@@ -427,5 +514,15 @@ function scene2() {
 
 
 function scene3() {
+    d3.selectAll(".scene2")
+        .transition()
+        .attr("opacity", 0)
+        .duration(800)
+    d3.selectAll(".scene3")
+        .transition()
+        .attr("opacity", 1)
+        .duration(800)
+
+
 }
 

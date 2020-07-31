@@ -56,7 +56,11 @@
     fill: #ffab00;
     stroke: #fff;
 }
-  
+
+.datapoint:hover{
+    fill: yellow;
+}
+
 .focus circle {
   fill: none;
   stroke: steelblue;

@@ -1,4 +1,220 @@
 Commodity,Month,Year,Quarter,Time,Balance ($US),Total Exports Value ($US),Customs Import Value (Gen) ($US)
+All Commodities,January,2002,Q1,January 2002,-6846054338,1569313503,8415367841
+All Commodities,February,2002,Q1,February 2002,-6491284627,1529492578,8020777205
+All Commodities,March,2002,Q1,March 2002,-5638471747,1620488889,7258960636
+All Commodities,April,2002,Q2,April 2002,-7553013934,1544544989,9097558923
+All Commodities,May,2002,Q2,May 2002,-8073020819,1773915631,9846936450
+All Commodities,June,2002,Q2,June 2002,-8521227849,2205939528,10727167377
+All Commodities,July,2002,Q3,July 2002,-9365219748,1847999145,11213218893
+All Commodities,August,2002,Q3,August 2002,-10831610144,1839815968,12671426112
+All Commodities,September,2002,Q3,September 2002,-10267792906,2023728253,12291521159
+All Commodities,October,2002,Q4,October 2002,-9492259430,1962695203,11454954633
+All Commodities,November,2002,Q4,November 2002,-10408826648,2160758163,12569584811
+All Commodities,December,2002,Q4,December 2002,-9575892568,2049098442,11624991010
+All Commodities,January,2003,Q1,January 2003,-9333665682,2069831893,11403497575
+All Commodities,February,2003,Q1,February 2003,-7580956295,2048670815,9629627110
+All Commodities,March,2003,Q1,March 2003,-7686939854,2423104708,10110044562
+All Commodities,April,2003,Q2,April 2003,-9399905702,2121946680,11521852382
+All Commodities,May,2003,Q2,May 2003,-9900382810,1984318683,11884701493
+All Commodities,June,2003,Q2,June 2003,-10007680292,2119621137,12127301429
+All Commodities,July,2003,Q3,July 2003,-11371229512,2067405578,13438635090
+All Commodities,August,2003,Q3,August 2003,-11730438781,2034428227,13764867008
+All Commodities,September,2003,Q3,September 2003,-12656548622,2090976796,14747525418
+All Commodities,October,2003,Q4,October 2003,-13679981152,2778336455,16458317607
+All Commodities,November,2003,Q4,November 2003,-10837255312,3319692649,14156947961
+All Commodities,December,2003,Q4,December 2003,-9883170025,3309609238,13192779263
+All Commodities,January,2004,Q1,January 2004,-11468525703,2620489793,14089015496
+All Commodities,February,2004,Q1,February 2004,-8338156059,2928991616,11267147675
+All Commodities,March,2004,Q1,March 2004,-10438209270,3361910701,13800119971
+All Commodities,April,2004,Q2,April 2004,-12010230290,2734553860,14744784150
+All Commodities,May,2004,Q2,May 2004,-12232058855,2835052068,15067110923
+All Commodities,June,2004,Q2,June 2004,-14123545467,2764217124,16887762591
+All Commodities,July,2004,Q3,July 2004,-14943305964,2618793915,17562099879
+All Commodities,August,2004,Q3,August 2004,-15446896244,2620970808,18067867052
+All Commodities,September,2004,Q3,September 2004,-15563875193,2823070552,18386945745
+All Commodities,October,2004,Q4,October 2004,-16771413659,2946743822,19718157481
+All Commodities,November,2004,Q4,November 2004,-16740816772,2938175371,19678992143
+All Commodities,December,2004,Q4,December 2004,-14177228003,3234802826,17412030829
+All Commodities,January,2005,Q1,January 2005,-15276514484,2609326126,17885840610
+All Commodities,February,2005,Q1,February 2005,-13879505721,3058089091,16937594812
+All Commodities,March,2005,Q1,March 2005,-12848563774,3336381178,16184944952
+All Commodities,April,2005,Q2,April 2005,-14884787406,3263670754,18148458160
+All Commodities,May,2005,Q2,May 2005,-15830277142,3222909738,19053186880
+All Commodities,June,2005,Q2,June 2005,-17605971051,3370730806,20976701857
+All Commodities,July,2005,Q3,July 2005,-17712697315,3559972145,21272669460
+All Commodities,August,2005,Q3,August 2005,-18692568501,3728723847,22421292348
+All Commodities,September,2005,Q3,September 2005,-20128668413,3165813266,23294481679
+All Commodities,October,2005,Q4,October 2005,-20483701230,3899151496,24382852726
+All Commodities,November,2005,Q4,November 2005,-18618636744,3807491572,22426128316
+All Commodities,December,2005,Q4,December 2005,-16316202891,4169750104,20485952995
+All Commodities,January,2006,Q1,January 2006,-17985635758,3396870149,21382505907
+All Commodities,February,2006,Q1,February 2006,-13833108381,4072245086,17905353467
+All Commodities,March,2006,Q1,March 2006,-15664193620,4867064710,20531258330
+All Commodities,April,2006,Q2,April 2006,-17226665438,4232404495,21459069933
+All Commodities,May,2006,Q2,May 2006,-17883545082,4434090049,22317635131
+All Commodities,June,2006,Q2,June 2006,-19686794060,4302905336,23989699396
+All Commodities,July,2006,Q3,July 2006,-19825735662,4806275103,24632010765
+All Commodities,August,2006,Q3,August 2006,-22110066658,4603268577,26713335235
+All Commodities,September,2006,Q3,September 2006,-23109608039,4461009876,27570617915
+All Commodities,October,2006,Q4,October 2006,-24503337564,4885264175,29388601739
+All Commodities,November,2006,Q4,November 2006,-23179256599,4595822622,27775079221
+All Commodities,December,2006,Q4,December 2006,-19093397408,5015788165,24109185573
+All Commodities,January,2007,Q1,January 2007,-21251028051,4389534621,25640562672
+All Commodities,February,2007,Q1,February 2007,-18505990388,4532889974,23038880362
+All Commodities,March,2007,Q1,March 2007,-17297650347,5425393888,22723044235
+All Commodities,April,2007,Q2,April 2007,-19537571558,4703951215,24241522773
+All Commodities,May,2007,Q2,May 2007,-20161137702,5129436740,25290574442
+All Commodities,June,2007,Q2,June 2007,-21509187948,5561773250,27070961198
+All Commodities,July,2007,Q3,July 2007,-23935233558,4665937256,28601170814
+All Commodities,August,2007,Q3,August 2007,-22871703868,5552797567,28424501435
+All Commodities,September,2007,Q3,September 2007,-24107091621,5311870909,29418962530
+All Commodities,October,2007,Q4,October 2007,-26022486420,5532919982,31555406402
+All Commodities,November,2007,Q4,November 2007,-24199213792,5581504999,29780718791
+All Commodities,December,2007,Q4,December 2007,-19107680105,6548881175,25656561280
+All Commodities,January,2008,Q1,January 2008,-20636323293,5556708852,26193032145
+All Commodities,February,2008,Q1,February 2008,-18397831678,5698054777,24095886455
+All Commodities,March,2008,Q1,March 2008,-16145890062,6294351708,22440241770
+All Commodities,April,2008,Q2,April 2008,-20300418636,5651248360,25951666996
+All Commodities,May,2008,Q2,May 2008,-21358860127,6275672316,27634532443
+All Commodities,June,2008,Q2,June 2008,-21742474197,6188166337,27930640534
+All Commodities,July,2008,Q3,July 2008,-25012634967,6234635702,31247270669
+All Commodities,August,2008,Q3,August 2008,-25622401511,6201296378,31823697889
+All Commodities,September,2008,Q3,September 2008,-27821083988,5257646643,33078730631
+All Commodities,October,2008,Q4,October 2008,-27948988148,6083400135,34032388283
+All Commodities,November,2008,Q4,November 2008,-23084074890,5180950140,28265025030
+All Commodities,December,2008,Q4,December 2008,-19968808783,5110706195,25079514978
+All Commodities,January,2009,Q1,January 2009,-20583807646,4159649756,24743457402
+All Commodities,February,2009,Q1,February 2009,-14183813848,4661681362,18845495210
+All Commodities,March,2009,Q1,March 2009,-15645454490,5579259023,21224713513
+All Commodities,April,2009,Q2,April 2009,-16759152639,5161442609,21920595248
+All Commodities,May,2009,Q2,May 2009,-17478129748,5256018098,22734147846
+All Commodities,June,2009,Q2,June 2009,-18424199656,5548574581,23972774237
+All Commodities,July,2009,Q3,July 2009,-20401797708,5269286701,25671084409
+All Commodities,August,2009,Q3,August 2009,-20280145429,5517974227,25798119656
+All Commodities,September,2009,Q3,September 2009,-22129567804,5764348788,27893916592
+All Commodities,October,2009,Q4,October 2009,-22678482832,6879300033,29557782865
+All Commodities,November,2009,Q4,November 2009,-20167560139,7374160636,27541720775
+All Commodities,December,2009,Q4,December 2009,-18145092938,8324982797,26470075735
+All Commodities,January,2010,Q1,January 2010,-18317560150,6898358856,25215919006
+All Commodities,February,2010,Q1,February 2010,-16502550033,6840227481,23342777514
+All Commodities,March,2010,Q1,March 2010,-16891438582,7400774615,24292213197
+All Commodities,April,2010,Q2,April 2010,-19319462715,6600725426,25920188141
+All Commodities,May,2010,Q2,May 2010,-22297152550,6755285795,29052438345
+All Commodities,June,2010,Q2,June 2010,-26109381487,6733718548,32843100035
+All Commodities,July,2010,Q3,July 2010,-25927577562,7339256032,33266833594
+All Commodities,August,2010,Q3,August 2010,-28165553582,7209734849,35375288431
+All Commodities,September,2010,Q3,September 2010,-28082387628,7114311226,35196698854
+All Commodities,October,2010,Q4,October 2010,-25666010910,9417288527,35083299437
+All Commodities,November,2010,Q4,November 2010,-25088448927,9475844966,34564293893
+All Commodities,December,2010,Q4,December 2010,-20674028525,10125554623,30799583148
+All Commodities,January,2011,Q1,January 2011,-23359561912,8017791834,31377353746
+All Commodities,February,2011,Q1,February 2011,-18861425689,8383310124,27244735813
+All Commodities,March,2011,Q1,March 2011,-18035938576,9563728281,27599666857
+All Commodities,April,2011,Q2,April 2011,-21579779390,8000503316,29580282706
+All Commodities,May,2011,Q2,May 2011,-24938912298,7849159315,32788071613
+All Commodities,June,2011,Q2,June 2011,-26507825705,7867005088,34374830793
+All Commodities,July,2011,Q3,July 2011,-26994342067,8157901187,35152243254
+All Commodities,August,2011,Q3,August 2011,-28952494457,8421642066,37374136523
+All Commodities,September,2011,Q3,September 2011,-28048579304,8370063556,36418642860
+All Commodities,October,2011,Q4,October 2011,-28078515559,9745556144,37824071703
+All Commodities,November,2011,Q4,November 2011,-26767716047,9997195589,36764911636
+All Commodities,December,2011,Q4,December 2011,-23124617992,9747667135,32872285127
+All Commodities,January,2012,Q1,January 2012,-26058067707,8359472713,34417540420
+All Commodities,February,2012,Q1,February 2012,-19319523641,8785662778,28105186419
+All Commodities,March,2012,Q1,March 2012,-21619772405,9811576526,31431348931
+All Commodities,April,2012,Q2,April 2012,-24548111852,8468141982,33016253834
+All Commodities,May,2012,Q2,May 2012,-25977674946,8960154977,34937829923
+All Commodities,June,2012,Q2,June 2012,-27471242143,8478117308,35949359451
+All Commodities,July,2012,Q3,July 2012,-29415659705,8515095501,37930755206
+All Commodities,August,2012,Q3,August 2012,-28667293825,8613335319,37280629144
+All Commodities,September,2012,Q3,September 2012,-29087613369,8804209690,37891823059
+All Commodities,October,2012,Q4,October 2012,-29432652128,10824431396,40257083524
+All Commodities,November,2012,Q4,November 2012,-28955907635,10587785547,39543693182
+All Commodities,December,2012,Q4,December 2012,-24548947609,10308631935,34857579544
+All Commodities,January,2013,Q1,January 2013,-27810735657,9382923146,37193658803
+All Commodities,February,2013,Q1,February 2013,-23609359985,9133317600,32742677585
+All Commodities,March,2013,Q1,March 2013,-17755035864,9539031339,27294067203
+All Commodities,April,2013,Q2,April 2013,-24177971774,8953954532,33131926306
+All Commodities,May,2013,Q2,May 2013,-27864795955,8752827685,36617623640
+All Commodities,June,2013,Q2,June 2013,-26668352502,9217626330,35885978832
+All Commodities,July,2013,Q3,July 2013,-30076722478,8723708150,38800430628
+All Commodities,August,2013,Q3,August 2013,-29809180019,9352119496,39161299515
+All Commodities,September,2013,Q3,September 2013,-30617215865,9527176643,40144392508
+All Commodities,October,2013,Q4,October 2013,-28697708309,13147763822,41845472131
+All Commodities,November,2013,Q4,November 2013,-27085196972,13027082593,40112279565
+All Commodities,December,2013,Q4,December 2013,-24511555575,12988657301,37500212876
+All Commodities,January,2014,Q1,January 2014,-28112657018,10264542542,38377199560
+All Commodities,February,2014,Q1,February 2014,-20949656145,9750696184,30700352329
+All Commodities,March,2014,Q1,March 2014,-20486599175,10934276106,31420875281
+All Commodities,April,2014,Q2,April 2014,-27418317983,9031900812,36450218795
+All Commodities,May,2014,Q2,May 2014,-28967973788,9220161982,38188135770
+All Commodities,June,2014,Q2,June 2014,-30276899087,9330219574,39607118661
+All Commodities,July,2014,Q3,July 2014,-31027827282,9291791064,40319618346
+All Commodities,August,2014,Q3,August 2014,-30468644322,9625172763,40093817085
+All Commodities,September,2014,Q3,September 2014,-35788807711,9313967699,45102775410
+All Commodities,October,2014,Q4,October 2014,-32742017424,12593334298,45335351722
+All Commodities,November,2014,Q4,November 2014,-30357598919,12125930519,42483529438
+All Commodities,December,2014,Q4,December 2014,-28220692596,12175209863,40395902459
+All Commodities,January,2015,Q1,January 2015,-29130498337,9459198394,38589696731
+All Commodities,February,2015,Q1,February 2015,-22809399977,8754588178,31563988155
+All Commodities,March,2015,Q1,March 2015,-31250398366,9886519164,41136917530
+All Commodities,April,2015,Q2,April 2015,-26841481617,9279912850,36121394467
+All Commodities,May,2015,Q2,May 2015,-30332242342,8749787563,39082029905
+All Commodities,June,2015,Q2,June 2015,-31838085680,9615754115,41453839795
+All Commodities,July,2015,Q3,July 2015,-31709904617,9505173559,41215078176
+All Commodities,August,2015,Q3,August 2015,-34954599191,9183456081,44138055272
+All Commodities,September,2015,Q3,September 2015,-36305530076,9419421166,45724951242
+All Commodities,October,2015,Q4,October 2015,-32985076272,11324856248,44309932520
+All Commodities,November,2015,Q4,November 2015,-31281181471,10603592681,41884774152
+All Commodities,December,2015,Q4,December 2015,-27889892104,10091105315,37980997419
+All Commodities,January,2016,Q1,January 2016,-28917547743,8208886377,37126434120
+All Commodities,February,2016,Q1,February 2016,-27986377462,8080515063,36066892525
+All Commodities,March,2016,Q1,March 2016,-20886765697,8925561211,29812326908
+All Commodities,April,2016,Q2,April 2016,-24240536063,8679668476,32920204539
+All Commodities,May,2016,Q2,May 2016,-28971763554,8541963035,37513726589
+All Commodities,June,2016,Q2,June 2016,-29693632418,8845557796,38539190214
+All Commodities,July,2016,Q3,July 2016,-30309191457,9129666281,39438857738
+All Commodities,August,2016,Q3,August 2016,-33848854947,9372919258,43221774205
+All Commodities,September,2016,Q3,September 2016,-32499776611,9521151936,42020928547
+All Commodities,October,2016,Q4,October 2016,-31198093714,12600004710,43798098424
+All Commodities,November,2016,Q4,November 2016,-30558546910,12044084823,42602631733
+All Commodities,December,2016,Q4,December 2016,-27714120550,11644805511,39358926061
+All Commodities,January,2017,Q1,January 2017,-31380030594,9955522802,41335553396
+All Commodities,February,2017,Q1,February 2017,-23045142497,9739814915,32784957412
+All Commodities,March,2017,Q1,March 2017,-24441809552,9720184109,34161993661
+All Commodities,April,2017,Q2,April 2017,-27635394053,9806476826,37441870879
+All Commodities,May,2017,Q2,May 2017,-31876821200,9880023522,41756844722
+All Commodities,June,2017,Q2,June 2017,-32539867690,9718210931,42258078621
+All Commodities,July,2017,Q3,July 2017,-33607047544,9954063313,43561110857
+All Commodities,August,2017,Q3,August 2017,-34956851179,10825460770,45782311949
+All Commodities,September,2017,Q3,September 2017,-34509071971,10895979304,45405051275
+All Commodities,October,2017,Q4,October 2017,-35169927442,12963222187,48133149629
+All Commodities,November,2017,Q4,November 2017,-35196399188,12908394227,48104793415
+All Commodities,December,2017,Q4,December 2017,-30809507904,13629874337,44439382241
+All Commodities,January,2018,Q1,January 2018,-35839714626,9910227741,45749942367
+All Commodities,February,2018,Q1,February 2018,-29261850514,9741752846,39003603360
+All Commodities,March,2018,Q1,March 2018,-25641930970,12653174318,38295105288
+All Commodities,April,2018,Q2,April 2018,-27758897551,10510478379,38269375930
+All Commodities,May,2018,Q2,May 2018,-33542028511,10396624247,43938652758
+All Commodities,June,2018,Q2,June 2018,-33712940317,10858294665,44571234982
+All Commodities,July,2018,Q3,July 2018,-36931059713,10156527887,47087587600
+All Commodities,August,2018,Q3,August 2018,-38536558974,9280892425,47817451399
+All Commodities,September,2018,Q3,September 2018,-40255664416,9732404733,49988069149
+All Commodities,October,2018,Q4,October 2018,-42982552446,9187533643,52170086089
+All Commodities,November,2018,Q4,November 2018,-37794803057,8650888998,46445692055
+All Commodities,December,2018,Q4,December 2018,-36695850459,9210487995,45906338454
+All Commodities,January,2019,Q1,January 2019,-34409324145,7105125159,41514449304
+All Commodities,February,2019,Q1,February 2019,-25071607653,8083304442,33154912095
+All Commodities,March,2019,Q1,March 2019,-20600639365,10574937623,31175576988
+All Commodities,April,2019,Q2,April 2019,-26799636307,7883015916,34682652223
+All Commodities,May,2019,Q2,May 2019,-30103942061,9069418815,39173360876
+All Commodities,June,2019,Q2,June 2019,-29800945499,9166696315,38967641814
+All Commodities,July,2019,Q3,July 2019,-32754912332,8694298164,41449210496
+All Commodities,August,2019,Q3,August 2019,-31735496339,9415647335,41151143674
+All Commodities,September,2019,Q3,September 2019,-31568190457,8597272439,40165462896
+All Commodities,October,2019,Q4,October 2019,-31263667701,8851210888,40114878589
+All Commodities,November,2019,Q4,November 2019,-26333272849,10103334138,36436606987
+All Commodities,December,2019,Q4,December 2019,-24762552315,8902989856,33665542171
 Agricultural Products,January,2002,Q1,January 2002,203427993,216357463,12929470
 Agricultural Products,February,2002,Q1,February 2002,144113567,155206914,11093347
 Agricultural Products,March,2002,Q1,March 2002,4188454,14860976,10672522
@@ -647,222 +863,222 @@ Livestock & Livestock Products,December,2019,Q4,December 2019,486154,5054043,456
 "Forestry Products, Nesoi",October,2019,Q4,October 2019,33707840,43851423,10143583
 "Forestry Products, Nesoi",November,2019,Q4,November 2019,38647220,49966343,11319123
 "Forestry Products, Nesoi",December,2019,Q4,December 2019,21887106,35928460,14041354
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2002,Q1,January 2002,-49095144,7364455,56459599
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2002,Q1,February 2002,-40760789,11026880,51787669
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2002,Q1,March 2002,-21239122,14567243,35806365
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2002,Q2,April 2002,-28256458,15469622,43726080
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2002,Q2,May 2002,-42411818,7501765,49913583
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2002,Q2,June 2002,-40792643,7945987,48738630
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2002,Q3,July 2002,-44860919,13509378,58370297
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2002,Q3,August 2002,-57593476,19476015,77069491
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2002,Q3,September 2002,-56475734,16632862,73108596
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2002,Q4,October 2002,-59396567,14051937,73448504
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2002,Q4,November 2002,-85595928,12515725,98111653
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2002,Q4,December 2002,-98607995,6162653,104770648
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2003,Q1,January 2003,-81916430,5345044,87261474
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2003,Q1,February 2003,-46378368,18034112,64412480
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2003,Q1,March 2003,-18832873,19226673,38059546
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2003,Q2,April 2003,-28621284,27611267,56232551
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2003,Q2,May 2003,-39641836,16597859,56239695
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2003,Q2,June 2003,-56420874,8945688,65366562
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2003,Q3,July 2003,-81718496,16946789,98665285
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2003,Q3,August 2003,-79728564,26853896,106582460
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2003,Q3,September 2003,-74733614,26246168,100979782
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2003,Q4,October 2003,-97986171,15326401,113312572
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2003,Q4,November 2003,-98051108,16394581,114445689
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2003,Q4,December 2003,-101197620,11286508,112484128
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2004,Q1,January 2004,-105731541,6050704,111782245
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2004,Q1,February 2004,-61353460,35611420,96964880
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2004,Q1,March 2004,-45247969,31134712,76382681
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2004,Q2,April 2004,-31921668,32073054,63994722
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2004,Q2,May 2004,-46936277,18690702,65626979
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2004,Q2,June 2004,-51681895,12502337,64184232
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2004,Q3,July 2004,-39029001,28674595,67703596
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2004,Q3,August 2004,-30232348,42013303,72245651
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2004,Q3,September 2004,-67919973,31969720,99889693
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2004,Q4,October 2004,-84336348,23529952,107866300
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2004,Q4,November 2004,-111498280,17037832,128536112
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2004,Q4,December 2004,-95490771,16902403,112393174
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2005,Q1,January 2005,-101014614,17639522,118654136
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2005,Q1,February 2005,-66813023,31043012,97856035
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2005,Q1,March 2005,-6294064,54787257,61081321
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2005,Q2,April 2005,-26653755,41488125,68141880
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2005,Q2,May 2005,-59074931,32628102,91703033
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2005,Q2,June 2005,-65625163,21265454,86890617
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2005,Q3,July 2005,-53373563,38018741,91392304
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2005,Q3,August 2005,-47689363,74949552,122638915
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2005,Q3,September 2005,-75146187,29354540,104500727
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2005,Q4,October 2005,-91693214,15034114,106727328
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2005,Q4,November 2005,-121056047,11504176,132560223
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2005,Q4,December 2005,-135675008,20818994,156494002
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2006,Q1,January 2006,-140854676,11166112,152020788
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2006,Q1,February 2006,-88282889,29286769,117569658
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2006,Q1,March 2006,-15397712,61011304,76409016
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2006,Q2,April 2006,-62487114,55584637,118071751
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2006,Q2,May 2006,-101923813,32239762,134163575
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2006,Q2,June 2006,-110728036,28954254,139682290
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2006,Q3,July 2006,-87058907,49822753,136881660
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2006,Q3,August 2006,-56358193,86377186,142735379
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2006,Q3,September 2006,-113101722,54655701,167757423
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2006,Q4,October 2006,-125838967,32342792,158181759
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2006,Q4,November 2006,-154913901,14316657,169230558
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2006,Q4,December 2006,-169507630,12749506,182257136
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2007,Q1,January 2007,-204382991,11868169,216251160
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2007,Q1,February 2007,-130064701,34142612,164207313
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2007,Q1,March 2007,-76568138,44364980,120933118
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2007,Q2,April 2007,-29212532,68180162,97392694
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2007,Q2,May 2007,-106635498,36857772,143493270
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2007,Q2,June 2007,-85789615,39713168,125502783
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2007,Q3,July 2007,-50657765,86689981,137347746
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2007,Q3,August 2007,-30600864,110048428,140649292
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2007,Q3,September 2007,-67949885,63319491,131269376
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2007,Q4,October 2007,-102585156,30963528,133548684
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2007,Q4,November 2007,-136721436,18816021,155537457
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2007,Q4,December 2007,-152522296,18687585,171209881
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2008,Q1,January 2008,-161224444,17565761,178790205
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2008,Q1,February 2008,-124867760,42865878,167733638
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2008,Q1,March 2008,-27901234,72678487,100579721
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2008,Q2,April 2008,-42978816,44150438,87129254
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2008,Q2,May 2008,-94541152,42052015,136593167
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2008,Q2,June 2008,-122144306,31489413,153633719
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2008,Q3,July 2008,-82690401,71088889,153779290
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2008,Q3,August 2008,-68125527,91506696,159632223
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2008,Q3,September 2008,-104602766,57272242,161875008
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2008,Q4,October 2008,-133387069,42943915,176330984
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2008,Q4,November 2008,-139162817,42166346,181329163
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2008,Q4,December 2008,-185518579,21420212,206938791
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2009,Q1,January 2009,-195892147,10648295,206540442
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2009,Q1,February 2009,-114929717,29255937,144185654
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2009,Q1,March 2009,-19459585,69562412,89021997
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2009,Q2,April 2009,-74613589,51829833,126443422
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2009,Q2,May 2009,-118602686,33691130,152293816
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2009,Q2,June 2009,-82904506,39478608,122383114
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2009,Q3,July 2009,-71195374,72186974,143382348
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2009,Q3,August 2009,-14104984,118102844,132207828
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2009,Q3,September 2009,-68752154,69674402,138426556
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2009,Q4,October 2009,-104088707,51456616,155545323
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2009,Q4,November 2009,-119530068,30782074,150312142
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2009,Q4,December 2009,-135429265,37795930,173225195
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2010,Q1,January 2010,-170193981,20427472,190621453
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2010,Q1,February 2010,-114251260,50149911,164401171
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2010,Q1,March 2010,-42946663,58995872,101942535
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2010,Q2,April 2010,-39926879,61909691,101836570
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2010,Q2,May 2010,-112517574,44368391,156885965
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2010,Q2,June 2010,-106605701,49174765,155780466
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2010,Q3,July 2010,-99163533,47164300,146327833
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2010,Q3,August 2010,-47728390,126391829,174120219
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2010,Q3,September 2010,-47584110,127086643,174670753
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2010,Q4,October 2010,-119604930,65321474,184926404
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2010,Q4,November 2010,-125263439,71176369,196439808
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2010,Q4,December 2010,-189825791,58253773,248079564
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2011,Q1,January 2011,-248751496,28219009,276970505
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2011,Q1,February 2011,-129058486,76683675,205742161
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2011,Q1,March 2011,7110970,100122382,93011412
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2011,Q2,April 2011,-38270673,94027489,132298162
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2011,Q2,May 2011,-81987070,80512934,162500004
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2011,Q2,June 2011,-108538986,59277680,167816666
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2011,Q3,July 2011,-50619810,103988133,154607943
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2011,Q3,August 2011,3657022,192466894,188809872
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2011,Q3,September 2011,-27066199,177885282,204951481
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2011,Q4,October 2011,-81078095,108865525,189943620
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2011,Q4,November 2011,-112811212,97627944,210439156
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2011,Q4,December 2011,-158795556,77230065,236025621
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2012,Q1,January 2012,-246503165,41065631,287568796
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2012,Q1,February 2012,-83548203,95951447,179499650
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2012,Q1,March 2012,19463904,113555293,94091389
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2012,Q2,April 2012,-49721027,112015592,161736619
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2012,Q2,May 2012,-104055175,84223016,188278191
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2012,Q2,June 2012,-74165167,102713590,176878757
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2012,Q3,July 2012,-81573681,89313377,170887058
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2012,Q3,August 2012,8022077,167829797,159807720
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2012,Q3,September 2012,-11482331,141452322,152934653
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2012,Q4,October 2012,-78356876,91681384,170038260
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2012,Q4,November 2012,-90104615,90984543,181089158
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2012,Q4,December 2012,-123077192,74628853,197706045
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2013,Q1,January 2013,-186900644,29629400,216530044
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2013,Q1,February 2013,-76096524,104020485,180117009
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2013,Q1,March 2013,-18928113,103471683,122399796
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2013,Q2,April 2013,-1976508,110519373,112495881
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2013,Q2,May 2013,-110951585,69765752,180717337
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2013,Q2,June 2013,-91778227,71687430,163465657
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2013,Q3,July 2013,-89300537,86557805,175858342
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2013,Q3,August 2013,-48976632,143760748,192737380
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2013,Q3,September 2013,25133238,188185937,163052699
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2013,Q4,October 2013,-57357587,124413781,181771368
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2013,Q4,November 2013,-96607772,91723540,188331312
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2013,Q4,December 2013,-205885485,55342414,261227899
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2014,Q1,January 2014,-259063785,34042391,293106176
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2014,Q1,February 2014,-122910836,84303552,207214388
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2014,Q1,March 2014,11505046,131443507,119938461
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2014,Q2,April 2014,-28237247,112766835,141004082
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2014,Q2,May 2014,-85617942,105588526,191206468
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2014,Q2,June 2014,-123446658,72990903,196437561
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2014,Q3,July 2014,-101254434,99757968,201012402
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2014,Q3,August 2014,4819432,186969333,182149901
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2014,Q3,September 2014,-39964998,143643990,183608988
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2014,Q4,October 2014,-59893433,119572602,179466035
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2014,Q4,November 2014,-109529492,92251552,201781044
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2014,Q4,December 2014,-149264328,63745233,213009561
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2015,Q1,January 2015,-227053560,36936496,263990056
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2015,Q1,February 2015,-127402886,82619135,210022021
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2015,Q1,March 2015,-68249790,124881400,193131190
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2015,Q2,April 2015,-7331460,79201160,86532620
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2015,Q2,May 2015,-44784606,94261853,139046459
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2015,Q2,June 2015,-120579643,48367484,168947127
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2015,Q3,July 2015,-74320700,80226762,154547462
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2015,Q3,August 2015,9014524,170171437,161156913
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2015,Q3,September 2015,1567184,156615933,155048749
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2015,Q4,October 2015,-49983959,95587322,145571281
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2015,Q4,November 2015,-82016377,83318078,165334455
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2015,Q4,December 2015,-167495957,48774725,216270682
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2016,Q1,January 2016,-206978666,31250163,238228829
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2016,Q1,February 2016,-147701638,79944544,227646182
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2016,Q1,March 2016,-9264049,108542250,117806299
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2016,Q2,April 2016,-7052577,89263836,96316413
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2016,Q2,May 2016,-49591185,88630919,138222104
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2016,Q2,June 2016,-91706657,70732971,162439628
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2016,Q3,July 2016,-32962816,111053742,144016558
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2016,Q3,August 2016,-55513884,127409734,182923618
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2016,Q3,September 2016,-40999791,112609636,153609427
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2016,Q4,October 2016,-51196145,104111332,155307477
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2016,Q4,November 2016,-116390692,62943372,179334064
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2016,Q4,December 2016,-137165240,68814194,205979434
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2017,Q1,January 2017,-192745787,47933987,240679774
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2017,Q1,February 2017,-130581525,63080108,193661633
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2017,Q1,March 2017,38774327,127534331,88760004
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2017,Q2,April 2017,-22736563,125553339,148289902
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2017,Q2,May 2017,-116056966,70810604,186867570
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2017,Q2,June 2017,-110457026,74055678,184512704
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2017,Q3,July 2017,-80796643,109155536,189952179
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2017,Q3,August 2017,-11968784,181608308,193577092
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2017,Q3,September 2017,16927059,194734860,177807801
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2017,Q4,October 2017,-52532623,132594053,185126676
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2017,Q4,November 2017,-75258469,91279025,166537494
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2017,Q4,December 2017,-102296428,103126951,205423379
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2018,Q1,January 2018,-173916844,57097789,231014633
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2018,Q1,February 2018,-91201599,101940842,193142441
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2018,Q1,March 2018,-29349202,124640475,153989677
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2018,Q2,April 2018,37979662,120642146,82662484
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2018,Q2,May 2018,-48925803,99527151,148452954
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2018,Q2,June 2018,-82377053,94283455,176660508
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2018,Q3,July 2018,-104383918,84807452,189191370
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2018,Q3,August 2018,-95527510,121121260,216648770
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2018,Q3,September 2018,-81011166,124883047,205894213
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2018,Q4,October 2018,-93931034,85800007,179731041
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2018,Q4,November 2018,-122155629,78490894,200646523
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2018,Q4,December 2018,-228463081,52353065,280816146
-"Fish, Fresh/chilled/frozen & Other Marine Products",January,2019,Q1,January 2019,-105036500,40332011,145368511
-"Fish, Fresh/chilled/frozen & Other Marine Products",February,2019,Q1,February 2019,-78846950,69893313,148740263
-"Fish, Fresh/chilled/frozen & Other Marine Products",March,2019,Q1,March 2019,12227668,105300803,93073135
-"Fish, Fresh/chilled/frozen & Other Marine Products",April,2019,Q2,April 2019,-2094910,83090694,85185604
-"Fish, Fresh/chilled/frozen & Other Marine Products",May,2019,Q2,May 2019,-66920406,77544327,144464733
-"Fish, Fresh/chilled/frozen & Other Marine Products",June,2019,Q2,June 2019,-88976441,47701416,136677857
-"Fish, Fresh/chilled/frozen & Other Marine Products",July,2019,Q3,July 2019,-74854923,74864697,149719620
-"Fish, Fresh/chilled/frozen & Other Marine Products",August,2019,Q3,August 2019,11520365,138401831,126881466
-"Fish, Fresh/chilled/frozen & Other Marine Products",September,2019,Q3,September 2019,-29874712,98998936,128873648
-"Fish, Fresh/chilled/frozen & Other Marine Products",October,2019,Q4,October 2019,-32308732,85398929,117707661
-"Fish, Fresh/chilled/frozen & Other Marine Products",November,2019,Q4,November 2019,-65250749,60018832,125269581
-"Fish, Fresh/chilled/frozen & Other Marine Products",December,2019,Q4,December 2019,-120919642,37178318,158097960
+Marine Products,January,2002,Q1,January 2002,-49095144,7364455,56459599
+Marine Products,February,2002,Q1,February 2002,-40760789,11026880,51787669
+Marine Products,March,2002,Q1,March 2002,-21239122,14567243,35806365
+Marine Products,April,2002,Q2,April 2002,-28256458,15469622,43726080
+Marine Products,May,2002,Q2,May 2002,-42411818,7501765,49913583
+Marine Products,June,2002,Q2,June 2002,-40792643,7945987,48738630
+Marine Products,July,2002,Q3,July 2002,-44860919,13509378,58370297
+Marine Products,August,2002,Q3,August 2002,-57593476,19476015,77069491
+Marine Products,September,2002,Q3,September 2002,-56475734,16632862,73108596
+Marine Products,October,2002,Q4,October 2002,-59396567,14051937,73448504
+Marine Products,November,2002,Q4,November 2002,-85595928,12515725,98111653
+Marine Products,December,2002,Q4,December 2002,-98607995,6162653,104770648
+Marine Products,January,2003,Q1,January 2003,-81916430,5345044,87261474
+Marine Products,February,2003,Q1,February 2003,-46378368,18034112,64412480
+Marine Products,March,2003,Q1,March 2003,-18832873,19226673,38059546
+Marine Products,April,2003,Q2,April 2003,-28621284,27611267,56232551
+Marine Products,May,2003,Q2,May 2003,-39641836,16597859,56239695
+Marine Products,June,2003,Q2,June 2003,-56420874,8945688,65366562
+Marine Products,July,2003,Q3,July 2003,-81718496,16946789,98665285
+Marine Products,August,2003,Q3,August 2003,-79728564,26853896,106582460
+Marine Products,September,2003,Q3,September 2003,-74733614,26246168,100979782
+Marine Products,October,2003,Q4,October 2003,-97986171,15326401,113312572
+Marine Products,November,2003,Q4,November 2003,-98051108,16394581,114445689
+Marine Products,December,2003,Q4,December 2003,-101197620,11286508,112484128
+Marine Products,January,2004,Q1,January 2004,-105731541,6050704,111782245
+Marine Products,February,2004,Q1,February 2004,-61353460,35611420,96964880
+Marine Products,March,2004,Q1,March 2004,-45247969,31134712,76382681
+Marine Products,April,2004,Q2,April 2004,-31921668,32073054,63994722
+Marine Products,May,2004,Q2,May 2004,-46936277,18690702,65626979
+Marine Products,June,2004,Q2,June 2004,-51681895,12502337,64184232
+Marine Products,July,2004,Q3,July 2004,-39029001,28674595,67703596
+Marine Products,August,2004,Q3,August 2004,-30232348,42013303,72245651
+Marine Products,September,2004,Q3,September 2004,-67919973,31969720,99889693
+Marine Products,October,2004,Q4,October 2004,-84336348,23529952,107866300
+Marine Products,November,2004,Q4,November 2004,-111498280,17037832,128536112
+Marine Products,December,2004,Q4,December 2004,-95490771,16902403,112393174
+Marine Products,January,2005,Q1,January 2005,-101014614,17639522,118654136
+Marine Products,February,2005,Q1,February 2005,-66813023,31043012,97856035
+Marine Products,March,2005,Q1,March 2005,-6294064,54787257,61081321
+Marine Products,April,2005,Q2,April 2005,-26653755,41488125,68141880
+Marine Products,May,2005,Q2,May 2005,-59074931,32628102,91703033
+Marine Products,June,2005,Q2,June 2005,-65625163,21265454,86890617
+Marine Products,July,2005,Q3,July 2005,-53373563,38018741,91392304
+Marine Products,August,2005,Q3,August 2005,-47689363,74949552,122638915
+Marine Products,September,2005,Q3,September 2005,-75146187,29354540,104500727
+Marine Products,October,2005,Q4,October 2005,-91693214,15034114,106727328
+Marine Products,November,2005,Q4,November 2005,-121056047,11504176,132560223
+Marine Products,December,2005,Q4,December 2005,-135675008,20818994,156494002
+Marine Products,January,2006,Q1,January 2006,-140854676,11166112,152020788
+Marine Products,February,2006,Q1,February 2006,-88282889,29286769,117569658
+Marine Products,March,2006,Q1,March 2006,-15397712,61011304,76409016
+Marine Products,April,2006,Q2,April 2006,-62487114,55584637,118071751
+Marine Products,May,2006,Q2,May 2006,-101923813,32239762,134163575
+Marine Products,June,2006,Q2,June 2006,-110728036,28954254,139682290
+Marine Products,July,2006,Q3,July 2006,-87058907,49822753,136881660
+Marine Products,August,2006,Q3,August 2006,-56358193,86377186,142735379
+Marine Products,September,2006,Q3,September 2006,-113101722,54655701,167757423
+Marine Products,October,2006,Q4,October 2006,-125838967,32342792,158181759
+Marine Products,November,2006,Q4,November 2006,-154913901,14316657,169230558
+Marine Products,December,2006,Q4,December 2006,-169507630,12749506,182257136
+Marine Products,January,2007,Q1,January 2007,-204382991,11868169,216251160
+Marine Products,February,2007,Q1,February 2007,-130064701,34142612,164207313
+Marine Products,March,2007,Q1,March 2007,-76568138,44364980,120933118
+Marine Products,April,2007,Q2,April 2007,-29212532,68180162,97392694
+Marine Products,May,2007,Q2,May 2007,-106635498,36857772,143493270
+Marine Products,June,2007,Q2,June 2007,-85789615,39713168,125502783
+Marine Products,July,2007,Q3,July 2007,-50657765,86689981,137347746
+Marine Products,August,2007,Q3,August 2007,-30600864,110048428,140649292
+Marine Products,September,2007,Q3,September 2007,-67949885,63319491,131269376
+Marine Products,October,2007,Q4,October 2007,-102585156,30963528,133548684
+Marine Products,November,2007,Q4,November 2007,-136721436,18816021,155537457
+Marine Products,December,2007,Q4,December 2007,-152522296,18687585,171209881
+Marine Products,January,2008,Q1,January 2008,-161224444,17565761,178790205
+Marine Products,February,2008,Q1,February 2008,-124867760,42865878,167733638
+Marine Products,March,2008,Q1,March 2008,-27901234,72678487,100579721
+Marine Products,April,2008,Q2,April 2008,-42978816,44150438,87129254
+Marine Products,May,2008,Q2,May 2008,-94541152,42052015,136593167
+Marine Products,June,2008,Q2,June 2008,-122144306,31489413,153633719
+Marine Products,July,2008,Q3,July 2008,-82690401,71088889,153779290
+Marine Products,August,2008,Q3,August 2008,-68125527,91506696,159632223
+Marine Products,September,2008,Q3,September 2008,-104602766,57272242,161875008
+Marine Products,October,2008,Q4,October 2008,-133387069,42943915,176330984
+Marine Products,November,2008,Q4,November 2008,-139162817,42166346,181329163
+Marine Products,December,2008,Q4,December 2008,-185518579,21420212,206938791
+Marine Products,January,2009,Q1,January 2009,-195892147,10648295,206540442
+Marine Products,February,2009,Q1,February 2009,-114929717,29255937,144185654
+Marine Products,March,2009,Q1,March 2009,-19459585,69562412,89021997
+Marine Products,April,2009,Q2,April 2009,-74613589,51829833,126443422
+Marine Products,May,2009,Q2,May 2009,-118602686,33691130,152293816
+Marine Products,June,2009,Q2,June 2009,-82904506,39478608,122383114
+Marine Products,July,2009,Q3,July 2009,-71195374,72186974,143382348
+Marine Products,August,2009,Q3,August 2009,-14104984,118102844,132207828
+Marine Products,September,2009,Q3,September 2009,-68752154,69674402,138426556
+Marine Products,October,2009,Q4,October 2009,-104088707,51456616,155545323
+Marine Products,November,2009,Q4,November 2009,-119530068,30782074,150312142
+Marine Products,December,2009,Q4,December 2009,-135429265,37795930,173225195
+Marine Products,January,2010,Q1,January 2010,-170193981,20427472,190621453
+Marine Products,February,2010,Q1,February 2010,-114251260,50149911,164401171
+Marine Products,March,2010,Q1,March 2010,-42946663,58995872,101942535
+Marine Products,April,2010,Q2,April 2010,-39926879,61909691,101836570
+Marine Products,May,2010,Q2,May 2010,-112517574,44368391,156885965
+Marine Products,June,2010,Q2,June 2010,-106605701,49174765,155780466
+Marine Products,July,2010,Q3,July 2010,-99163533,47164300,146327833
+Marine Products,August,2010,Q3,August 2010,-47728390,126391829,174120219
+Marine Products,September,2010,Q3,September 2010,-47584110,127086643,174670753
+Marine Products,October,2010,Q4,October 2010,-119604930,65321474,184926404
+Marine Products,November,2010,Q4,November 2010,-125263439,71176369,196439808
+Marine Products,December,2010,Q4,December 2010,-189825791,58253773,248079564
+Marine Products,January,2011,Q1,January 2011,-248751496,28219009,276970505
+Marine Products,February,2011,Q1,February 2011,-129058486,76683675,205742161
+Marine Products,March,2011,Q1,March 2011,7110970,100122382,93011412
+Marine Products,April,2011,Q2,April 2011,-38270673,94027489,132298162
+Marine Products,May,2011,Q2,May 2011,-81987070,80512934,162500004
+Marine Products,June,2011,Q2,June 2011,-108538986,59277680,167816666
+Marine Products,July,2011,Q3,July 2011,-50619810,103988133,154607943
+Marine Products,August,2011,Q3,August 2011,3657022,192466894,188809872
+Marine Products,September,2011,Q3,September 2011,-27066199,177885282,204951481
+Marine Products,October,2011,Q4,October 2011,-81078095,108865525,189943620
+Marine Products,November,2011,Q4,November 2011,-112811212,97627944,210439156
+Marine Products,December,2011,Q4,December 2011,-158795556,77230065,236025621
+Marine Products,January,2012,Q1,January 2012,-246503165,41065631,287568796
+Marine Products,February,2012,Q1,February 2012,-83548203,95951447,179499650
+Marine Products,March,2012,Q1,March 2012,19463904,113555293,94091389
+Marine Products,April,2012,Q2,April 2012,-49721027,112015592,161736619
+Marine Products,May,2012,Q2,May 2012,-104055175,84223016,188278191
+Marine Products,June,2012,Q2,June 2012,-74165167,102713590,176878757
+Marine Products,July,2012,Q3,July 2012,-81573681,89313377,170887058
+Marine Products,August,2012,Q3,August 2012,8022077,167829797,159807720
+Marine Products,September,2012,Q3,September 2012,-11482331,141452322,152934653
+Marine Products,October,2012,Q4,October 2012,-78356876,91681384,170038260
+Marine Products,November,2012,Q4,November 2012,-90104615,90984543,181089158
+Marine Products,December,2012,Q4,December 2012,-123077192,74628853,197706045
+Marine Products,January,2013,Q1,January 2013,-186900644,29629400,216530044
+Marine Products,February,2013,Q1,February 2013,-76096524,104020485,180117009
+Marine Products,March,2013,Q1,March 2013,-18928113,103471683,122399796
+Marine Products,April,2013,Q2,April 2013,-1976508,110519373,112495881
+Marine Products,May,2013,Q2,May 2013,-110951585,69765752,180717337
+Marine Products,June,2013,Q2,June 2013,-91778227,71687430,163465657
+Marine Products,July,2013,Q3,July 2013,-89300537,86557805,175858342
+Marine Products,August,2013,Q3,August 2013,-48976632,143760748,192737380
+Marine Products,September,2013,Q3,September 2013,25133238,188185937,163052699
+Marine Products,October,2013,Q4,October 2013,-57357587,124413781,181771368
+Marine Products,November,2013,Q4,November 2013,-96607772,91723540,188331312
+Marine Products,December,2013,Q4,December 2013,-205885485,55342414,261227899
+Marine Products,January,2014,Q1,January 2014,-259063785,34042391,293106176
+Marine Products,February,2014,Q1,February 2014,-122910836,84303552,207214388
+Marine Products,March,2014,Q1,March 2014,11505046,131443507,119938461
+Marine Products,April,2014,Q2,April 2014,-28237247,112766835,141004082
+Marine Products,May,2014,Q2,May 2014,-85617942,105588526,191206468
+Marine Products,June,2014,Q2,June 2014,-123446658,72990903,196437561
+Marine Products,July,2014,Q3,July 2014,-101254434,99757968,201012402
+Marine Products,August,2014,Q3,August 2014,4819432,186969333,182149901
+Marine Products,September,2014,Q3,September 2014,-39964998,143643990,183608988
+Marine Products,October,2014,Q4,October 2014,-59893433,119572602,179466035
+Marine Products,November,2014,Q4,November 2014,-109529492,92251552,201781044
+Marine Products,December,2014,Q4,December 2014,-149264328,63745233,213009561
+Marine Products,January,2015,Q1,January 2015,-227053560,36936496,263990056
+Marine Products,February,2015,Q1,February 2015,-127402886,82619135,210022021
+Marine Products,March,2015,Q1,March 2015,-68249790,124881400,193131190
+Marine Products,April,2015,Q2,April 2015,-7331460,79201160,86532620
+Marine Products,May,2015,Q2,May 2015,-44784606,94261853,139046459
+Marine Products,June,2015,Q2,June 2015,-120579643,48367484,168947127
+Marine Products,July,2015,Q3,July 2015,-74320700,80226762,154547462
+Marine Products,August,2015,Q3,August 2015,9014524,170171437,161156913
+Marine Products,September,2015,Q3,September 2015,1567184,156615933,155048749
+Marine Products,October,2015,Q4,October 2015,-49983959,95587322,145571281
+Marine Products,November,2015,Q4,November 2015,-82016377,83318078,165334455
+Marine Products,December,2015,Q4,December 2015,-167495957,48774725,216270682
+Marine Products,January,2016,Q1,January 2016,-206978666,31250163,238228829
+Marine Products,February,2016,Q1,February 2016,-147701638,79944544,227646182
+Marine Products,March,2016,Q1,March 2016,-9264049,108542250,117806299
+Marine Products,April,2016,Q2,April 2016,-7052577,89263836,96316413
+Marine Products,May,2016,Q2,May 2016,-49591185,88630919,138222104
+Marine Products,June,2016,Q2,June 2016,-91706657,70732971,162439628
+Marine Products,July,2016,Q3,July 2016,-32962816,111053742,144016558
+Marine Products,August,2016,Q3,August 2016,-55513884,127409734,182923618
+Marine Products,September,2016,Q3,September 2016,-40999791,112609636,153609427
+Marine Products,October,2016,Q4,October 2016,-51196145,104111332,155307477
+Marine Products,November,2016,Q4,November 2016,-116390692,62943372,179334064
+Marine Products,December,2016,Q4,December 2016,-137165240,68814194,205979434
+Marine Products,January,2017,Q1,January 2017,-192745787,47933987,240679774
+Marine Products,February,2017,Q1,February 2017,-130581525,63080108,193661633
+Marine Products,March,2017,Q1,March 2017,38774327,127534331,88760004
+Marine Products,April,2017,Q2,April 2017,-22736563,125553339,148289902
+Marine Products,May,2017,Q2,May 2017,-116056966,70810604,186867570
+Marine Products,June,2017,Q2,June 2017,-110457026,74055678,184512704
+Marine Products,July,2017,Q3,July 2017,-80796643,109155536,189952179
+Marine Products,August,2017,Q3,August 2017,-11968784,181608308,193577092
+Marine Products,September,2017,Q3,September 2017,16927059,194734860,177807801
+Marine Products,October,2017,Q4,October 2017,-52532623,132594053,185126676
+Marine Products,November,2017,Q4,November 2017,-75258469,91279025,166537494
+Marine Products,December,2017,Q4,December 2017,-102296428,103126951,205423379
+Marine Products,January,2018,Q1,January 2018,-173916844,57097789,231014633
+Marine Products,February,2018,Q1,February 2018,-91201599,101940842,193142441
+Marine Products,March,2018,Q1,March 2018,-29349202,124640475,153989677
+Marine Products,April,2018,Q2,April 2018,37979662,120642146,82662484
+Marine Products,May,2018,Q2,May 2018,-48925803,99527151,148452954
+Marine Products,June,2018,Q2,June 2018,-82377053,94283455,176660508
+Marine Products,July,2018,Q3,July 2018,-104383918,84807452,189191370
+Marine Products,August,2018,Q3,August 2018,-95527510,121121260,216648770
+Marine Products,September,2018,Q3,September 2018,-81011166,124883047,205894213
+Marine Products,October,2018,Q4,October 2018,-93931034,85800007,179731041
+Marine Products,November,2018,Q4,November 2018,-122155629,78490894,200646523
+Marine Products,December,2018,Q4,December 2018,-228463081,52353065,280816146
+Marine Products,January,2019,Q1,January 2019,-105036500,40332011,145368511
+Marine Products,February,2019,Q1,February 2019,-78846950,69893313,148740263
+Marine Products,March,2019,Q1,March 2019,12227668,105300803,93073135
+Marine Products,April,2019,Q2,April 2019,-2094910,83090694,85185604
+Marine Products,May,2019,Q2,May 2019,-66920406,77544327,144464733
+Marine Products,June,2019,Q2,June 2019,-88976441,47701416,136677857
+Marine Products,July,2019,Q3,July 2019,-74854923,74864697,149719620
+Marine Products,August,2019,Q3,August 2019,11520365,138401831,126881466
+Marine Products,September,2019,Q3,September 2019,-29874712,98998936,128873648
+Marine Products,October,2019,Q4,October 2019,-32308732,85398929,117707661
+Marine Products,November,2019,Q4,November 2019,-65250749,60018832,125269581
+Marine Products,December,2019,Q4,December 2019,-120919642,37178318,158097960
 Oil & Gas,January,2002,Q1,January 2002,25607,25607,
 Oil & Gas,February,2002,Q1,February 2002,-19487191,25685,19512876
 Oil & Gas,March,2002,Q1,March 2002,-3523396,,3523396
@@ -4751,222 +4967,222 @@ Primary Metal Mfg,December,2019,Q4,December 2019,31591673,206546869,174955196
 "Machinery, Except Electrical",October,2019,Q4,October 2019,-1639254546,862546734,2501801280
 "Machinery, Except Electrical",November,2019,Q4,November 2019,-1476877635,805079416,2281957051
 "Machinery, Except Electrical",December,2019,Q4,December 2019,-1541133079,1033620936,2574754015
-Computer & Electronic Products,January,2002,Q1,January 2002,-1640523592,393050486,2033574078
-Computer & Electronic Products,February,2002,Q1,February 2002,-1660127327,328693227,1988820554
-Computer & Electronic Products,March,2002,Q1,March 2002,-1537610910,434101020,1971711930
-Computer & Electronic Products,April,2002,Q2,April 2002,-2001510874,418367679,2419878553
-Computer & Electronic Products,May,2002,Q2,May 2002,-2034265548,450032848,2484298396
-Computer & Electronic Products,June,2002,Q2,June 2002,-2366417930,507321649,2873739579
-Computer & Electronic Products,July,2002,Q3,July 2002,-2389713498,453865884,2843579382
-Computer & Electronic Products,August,2002,Q3,August 2002,-2673774088,486911042,3160685130
-Computer & Electronic Products,September,2002,Q3,September 2002,-2685827712,443650833,3129478545
-Computer & Electronic Products,October,2002,Q4,October 2002,-2716618160,453396961,3170015121
-Computer & Electronic Products,November,2002,Q4,November 2002,-3475087594,467610962,3942698556
-Computer & Electronic Products,December,2002,Q4,December 2002,-2823070359,481625988,3304696347
-Computer & Electronic Products,January,2003,Q1,January 2003,-2352783459,395223472,2748006931
-Computer & Electronic Products,February,2003,Q1,February 2003,-1930793027,370746639,2301539666
-Computer & Electronic Products,March,2003,Q1,March 2003,-2324807812,526575892,2851383704
-Computer & Electronic Products,April,2003,Q2,April 2003,-2638588331,521399412,3159987743
-Computer & Electronic Products,May,2003,Q2,May 2003,-2705729427,518271794,3224001221
-Computer & Electronic Products,June,2003,Q2,June 2003,-2890865261,546779716,3437644977
-Computer & Electronic Products,July,2003,Q3,July 2003,-3105278613,598220934,3703499547
-Computer & Electronic Products,August,2003,Q3,August 2003,-3180981190,581797390,3762778580
-Computer & Electronic Products,September,2003,Q3,September 2003,-3731579629,555346254,4286925883
-Computer & Electronic Products,October,2003,Q4,October 2003,-4478067768,622693524,5100761292
-Computer & Electronic Products,November,2003,Q4,November 2003,-4241500920,600771113,4842272033
-Computer & Electronic Products,December,2003,Q4,December 2003,-3779670876,670456431,4450127307
-Computer & Electronic Products,January,2004,Q1,January 2004,-3586853325,546490029,4133343354
-Computer & Electronic Products,February,2004,Q1,February 2004,-2982849761,617665335,3600515096
-Computer & Electronic Products,March,2004,Q1,March 2004,-3974218988,676658490,4650877478
-Computer & Electronic Products,April,2004,Q2,April 2004,-4071297927,647489764,4718787691
-Computer & Electronic Products,May,2004,Q2,May 2004,-3908935516,720324122,4629259638
-Computer & Electronic Products,June,2004,Q2,June 2004,-4755456114,684597890,5440054004
-Computer & Electronic Products,July,2004,Q3,July 2004,-4946528358,655249806,5601778164
-Computer & Electronic Products,August,2004,Q3,August 2004,-5119779454,633521413,5753300867
-Computer & Electronic Products,September,2004,Q3,September 2004,-5020357451,688935828,5709293279
-Computer & Electronic Products,October,2004,Q4,October 2004,-6098070623,646574714,6744645337
-Computer & Electronic Products,November,2004,Q4,November 2004,-6466313217,582730227,7049043444
-Computer & Electronic Products,December,2004,Q4,December 2004,-5342214071,674279865,6016493936
-Computer & Electronic Products,January,2005,Q1,January 2005,-4850602571,577012426,5427614997
-Computer & Electronic Products,February,2005,Q1,February 2005,-4249165308,537505082,4786670390
-Computer & Electronic Products,March,2005,Q1,March 2005,-4704698696,721559147,5426257843
-Computer & Electronic Products,April,2005,Q2,April 2005,-5101003400,633060839,5734064239
-Computer & Electronic Products,May,2005,Q2,May 2005,-5239930693,635260704,5875191397
-Computer & Electronic Products,June,2005,Q2,June 2005,-5982889547,693940085,6676829632
-Computer & Electronic Products,July,2005,Q3,July 2005,-6072765171,708936966,6781702137
-Computer & Electronic Products,August,2005,Q3,August 2005,-6320382148,715446640,7035828788
-Computer & Electronic Products,September,2005,Q3,September 2005,-6837008474,778727734,7615736208
-Computer & Electronic Products,October,2005,Q4,October 2005,-7528974454,917190753,8446165207
-Computer & Electronic Products,November,2005,Q4,November 2005,-7580388430,856719848,8437108278
-Computer & Electronic Products,December,2005,Q4,December 2005,-6388480618,1073398564,7461879182
-Computer & Electronic Products,January,2006,Q1,January 2006,-6342862744,760150244,7103012988
-Computer & Electronic Products,February,2006,Q1,February 2006,-4849045106,950992859,5800037965
-Computer & Electronic Products,March,2006,Q1,March 2006,-6750087661,1083727621,7833815282
-Computer & Electronic Products,April,2006,Q2,April 2006,-6067308138,939717782,7007025920
-Computer & Electronic Products,May,2006,Q2,May 2006,-5895377840,1066888778,6962266618
-Computer & Electronic Products,June,2006,Q2,June 2006,-6961036472,1115453308,8076489780
-Computer & Electronic Products,July,2006,Q3,July 2006,-7098990364,1040338538,8139328902
-Computer & Electronic Products,August,2006,Q3,August 2006,-6924699769,1191648955,8116348724
-Computer & Electronic Products,September,2006,Q3,September 2006,-7822443187,1118238257,8940681444
-Computer & Electronic Products,October,2006,Q4,October 2006,-8747192963,1091738942,9838931905
-Computer & Electronic Products,November,2006,Q4,November 2006,-8866612409,1057807580,9924419989
-Computer & Electronic Products,December,2006,Q4,December 2006,-6921643233,1157434715,8079077948
-Computer & Electronic Products,January,2007,Q1,January 2007,-7254005898,1000336036,8254341934
-Computer & Electronic Products,February,2007,Q1,February 2007,-6223582976,874953874,7098536850
-Computer & Electronic Products,March,2007,Q1,March 2007,-6799740948,1227002938,8026743886
-Computer & Electronic Products,April,2007,Q2,April 2007,-7188158303,946286393,8134444696
-Computer & Electronic Products,May,2007,Q2,May 2007,-6604005370,1188687229,7792692599
-Computer & Electronic Products,June,2007,Q2,June 2007,-7798754096,1261107823,9059861919
-Computer & Electronic Products,July,2007,Q3,July 2007,-7988458058,1018148187,9006606245
-Computer & Electronic Products,August,2007,Q3,August 2007,-7523600937,1101840091,8625441028
-Computer & Electronic Products,September,2007,Q3,September 2007,-8458114293,1188147103,9646261396
-Computer & Electronic Products,October,2007,Q4,October 2007,-9718454242,1183636357,10902090599
-Computer & Electronic Products,November,2007,Q4,November 2007,-9853569523,1091746805,10945316328
-Computer & Electronic Products,December,2007,Q4,December 2007,-8018499140,1184591333,9203090473
-Computer & Electronic Products,January,2008,Q1,January 2008,-7070364563,1049098207,8119462770
-Computer & Electronic Products,February,2008,Q1,February 2008,-6151152999,979449687,7130602686
-Computer & Electronic Products,March,2008,Q1,March 2008,-7069995652,1220297827,8290293479
-Computer & Electronic Products,April,2008,Q2,April 2008,-7778729773,1131136516,8909866289
-Computer & Electronic Products,May,2008,Q2,May 2008,-7466281263,1306968986,8773250249
-Computer & Electronic Products,June,2008,Q2,June 2008,-8013114829,1218028685,9231143514
-Computer & Electronic Products,July,2008,Q3,July 2008,-8962106614,1287729057,10249835671
-Computer & Electronic Products,August,2008,Q3,August 2008,-8410281553,1222792757,9633074310
-Computer & Electronic Products,September,2008,Q3,September 2008,-9082276916,1193514246,10275791162
-Computer & Electronic Products,October,2008,Q4,October 2008,-9506023237,1183570188,10689593425
-Computer & Electronic Products,November,2008,Q4,November 2008,-7842108611,1084053814,8926162425
-Computer & Electronic Products,December,2008,Q4,December 2008,-6758116089,994466353,7752582442
-Computer & Electronic Products,January,2009,Q1,January 2009,-5915106744,752682640,6667789384
-Computer & Electronic Products,February,2009,Q1,February 2009,-4952210245,817613315,5769823560
-Computer & Electronic Products,March,2009,Q1,March 2009,-6433134647,1078173306,7511307953
-Computer & Electronic Products,April,2009,Q2,April 2009,-6347386219,933667400,7281053619
-Computer & Electronic Products,May,2009,Q2,May 2009,-6549818399,970943480,7520761879
-Computer & Electronic Products,June,2009,Q2,June 2009,-8102174399,1037390528,9139564927
-Computer & Electronic Products,July,2009,Q3,July 2009,-7773219732,1093246165,8866465897
-Computer & Electronic Products,August,2009,Q3,August 2009,-7412735231,1090389887,8503125118
-Computer & Electronic Products,September,2009,Q3,September 2009,-8365896922,1141729173,9507626095
-Computer & Electronic Products,October,2009,Q4,October 2009,-9662343651,1190698282,10853041933
-Computer & Electronic Products,November,2009,Q4,November 2009,-10114697899,1052803245,11167501144
-Computer & Electronic Products,December,2009,Q4,December 2009,-9196784774,1370843407,10567628181
-Computer & Electronic Products,January,2010,Q1,January 2010,-7610073213,1180046180,8790119393
-Computer & Electronic Products,February,2010,Q1,February 2010,-7073522388,1006999291,8080521679
-Computer & Electronic Products,March,2010,Q1,March 2010,-7860373538,1320396443,9180769981
-Computer & Electronic Products,April,2010,Q2,April 2010,-8528882500,1242915035,9771797535
-Computer & Electronic Products,May,2010,Q2,May 2010,-9245961962,1343311386,10589273348
-Computer & Electronic Products,June,2010,Q2,June 2010,-10963580478,1375374992,12338955470
-Computer & Electronic Products,July,2010,Q3,July 2010,-10419375230,1286783406,11706158636
-Computer & Electronic Products,August,2010,Q3,August 2010,-10599767622,1217317973,11817085595
-Computer & Electronic Products,September,2010,Q3,September 2010,-10996786947,1211072767,12207859714
-Computer & Electronic Products,October,2010,Q4,October 2010,-10853677072,1314298760,12167975832
-Computer & Electronic Products,November,2010,Q4,November 2010,-12771203284,1282243792,14053447076
-Computer & Electronic Products,December,2010,Q4,December 2010,-10611879620,1454579313,12066458933
-Computer & Electronic Products,January,2011,Q1,January 2011,-9592829687,1138806732,10731636419
-Computer & Electronic Products,February,2011,Q1,February 2011,-8269400646,1031574633,9300975279
-Computer & Electronic Products,March,2011,Q1,March 2011,-10536234632,1343768853,11880003485
-Computer & Electronic Products,April,2011,Q2,April 2011,-9553180047,1128390963,10681571010
-Computer & Electronic Products,May,2011,Q2,May 2011,-10521986197,1184833365,11706819562
-Computer & Electronic Products,June,2011,Q2,June 2011,-11507164695,1208228296,12715392991
-Computer & Electronic Products,July,2011,Q3,July 2011,-11148618586,1148790498,12297409084
-Computer & Electronic Products,August,2011,Q3,August 2011,-11294458266,1060415706,12354873972
-Computer & Electronic Products,September,2011,Q3,September 2011,-10954333218,1117589923,12071923141
-Computer & Electronic Products,October,2011,Q4,October 2011,-13341113457,1098335138,14439448595
-Computer & Electronic Products,November,2011,Q4,November 2011,-13522255024,1097593095,14619848119
-Computer & Electronic Products,December,2011,Q4,December 2011,-11790939912,1231469848,13022409760
-Computer & Electronic Products,January,2012,Q1,January 2012,-10112259447,876272220,10988531667
-Computer & Electronic Products,February,2012,Q1,February 2012,-9123717307,965064538,10088781845
-Computer & Electronic Products,March,2012,Q1,March 2012,-11952454765,1139582795,13092037560
-Computer & Electronic Products,April,2012,Q2,April 2012,-10351812958,1052742653,11404555611
-Computer & Electronic Products,May,2012,Q2,May 2012,-10780034769,1276993949,12057028718
-Computer & Electronic Products,June,2012,Q2,June 2012,-11338777922,1413947325,12752725247
-Computer & Electronic Products,July,2012,Q3,July 2012,-11586749543,1234050954,12820800497
-Computer & Electronic Products,August,2012,Q3,August 2012,-10873939522,1277928447,12151867969
-Computer & Electronic Products,September,2012,Q3,September 2012,-11819798195,1202716166,13022514361
-Computer & Electronic Products,October,2012,Q4,October 2012,-13956019778,1149217506,15105237284
-Computer & Electronic Products,November,2012,Q4,November 2012,-16227647427,1056290015,17283937442
-Computer & Electronic Products,December,2012,Q4,December 2012,-12354183588,1277172174,13631355762
-Computer & Electronic Products,January,2013,Q1,January 2013,-11720258881,1091616031,12811874912
-Computer & Electronic Products,February,2013,Q1,February 2013,-9546037432,926506657,10472544089
-Computer & Electronic Products,March,2013,Q1,March 2013,-9394963204,1513264927,10908228131
-Computer & Electronic Products,April,2013,Q2,April 2013,-10759874762,1259722375,12019597137
-Computer & Electronic Products,May,2013,Q2,May 2013,-12119690286,1486873803,13606564089
-Computer & Electronic Products,June,2013,Q2,June 2013,-11453889982,1565129970,13019019952
-Computer & Electronic Products,July,2013,Q3,July 2013,-11670176258,1387658046,13057834304
-Computer & Electronic Products,August,2013,Q3,August 2013,-11163441138,1428504827,12591945965
-Computer & Electronic Products,September,2013,Q3,September 2013,-12552524656,1199382517,13751907173
-Computer & Electronic Products,October,2013,Q4,October 2013,-13497857117,1442611211,14940468328
-Computer & Electronic Products,November,2013,Q4,November 2013,-15750209607,1272088415,17022298022
-Computer & Electronic Products,December,2013,Q4,December 2013,-13399634209,1452281221,14851915430
-Computer & Electronic Products,January,2014,Q1,January 2014,-11117695699,1119513011,12237208710
-Computer & Electronic Products,February,2014,Q1,February 2014,-8532273176,1137656599,9669929775
-Computer & Electronic Products,March,2014,Q1,March 2014,-10547485697,1325061583,11872547280
-Computer & Electronic Products,April,2014,Q2,April 2014,-11977582544,1268307452,13245889996
-Computer & Electronic Products,May,2014,Q2,May 2014,-12147794455,1426337088,13574131543
-Computer & Electronic Products,June,2014,Q2,June 2014,-12608179850,1499202420,14107382270
-Computer & Electronic Products,July,2014,Q3,July 2014,-11757121925,1398940108,13156062033
-Computer & Electronic Products,August,2014,Q3,August 2014,-11250421101,1521291703,12771712804
-Computer & Electronic Products,September,2014,Q3,September 2014,-14677519221,1371593582,16049112803
-Computer & Electronic Products,October,2014,Q4,October 2014,-15209183465,1435753740,16644937205
-Computer & Electronic Products,November,2014,Q4,November 2014,-17261274202,1301355560,18562629762
-Computer & Electronic Products,December,2014,Q4,December 2014,-14836954142,1551261205,16388215347
-Computer & Electronic Products,January,2015,Q1,January 2015,-11867086389,1424636302,13291722691
-Computer & Electronic Products,February,2015,Q1,February 2015,-9091886231,1085275162,10177161393
-Computer & Electronic Products,March,2015,Q1,March 2015,-12448692004,1503136648,13951828652
-Computer & Electronic Products,April,2015,Q2,April 2015,-11432337839,1367612656,12799950495
-Computer & Electronic Products,May,2015,Q2,May 2015,-11818443820,1382974247,13201418067
-Computer & Electronic Products,June,2015,Q2,June 2015,-12935871287,1444833437,14380704724
-Computer & Electronic Products,July,2015,Q3,July 2015,-11551820511,1641989488,13193809999
-Computer & Electronic Products,August,2015,Q3,August 2015,-12516910407,1491535549,14008445956
-Computer & Electronic Products,September,2015,Q3,September 2015,-14986944847,1490574870,16477519717
-Computer & Electronic Products,October,2015,Q4,October 2015,-15535474233,1515042111,17050516344
-Computer & Electronic Products,November,2015,Q4,November 2015,-16315976827,1368301759,17684278586
-Computer & Electronic Products,December,2015,Q4,December 2015,-12651901044,1681563791,14333464835
-Computer & Electronic Products,January,2016,Q1,January 2016,-10395963788,1300037752,11696001540
-Computer & Electronic Products,February,2016,Q1,February 2016,-9361720250,1143287332,10505007582
-Computer & Electronic Products,March,2016,Q1,March 2016,-9962412699,1627714962,11590127661
-Computer & Electronic Products,April,2016,Q2,April 2016,-9623395348,1322386935,10945782283
-Computer & Electronic Products,May,2016,Q2,May 2016,-11191426863,1491281951,12682708814
-Computer & Electronic Products,June,2016,Q2,June 2016,-11969906578,1412043980,13381950558
-Computer & Electronic Products,July,2016,Q3,July 2016,-11717658261,1380190828,13097849089
-Computer & Electronic Products,August,2016,Q3,August 2016,-12426737677,1509049614,13935787291
-Computer & Electronic Products,September,2016,Q3,September 2016,-13642256321,1429126812,15071383133
-Computer & Electronic Products,October,2016,Q4,October 2016,-14766172703,1504348755,16270521458
-Computer & Electronic Products,November,2016,Q4,November 2016,-16080492769,1375422694,17455915463
-Computer & Electronic Products,December,2016,Q4,December 2016,-12987439010,1612723396,14600162406
-Computer & Electronic Products,January,2017,Q1,January 2017,-12329891382,1165220330,13495111712
-Computer & Electronic Products,February,2017,Q1,February 2017,-8706755590,1299183421,10005939011
-Computer & Electronic Products,March,2017,Q1,March 2017,-11725766737,1419900627,13145667364
-Computer & Electronic Products,April,2017,Q2,April 2017,-12025756573,1373978940,13399735513
-Computer & Electronic Products,May,2017,Q2,May 2017,-13157366329,1352838174,14510204503
-Computer & Electronic Products,June,2017,Q2,June 2017,-13353931715,1539442725,14893374440
-Computer & Electronic Products,July,2017,Q3,July 2017,-13755214289,1356922147,15112136436
-Computer & Electronic Products,August,2017,Q3,August 2017,-14293517976,1524313791,15817831767
-Computer & Electronic Products,September,2017,Q3,September 2017,-15138906145,1489724282,16628630427
-Computer & Electronic Products,October,2017,Q4,October 2017,-16596946562,1546284429,18143230991
-Computer & Electronic Products,November,2017,Q4,November 2017,-19172805997,1672437699,20845243696
-Computer & Electronic Products,December,2017,Q4,December 2017,-16496880391,1559965289,18056845680
-Computer & Electronic Products,January,2018,Q1,January 2018,-14184806261,1442813234,15627619495
-Computer & Electronic Products,February,2018,Q1,February 2018,-10897495125,1120180585,12017675710
-Computer & Electronic Products,March,2018,Q1,March 2018,-12860524529,1615234930,14475759459
-Computer & Electronic Products,April,2018,Q2,April 2018,-12611827419,1404775857,14016603276
-Computer & Electronic Products,May,2018,Q2,May 2018,-13749614296,1415543359,15165157655
-Computer & Electronic Products,June,2018,Q2,June 2018,-13309677614,1555374852,14865052466
-Computer & Electronic Products,July,2018,Q3,July 2018,-14210199345,1444734222,15654933567
-Computer & Electronic Products,August,2018,Q3,August 2018,-14074663694,1678770505,15753434199
-Computer & Electronic Products,September,2018,Q3,September 2018,-16551298903,1467284776,18018583679
-Computer & Electronic Products,October,2018,Q4,October 2018,-16688154776,1660807567,18348962343
-Computer & Electronic Products,November,2018,Q4,November 2018,-15602939480,1584092981,17187032461
-Computer & Electronic Products,December,2018,Q4,December 2018,-13034302906,1761727704,14796030610
-Computer & Electronic Products,January,2019,Q1,January 2019,-10590637750,1421602576,12012240326
-Computer & Electronic Products,February,2019,Q1,February 2019,-7505220581,1441732460,8946953041
-Computer & Electronic Products,March,2019,Q1,March 2019,-9026052407,1797438147,10823490554
-Computer & Electronic Products,April,2019,Q2,April 2019,-9473426282,1531182005,11004608287
-Computer & Electronic Products,May,2019,Q2,May 2019,-10969230310,1628241508,12597471818
-Computer & Electronic Products,June,2019,Q2,June 2019,-11943867420,1519609097,13463476517
-Computer & Electronic Products,July,2019,Q3,July 2019,-10745570718,1364157311,12109728029
-Computer & Electronic Products,August,2019,Q3,August 2019,-10092705301,1623202110,11715907411
-Computer & Electronic Products,September,2019,Q3,September 2019,-11570645536,1550015853,13120661389
-Computer & Electronic Products,October,2019,Q4,October 2019,-13137281385,1662158526,14799439911
-Computer & Electronic Products,November,2019,Q4,November 2019,-12487742666,1701330726,14189073392
-Computer & Electronic Products,December,2019,Q4,December 2019,-9842461394,1695183994,11537645388
+Computer & Electronics,January,2002,Q1,January 2002,-1640523592,393050486,2033574078
+Computer & Electronics,February,2002,Q1,February 2002,-1660127327,328693227,1988820554
+Computer & Electronics,March,2002,Q1,March 2002,-1537610910,434101020,1971711930
+Computer & Electronics,April,2002,Q2,April 2002,-2001510874,418367679,2419878553
+Computer & Electronics,May,2002,Q2,May 2002,-2034265548,450032848,2484298396
+Computer & Electronics,June,2002,Q2,June 2002,-2366417930,507321649,2873739579
+Computer & Electronics,July,2002,Q3,July 2002,-2389713498,453865884,2843579382
+Computer & Electronics,August,2002,Q3,August 2002,-2673774088,486911042,3160685130
+Computer & Electronics,September,2002,Q3,September 2002,-2685827712,443650833,3129478545
+Computer & Electronics,October,2002,Q4,October 2002,-2716618160,453396961,3170015121
+Computer & Electronics,November,2002,Q4,November 2002,-3475087594,467610962,3942698556
+Computer & Electronics,December,2002,Q4,December 2002,-2823070359,481625988,3304696347
+Computer & Electronics,January,2003,Q1,January 2003,-2352783459,395223472,2748006931
+Computer & Electronics,February,2003,Q1,February 2003,-1930793027,370746639,2301539666
+Computer & Electronics,March,2003,Q1,March 2003,-2324807812,526575892,2851383704
+Computer & Electronics,April,2003,Q2,April 2003,-2638588331,521399412,3159987743
+Computer & Electronics,May,2003,Q2,May 2003,-2705729427,518271794,3224001221
+Computer & Electronics,June,2003,Q2,June 2003,-2890865261,546779716,3437644977
+Computer & Electronics,July,2003,Q3,July 2003,-3105278613,598220934,3703499547
+Computer & Electronics,August,2003,Q3,August 2003,-3180981190,581797390,3762778580
+Computer & Electronics,September,2003,Q3,September 2003,-3731579629,555346254,4286925883
+Computer & Electronics,October,2003,Q4,October 2003,-4478067768,622693524,5100761292
+Computer & Electronics,November,2003,Q4,November 2003,-4241500920,600771113,4842272033
+Computer & Electronics,December,2003,Q4,December 2003,-3779670876,670456431,4450127307
+Computer & Electronics,January,2004,Q1,January 2004,-3586853325,546490029,4133343354
+Computer & Electronics,February,2004,Q1,February 2004,-2982849761,617665335,3600515096
+Computer & Electronics,March,2004,Q1,March 2004,-3974218988,676658490,4650877478
+Computer & Electronics,April,2004,Q2,April 2004,-4071297927,647489764,4718787691
+Computer & Electronics,May,2004,Q2,May 2004,-3908935516,720324122,4629259638
+Computer & Electronics,June,2004,Q2,June 2004,-4755456114,684597890,5440054004
+Computer & Electronics,July,2004,Q3,July 2004,-4946528358,655249806,5601778164
+Computer & Electronics,August,2004,Q3,August 2004,-5119779454,633521413,5753300867
+Computer & Electronics,September,2004,Q3,September 2004,-5020357451,688935828,5709293279
+Computer & Electronics,October,2004,Q4,October 2004,-6098070623,646574714,6744645337
+Computer & Electronics,November,2004,Q4,November 2004,-6466313217,582730227,7049043444
+Computer & Electronics,December,2004,Q4,December 2004,-5342214071,674279865,6016493936
+Computer & Electronics,January,2005,Q1,January 2005,-4850602571,577012426,5427614997
+Computer & Electronics,February,2005,Q1,February 2005,-4249165308,537505082,4786670390
+Computer & Electronics,March,2005,Q1,March 2005,-4704698696,721559147,5426257843
+Computer & Electronics,April,2005,Q2,April 2005,-5101003400,633060839,5734064239
+Computer & Electronics,May,2005,Q2,May 2005,-5239930693,635260704,5875191397
+Computer & Electronics,June,2005,Q2,June 2005,-5982889547,693940085,6676829632
+Computer & Electronics,July,2005,Q3,July 2005,-6072765171,708936966,6781702137
+Computer & Electronics,August,2005,Q3,August 2005,-6320382148,715446640,7035828788
+Computer & Electronics,September,2005,Q3,September 2005,-6837008474,778727734,7615736208
+Computer & Electronics,October,2005,Q4,October 2005,-7528974454,917190753,8446165207
+Computer & Electronics,November,2005,Q4,November 2005,-7580388430,856719848,8437108278
+Computer & Electronics,December,2005,Q4,December 2005,-6388480618,1073398564,7461879182
+Computer & Electronics,January,2006,Q1,January 2006,-6342862744,760150244,7103012988
+Computer & Electronics,February,2006,Q1,February 2006,-4849045106,950992859,5800037965
+Computer & Electronics,March,2006,Q1,March 2006,-6750087661,1083727621,7833815282
+Computer & Electronics,April,2006,Q2,April 2006,-6067308138,939717782,7007025920
+Computer & Electronics,May,2006,Q2,May 2006,-5895377840,1066888778,6962266618
+Computer & Electronics,June,2006,Q2,June 2006,-6961036472,1115453308,8076489780
+Computer & Electronics,July,2006,Q3,July 2006,-7098990364,1040338538,8139328902
+Computer & Electronics,August,2006,Q3,August 2006,-6924699769,1191648955,8116348724
+Computer & Electronics,September,2006,Q3,September 2006,-7822443187,1118238257,8940681444
+Computer & Electronics,October,2006,Q4,October 2006,-8747192963,1091738942,9838931905
+Computer & Electronics,November,2006,Q4,November 2006,-8866612409,1057807580,9924419989
+Computer & Electronics,December,2006,Q4,December 2006,-6921643233,1157434715,8079077948
+Computer & Electronics,January,2007,Q1,January 2007,-7254005898,1000336036,8254341934
+Computer & Electronics,February,2007,Q1,February 2007,-6223582976,874953874,7098536850
+Computer & Electronics,March,2007,Q1,March 2007,-6799740948,1227002938,8026743886
+Computer & Electronics,April,2007,Q2,April 2007,-7188158303,946286393,8134444696
+Computer & Electronics,May,2007,Q2,May 2007,-6604005370,1188687229,7792692599
+Computer & Electronics,June,2007,Q2,June 2007,-7798754096,1261107823,9059861919
+Computer & Electronics,July,2007,Q3,July 2007,-7988458058,1018148187,9006606245
+Computer & Electronics,August,2007,Q3,August 2007,-7523600937,1101840091,8625441028
+Computer & Electronics,September,2007,Q3,September 2007,-8458114293,1188147103,9646261396
+Computer & Electronics,October,2007,Q4,October 2007,-9718454242,1183636357,10902090599
+Computer & Electronics,November,2007,Q4,November 2007,-9853569523,1091746805,10945316328
+Computer & Electronics,December,2007,Q4,December 2007,-8018499140,1184591333,9203090473
+Computer & Electronics,January,2008,Q1,January 2008,-7070364563,1049098207,8119462770
+Computer & Electronics,February,2008,Q1,February 2008,-6151152999,979449687,7130602686
+Computer & Electronics,March,2008,Q1,March 2008,-7069995652,1220297827,8290293479
+Computer & Electronics,April,2008,Q2,April 2008,-7778729773,1131136516,8909866289
+Computer & Electronics,May,2008,Q2,May 2008,-7466281263,1306968986,8773250249
+Computer & Electronics,June,2008,Q2,June 2008,-8013114829,1218028685,9231143514
+Computer & Electronics,July,2008,Q3,July 2008,-8962106614,1287729057,10249835671
+Computer & Electronics,August,2008,Q3,August 2008,-8410281553,1222792757,9633074310
+Computer & Electronics,September,2008,Q3,September 2008,-9082276916,1193514246,10275791162
+Computer & Electronics,October,2008,Q4,October 2008,-9506023237,1183570188,10689593425
+Computer & Electronics,November,2008,Q4,November 2008,-7842108611,1084053814,8926162425
+Computer & Electronics,December,2008,Q4,December 2008,-6758116089,994466353,7752582442
+Computer & Electronics,January,2009,Q1,January 2009,-5915106744,752682640,6667789384
+Computer & Electronics,February,2009,Q1,February 2009,-4952210245,817613315,5769823560
+Computer & Electronics,March,2009,Q1,March 2009,-6433134647,1078173306,7511307953
+Computer & Electronics,April,2009,Q2,April 2009,-6347386219,933667400,7281053619
+Computer & Electronics,May,2009,Q2,May 2009,-6549818399,970943480,7520761879
+Computer & Electronics,June,2009,Q2,June 2009,-8102174399,1037390528,9139564927
+Computer & Electronics,July,2009,Q3,July 2009,-7773219732,1093246165,8866465897
+Computer & Electronics,August,2009,Q3,August 2009,-7412735231,1090389887,8503125118
+Computer & Electronics,September,2009,Q3,September 2009,-8365896922,1141729173,9507626095
+Computer & Electronics,October,2009,Q4,October 2009,-9662343651,1190698282,10853041933
+Computer & Electronics,November,2009,Q4,November 2009,-10114697899,1052803245,11167501144
+Computer & Electronics,December,2009,Q4,December 2009,-9196784774,1370843407,10567628181
+Computer & Electronics,January,2010,Q1,January 2010,-7610073213,1180046180,8790119393
+Computer & Electronics,February,2010,Q1,February 2010,-7073522388,1006999291,8080521679
+Computer & Electronics,March,2010,Q1,March 2010,-7860373538,1320396443,9180769981
+Computer & Electronics,April,2010,Q2,April 2010,-8528882500,1242915035,9771797535
+Computer & Electronics,May,2010,Q2,May 2010,-9245961962,1343311386,10589273348
+Computer & Electronics,June,2010,Q2,June 2010,-10963580478,1375374992,12338955470
+Computer & Electronics,July,2010,Q3,July 2010,-10419375230,1286783406,11706158636
+Computer & Electronics,August,2010,Q3,August 2010,-10599767622,1217317973,11817085595
+Computer & Electronics,September,2010,Q3,September 2010,-10996786947,1211072767,12207859714
+Computer & Electronics,October,2010,Q4,October 2010,-10853677072,1314298760,12167975832
+Computer & Electronics,November,2010,Q4,November 2010,-12771203284,1282243792,14053447076
+Computer & Electronics,December,2010,Q4,December 2010,-10611879620,1454579313,12066458933
+Computer & Electronics,January,2011,Q1,January 2011,-9592829687,1138806732,10731636419
+Computer & Electronics,February,2011,Q1,February 2011,-8269400646,1031574633,9300975279
+Computer & Electronics,March,2011,Q1,March 2011,-10536234632,1343768853,11880003485
+Computer & Electronics,April,2011,Q2,April 2011,-9553180047,1128390963,10681571010
+Computer & Electronics,May,2011,Q2,May 2011,-10521986197,1184833365,11706819562
+Computer & Electronics,June,2011,Q2,June 2011,-11507164695,1208228296,12715392991
+Computer & Electronics,July,2011,Q3,July 2011,-11148618586,1148790498,12297409084
+Computer & Electronics,August,2011,Q3,August 2011,-11294458266,1060415706,12354873972
+Computer & Electronics,September,2011,Q3,September 2011,-10954333218,1117589923,12071923141
+Computer & Electronics,October,2011,Q4,October 2011,-13341113457,1098335138,14439448595
+Computer & Electronics,November,2011,Q4,November 2011,-13522255024,1097593095,14619848119
+Computer & Electronics,December,2011,Q4,December 2011,-11790939912,1231469848,13022409760
+Computer & Electronics,January,2012,Q1,January 2012,-10112259447,876272220,10988531667
+Computer & Electronics,February,2012,Q1,February 2012,-9123717307,965064538,10088781845
+Computer & Electronics,March,2012,Q1,March 2012,-11952454765,1139582795,13092037560
+Computer & Electronics,April,2012,Q2,April 2012,-10351812958,1052742653,11404555611
+Computer & Electronics,May,2012,Q2,May 2012,-10780034769,1276993949,12057028718
+Computer & Electronics,June,2012,Q2,June 2012,-11338777922,1413947325,12752725247
+Computer & Electronics,July,2012,Q3,July 2012,-11586749543,1234050954,12820800497
+Computer & Electronics,August,2012,Q3,August 2012,-10873939522,1277928447,12151867969
+Computer & Electronics,September,2012,Q3,September 2012,-11819798195,1202716166,13022514361
+Computer & Electronics,October,2012,Q4,October 2012,-13956019778,1149217506,15105237284
+Computer & Electronics,November,2012,Q4,November 2012,-16227647427,1056290015,17283937442
+Computer & Electronics,December,2012,Q4,December 2012,-12354183588,1277172174,13631355762
+Computer & Electronics,January,2013,Q1,January 2013,-11720258881,1091616031,12811874912
+Computer & Electronics,February,2013,Q1,February 2013,-9546037432,926506657,10472544089
+Computer & Electronics,March,2013,Q1,March 2013,-9394963204,1513264927,10908228131
+Computer & Electronics,April,2013,Q2,April 2013,-10759874762,1259722375,12019597137
+Computer & Electronics,May,2013,Q2,May 2013,-12119690286,1486873803,13606564089
+Computer & Electronics,June,2013,Q2,June 2013,-11453889982,1565129970,13019019952
+Computer & Electronics,July,2013,Q3,July 2013,-11670176258,1387658046,13057834304
+Computer & Electronics,August,2013,Q3,August 2013,-11163441138,1428504827,12591945965
+Computer & Electronics,September,2013,Q3,September 2013,-12552524656,1199382517,13751907173
+Computer & Electronics,October,2013,Q4,October 2013,-13497857117,1442611211,14940468328
+Computer & Electronics,November,2013,Q4,November 2013,-15750209607,1272088415,17022298022
+Computer & Electronics,December,2013,Q4,December 2013,-13399634209,1452281221,14851915430
+Computer & Electronics,January,2014,Q1,January 2014,-11117695699,1119513011,12237208710
+Computer & Electronics,February,2014,Q1,February 2014,-8532273176,1137656599,9669929775
+Computer & Electronics,March,2014,Q1,March 2014,-10547485697,1325061583,11872547280
+Computer & Electronics,April,2014,Q2,April 2014,-11977582544,1268307452,13245889996
+Computer & Electronics,May,2014,Q2,May 2014,-12147794455,1426337088,13574131543
+Computer & Electronics,June,2014,Q2,June 2014,-12608179850,1499202420,14107382270
+Computer & Electronics,July,2014,Q3,July 2014,-11757121925,1398940108,13156062033
+Computer & Electronics,August,2014,Q3,August 2014,-11250421101,1521291703,12771712804
+Computer & Electronics,September,2014,Q3,September 2014,-14677519221,1371593582,16049112803
+Computer & Electronics,October,2014,Q4,October 2014,-15209183465,1435753740,16644937205
+Computer & Electronics,November,2014,Q4,November 2014,-17261274202,1301355560,18562629762
+Computer & Electronics,December,2014,Q4,December 2014,-14836954142,1551261205,16388215347
+Computer & Electronics,January,2015,Q1,January 2015,-11867086389,1424636302,13291722691
+Computer & Electronics,February,2015,Q1,February 2015,-9091886231,1085275162,10177161393
+Computer & Electronics,March,2015,Q1,March 2015,-12448692004,1503136648,13951828652
+Computer & Electronics,April,2015,Q2,April 2015,-11432337839,1367612656,12799950495
+Computer & Electronics,May,2015,Q2,May 2015,-11818443820,1382974247,13201418067
+Computer & Electronics,June,2015,Q2,June 2015,-12935871287,1444833437,14380704724
+Computer & Electronics,July,2015,Q3,July 2015,-11551820511,1641989488,13193809999
+Computer & Electronics,August,2015,Q3,August 2015,-12516910407,1491535549,14008445956
+Computer & Electronics,September,2015,Q3,September 2015,-14986944847,1490574870,16477519717
+Computer & Electronics,October,2015,Q4,October 2015,-15535474233,1515042111,17050516344
+Computer & Electronics,November,2015,Q4,November 2015,-16315976827,1368301759,17684278586
+Computer & Electronics,December,2015,Q4,December 2015,-12651901044,1681563791,14333464835
+Computer & Electronics,January,2016,Q1,January 2016,-10395963788,1300037752,11696001540
+Computer & Electronics,February,2016,Q1,February 2016,-9361720250,1143287332,10505007582
+Computer & Electronics,March,2016,Q1,March 2016,-9962412699,1627714962,11590127661
+Computer & Electronics,April,2016,Q2,April 2016,-9623395348,1322386935,10945782283
+Computer & Electronics,May,2016,Q2,May 2016,-11191426863,1491281951,12682708814
+Computer & Electronics,June,2016,Q2,June 2016,-11969906578,1412043980,13381950558
+Computer & Electronics,July,2016,Q3,July 2016,-11717658261,1380190828,13097849089
+Computer & Electronics,August,2016,Q3,August 2016,-12426737677,1509049614,13935787291
+Computer & Electronics,September,2016,Q3,September 2016,-13642256321,1429126812,15071383133
+Computer & Electronics,October,2016,Q4,October 2016,-14766172703,1504348755,16270521458
+Computer & Electronics,November,2016,Q4,November 2016,-16080492769,1375422694,17455915463
+Computer & Electronics,December,2016,Q4,December 2016,-12987439010,1612723396,14600162406
+Computer & Electronics,January,2017,Q1,January 2017,-12329891382,1165220330,13495111712
+Computer & Electronics,February,2017,Q1,February 2017,-8706755590,1299183421,10005939011
+Computer & Electronics,March,2017,Q1,March 2017,-11725766737,1419900627,13145667364
+Computer & Electronics,April,2017,Q2,April 2017,-12025756573,1373978940,13399735513
+Computer & Electronics,May,2017,Q2,May 2017,-13157366329,1352838174,14510204503
+Computer & Electronics,June,2017,Q2,June 2017,-13353931715,1539442725,14893374440
+Computer & Electronics,July,2017,Q3,July 2017,-13755214289,1356922147,15112136436
+Computer & Electronics,August,2017,Q3,August 2017,-14293517976,1524313791,15817831767
+Computer & Electronics,September,2017,Q3,September 2017,-15138906145,1489724282,16628630427
+Computer & Electronics,October,2017,Q4,October 2017,-16596946562,1546284429,18143230991
+Computer & Electronics,November,2017,Q4,November 2017,-19172805997,1672437699,20845243696
+Computer & Electronics,December,2017,Q4,December 2017,-16496880391,1559965289,18056845680
+Computer & Electronics,January,2018,Q1,January 2018,-14184806261,1442813234,15627619495
+Computer & Electronics,February,2018,Q1,February 2018,-10897495125,1120180585,12017675710
+Computer & Electronics,March,2018,Q1,March 2018,-12860524529,1615234930,14475759459
+Computer & Electronics,April,2018,Q2,April 2018,-12611827419,1404775857,14016603276
+Computer & Electronics,May,2018,Q2,May 2018,-13749614296,1415543359,15165157655
+Computer & Electronics,June,2018,Q2,June 2018,-13309677614,1555374852,14865052466
+Computer & Electronics,July,2018,Q3,July 2018,-14210199345,1444734222,15654933567
+Computer & Electronics,August,2018,Q3,August 2018,-14074663694,1678770505,15753434199
+Computer & Electronics,September,2018,Q3,September 2018,-16551298903,1467284776,18018583679
+Computer & Electronics,October,2018,Q4,October 2018,-16688154776,1660807567,18348962343
+Computer & Electronics,November,2018,Q4,November 2018,-15602939480,1584092981,17187032461
+Computer & Electronics,December,2018,Q4,December 2018,-13034302906,1761727704,14796030610
+Computer & Electronics,January,2019,Q1,January 2019,-10590637750,1421602576,12012240326
+Computer & Electronics,February,2019,Q1,February 2019,-7505220581,1441732460,8946953041
+Computer & Electronics,March,2019,Q1,March 2019,-9026052407,1797438147,10823490554
+Computer & Electronics,April,2019,Q2,April 2019,-9473426282,1531182005,11004608287
+Computer & Electronics,May,2019,Q2,May 2019,-10969230310,1628241508,12597471818
+Computer & Electronics,June,2019,Q2,June 2019,-11943867420,1519609097,13463476517
+Computer & Electronics,July,2019,Q3,July 2019,-10745570718,1364157311,12109728029
+Computer & Electronics,August,2019,Q3,August 2019,-10092705301,1623202110,11715907411
+Computer & Electronics,September,2019,Q3,September 2019,-11570645536,1550015853,13120661389
+Computer & Electronics,October,2019,Q4,October 2019,-13137281385,1662158526,14799439911
+Computer & Electronics,November,2019,Q4,November 2019,-12487742666,1701330726,14189073392
+Computer & Electronics,December,2019,Q4,December 2019,-9842461394,1695183994,11537645388
 "Electrical Equipment, Appliances & Components",January,2002,Q1,January 2002,-624500660,36199602,660700262
 "Electrical Equipment, Appliances & Components",February,2002,Q1,February 2002,-595760843,48462112,644222955
 "Electrical Equipment, Appliances & Components",March,2002,Q1,March 2002,-554801816,45328204,600130020
