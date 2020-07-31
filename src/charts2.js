@@ -11,11 +11,23 @@ const colorScheme = {
     exports: "green"
 }
 
-var currentScene = 1;
+var currScene = 1;
+var prevScene = -1;
 
 // Scales
-var xTime;
-var y;
+var xTime = d3.scaleTime()
+    .range([0, width]);
+var yAnnual = d3.scaleTime()
+    .range([height, 0]);
+
+
+var chartSettings = [
+    {
+        x: d3.scaleTime()
+            .domain([new Date("1/1/2002"), new Date("1/1/2020")])
+
+    }
+]
 
 var balanceLine = d3.line()
     .x(function (d) { return xTime(yearDate(d.time)); })
@@ -34,7 +46,7 @@ var yearDate = d3.timeParse("%Y");
 var monthYear = d3.timeParse("%B %Y");
 
 // Data from csvs
-var csvData;
+var annualData;
 var monthlyData;
 
 // Annotations
@@ -84,10 +96,6 @@ function drawAxes(svg, x, y) {
         .call(yAxes); // Create an axis component with d3.axisLeft
 }
 
-function drawLine(path, line, color) {
-
-}
-
 function annotateArea(svg, note) {
     t = svg.append("g")
         .attr("class", "annotation")
@@ -111,6 +119,22 @@ function annotateArea(svg, note) {
 async function init() {
     // move querying data to here?
     // and make data global
+    annualData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/Exports-Imports-China-Year.csv", function (d) {
+        return {
+            time: d.Time,
+            exports: parseInt(d['Total Exports Value ($US)']),
+            imports: parseInt(d['Customs Import Value (Gen) ($US)']),
+            deficit: -parseInt(d['Balance ($US)'])
+        }
+    });
+
+    xTime = d3.scaleTime()
+        //scale time does not seem to undertand the format?
+        .domain(d3.extent(annualData, function (d) { return yearDate(d.time); })) //fail?
+    yAnnual = d3.scaleLinear()
+        .domain([0, d3.max(annualData, function (d) { return d.imports; })])
+
+
     drawChart1();
     drawChart2();
 }
@@ -118,29 +142,8 @@ async function init() {
 async function drawChart1() {
     //var width = document.getElementById("slide1").offsetWidth - margin.left - margin.right // Use the window's width 
 
-    const data = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/Exports-Imports-China-Year.csv", function (d) {
-        if (d.Time < 2020)
-            return {
-                time: d.Time,
-                exports: parseInt(d['Total Exports Value ($US)']),
-                imports: parseInt(d['Customs Import Value (Gen) ($US)']),
-                deficit: -parseInt(d['Balance ($US)'])
-            }
-
-    });
-
-    csvData = data;
-
-    var yearDate = d3.timeParse("%Y")
-    xTime = d3.scaleTime()
-        //scale time does not seem to undertand the format?
-        .domain(d3.extent(data, function (d) { return yearDate(d.time); })) //fail?
-        .range([0, width]);
 
 
-    y = d3.scaleLinear()
-        .domain([0, d3.max(data, function (d) { return d.imports; })])
-        .range([height, 0]);
 
     var balanceLine = d3.line()
         .x(function (d) { return xTime(yearDate(d.time)); })
@@ -163,6 +166,7 @@ async function drawChart1() {
     drawAxes(svg, xTime, y);
     //Draw line imports
 
+    // Scene 1 
     svg.append("g")
         .attr("class", "scene1")
         .attr("opacity", 1)
@@ -172,6 +176,7 @@ async function drawChart1() {
         .attr("d", balanceLine)
         .attr("stroke", colorScheme["deficit"]);
 
+    // scene 2
     svg.append("g")
         .attr("class", "scene2")
         .attr("opacity", 0)
@@ -191,6 +196,20 @@ async function drawChart1() {
         .attr("stroke", colorScheme["exports"]);
 
     //draw 2018+ fade annotation
+    // plot individual points
+    svg.append("g")
+        .attr("class", "scene1")
+        .attr("opacity", 1)
+        .selectAll("myCircles")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("fill", "red")
+        .attr("stroke", "none")
+        .attr("cx", function (d) { return xTime(yearDate(d.time)) })
+        .attr("cy", function (d) { return y(d.deficit) })
+        .attr("r", 3)
+
 
     /**
      * Attempt at annotations
@@ -212,43 +231,48 @@ async function drawChart1() {
         y: 0,
         x: xTime(new Date("01/01/2018")), //position the x based on an x scale
         width: xTime(new Date("1/01/2005")),
-        validScenes: [1, 2, 3]
+        validScenes: [2, 3]
     })
 
     annotateArea(svg, annotations[0]);
-    annotateArea(svg, annotations[1]);
-    /*
-    notes.append("rect")
-        .attr("class", "rect")
-        .attr("x", function (d) {
-            return xTime(new Date(2008, 0));
-        })
-        .attr("y", 0)
-        .attr("width", function (d) {
-            return xTime(new Date(2005, 0)); // 3 years
-        })
-        .attr("height", height);
-
-    notes.append("text")
-        .attr("x", function (d) {
-            return xTime(new Date(2008, 0));
-        })
-        .attr("y", 0)
-        .attr("width", function (d) {
-            return xTime(new Date(2005, 0)); // 3 years
-        })
-        .text("Economic Recession");
-    */
-
+    //annotateArea(svg, annotations[1]);
 }
 
 
-// transition from scene 1 to 2
 // Transitions should hide the previous scene and the scene after
-function scene3() {
+
+function scene1() {
+
     d3.selectAll(".scene1")
         .transition()
-        .duration(100)
+        .duration(800)
+        .attr("opacity", 1);
+
+    d3.selectAll(".scene2").selectAll(".line.imports")
+        .transition()
+        .duration(800)
+        .attr("opacity", 0)
+        .attr('d', balanceLine);
+
+    d3.selectAll(".scene2").selectAll(".line.exports")
+        .transition()
+        .duration(800)
+        .attr("opacity", 0)
+        .attr('d', balanceLine);
+
+    d3.selectAll(".scene2")
+        .transition()
+        .attr("opacity", 0)
+        .duration(800)
+
+}
+// transition from scene 1 to 2
+// hides scene1
+// hides scene3
+function scene2() {
+    d3.selectAll(".scene1")
+        .transition()
+        .duration(400)
         .attr("opacity", 0);
     d3.selectAll(".scene2").selectAll(".line.imports")
         .transition()
@@ -267,9 +291,12 @@ function scene3() {
         .attr("opacity", 1)
         .duration(0)
 
-    currentScene = 3;
+    currentScene = 2;
 }
 
+
+function scene3() {
+}
 
 
 async function drawChart2() {
