@@ -201,6 +201,7 @@ async function init() {
             time: yearDate(d.Time),
             exports: parseInt(d['Total Exports Value ($US)']),
             imports: parseInt(d['Customs Import Value (Gen) ($US)']),
+            balance: parseInt(d['Balance ($US)']),
             deficit: -parseInt(d['Balance ($US)'])
         }
     });
@@ -229,18 +230,19 @@ async function init() {
     // precursor selects
     // Adds event for when state changes
     d3.select("#selectButton")
+        .attr("visibility", "hidden")
         .selectAll('commodities')
         .data(commoditiesList)
         .enter()
         .append('option')
         .text(function (d) { return d; }) // text showed in the menu
         .attr("value", function (d) { return d; })
-    
+
     // add a dispatch notifiying of change
     d3.select("#selectButton")
-        .on("change", function(){ 
+        .on("change", function () {
             dispatch.call("statechange", this, this.value);
-    });
+        });
 
     dispatch.on("statechange.line", function () {
         console.log(this.value);
@@ -255,6 +257,7 @@ async function init() {
     // draw scene 1
 
     drawChart1(svg, annualData);
+    setScene2();
     //drawChart1(svg, monthlyData);
     //drawChart1(svg, dataArray);
     //drawChart2(svg, dataArray);
@@ -319,14 +322,8 @@ async function drawChart1(svg, data) {
         .attr("class", "line")
         .attr("d", balanceLine)
         .attr("stroke", colorScheme["deficit"]);
-    
-    
-    dispatch.on("statechange.scene1", function(commodity){
-    
-        var scene1Line = scene1.select(".line");
-        var filteredData = annualData.filter(function (d) { return d.commodity == commodity })
-        updateLineChart(scene1Line, filteredData, balanceLine);
-    })
+
+
     /*
     scene1.selectAll("deficit-points")
         .data(data)
@@ -338,32 +335,46 @@ async function drawChart1(svg, data) {
         .attr("cy", function (d) { return yAnnual(d.deficit); })
         .attr("r", 5)
         .on("mouseover", mouseover)
+    */
 
     // Filter in post?
     // A selection filter
     // d3 filter only operates upon a selection of existing variables.
-    /*scene1.selectAll("path")
-        .filter(function (d, i) { return d[i].commodity == "All Commodities"; })
-        .attr("opacity", 1);
 
-    /*
+
     // scene 2 data
     var scene2 = svg.append("g")
         .attr("class", "scene2")
         .attr("opacity", 0);
 
+    drawAxes(scene2, xScales, yScales);
+
     scene2.append("path")
-        .datum(data)
+        .datum(filtered)
         .attr("class", "line imports")
         .attr("d", balanceLine)
         .attr("stroke", colorScheme["imports"]);
 
     scene2.append("path")
-        .datum(data)
+        .datum(filtered)
         .attr("class", "line exports")
         .attr("d", balanceLine)
         .attr("stroke", colorScheme["exports"]);
 
+    dispatch.on("statechange.scene2", function (commodity) {
+        //checks for right scene
+        //if (currScene == 2)
+
+        var s2exports = scene2.select(".line.exports");
+        var s2imports = scene2.select(".line.imports");
+        var filteredData = annualData.filter(function (d) { return d.commodity == commodity });
+        yScales.domain([0, d3.max(filteredData, function (d) { return Math.max(d.imports, d.exports); })]); // out of wack currently
+        updateLineChart(s2exports, filteredData, exportsLine);
+        updateLineChart(s2imports, filteredData, importsLine);
+        updateAxes(scene2, xScales, yScales);
+    })
+
+    /*
     scene2.selectAll("import-points")
         .data(data)
         .enter()
@@ -428,88 +439,6 @@ async function drawChart2(svg, data) {
 
 }
 
-async function drawBar() {
-
-    const data = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/Exports-Imports-China.csv", function (d) {
-        return {
-            commodity: d.Commodity,
-            exports: parseInt(d['Total Exports Value ($US)']),
-            imports: parseInt(d['Customs Import Value (Gen) ($US)']),
-            balance: parseInt(d['Balance ($US)'])
-        }
-    });
-
-    // aggregate data by value
-    var dataArray = data.reduce(function (obj, value) {
-        var key = value.commodity;
-        if (obj[key] == null)
-            obj[key] = [value];
-        obj[key].push(value);
-        return obj;
-    }, {});
-
-    var commodityData = data.reduce(function (obj, value) {
-        var key = value.commodity;
-        if (obj[key] == null)
-            obj[key] = value;
-
-        obj[key]["imports"] += value["imports"] || 0;
-        obj[key]["balance"] += value["balance"] || 0;
-
-        return obj;
-    }, {});
-
-    var commodityArray = Object.values(commodityData)
-    commodityArray.sort(function (a, b) {
-        return d3.ascending(a.balance, b.balance);
-    });
-    var topDeficits = commodityArray.slice(0, 10);
-
-    var y = d3.scaleLinear()
-        .domain([d3.min(commodityArray, function (d) { return d.imports }), d3.max(commodityArray, function (d) { return d.imports; })])
-        .range([height, 0]);
-
-    var x = d3.scaleBand()
-        .domain(topDeficits.map(function (d) {
-            return d.commodity;
-        }))
-        .range([0, width]);
-
-
-    var svg = d3.select("#slide2").select("svg")
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    svg.append("g")
-        .attr("class", "x-axis bar")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x)) // Create an axis component with d3.axisBottom
-        .selectAll("text")
-        .attr("y", 20)
-        .style("font-size", "small")
-        .call(wrap, x.step());
-
-    svg.append("g")
-        .attr("class", "y-axis")
-        .call(d3.axisLeft(y).ticks(5, "s")); // Create an axis component with d3.axisLeft
-
-    svg.append("g")
-        .selectAll("rect")
-        .data(topDeficits)
-        .enter()
-        .append("rect")
-        .attr("class", "imports bar")
-        .attr("x", function (d) {
-            return x(d.commodity);
-        })
-        .attr("width", x.step())
-        .attr("height", function (d) {
-            return height - y(d.imports);
-        })
-        .attr("y", function (d) {
-            return y(d.imports);
-        });
-}
 
 function createAnnotations() {
     var notes = svg.append("g")
@@ -541,43 +470,50 @@ function createAnnotations() {
  * Shows scene1
  * Hides scene2
  */
-function showScene1() {
+function setScene1() {
 
     d3.selectAll(".scene1")
         .transition()
         .duration(800)
         .attr("opacity", 1);
 
+    // Hide
     d3.selectAll(".scene2").selectAll(".line.imports")
         .transition()
         .duration(800)
-        .attr("opacity", 0)
         .attr('d', balanceLine);
 
     d3.selectAll(".scene2").selectAll(".line.exports")
         .transition()
         .duration(800)
-        .attr("opacity", 0)
         .attr('d', balanceLine);
 
     d3.selectAll(".scene2")
         .transition()
         .attr("opacity", 0)
-        .duration(800)
+        .duration(800);
+
+    d3.select("#selectButton")
+        .attr("visiblity", "invisible");
 
 }
 // transition from scene 1 to 2
 // hides scene1
 // hides scene3
-function scene2() {
+function setScene2() {
     d3.selectAll(".scene1")
         .transition()
         .duration(400)
         .attr("opacity", 0);
+
+    d3.selectAll(".scene2")
+        .transition()
+        .attr("opacity", 1)
+        .duration(800)
+
     d3.selectAll(".scene2").selectAll(".line.imports")
         .transition()
         .duration(800)
-        .attr("opacity", 1)
         .attr('d', importsLine);
 
     d3.selectAll(".scene2").selectAll(".line.exports")
@@ -586,12 +522,10 @@ function scene2() {
         .attr("opacity", 1)
         .attr('d', exportsLine);
 
-    d3.selectAll(".scene2")
-        .transition()
-        .attr("opacity", 1)
-        .duration(800)
+    d3.select("#selectButton")
+        .attr("visiblity", "visible");
 
-    currentScene = 2;
+    currScene = 2;
 }
 
 function scene3() {
