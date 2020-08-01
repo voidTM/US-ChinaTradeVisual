@@ -123,6 +123,16 @@ function updateAxes(svg, x, y) {
 }
 
 
+function updateLineChart(chart, data, line) {
+    //Get current chart and refilter
+
+    chart.datum(data)
+        .transition()
+        .duration(1000)
+        .attr('d', line);
+
+}
+
 /**
  * 
  * Data filtering and aggregation
@@ -310,10 +320,12 @@ async function drawChart1(svg, data) {
         .attr("d", balanceLine)
         .attr("stroke", colorScheme["deficit"]);
     
+    
     dispatch.on("statechange.scene1", function(commodity){
+    
         var scene1Line = scene1.select(".line");
         var filteredData = annualData.filter(function (d) { return d.commodity == commodity })
-        updateLineChart(scene1.select(".line"), filteredData, balanceLine);
+        updateLineChart(scene1Line, filteredData, balanceLine);
     })
     /*
     scene1.selectAll("deficit-points")
@@ -523,17 +535,6 @@ function createAnnotations() {
     //annotateArea(svg, annotations[1]);
 }
 
-// dispatchs
-
-function updateLineChart(chart, data, line) {
-    //Get current chart and refilter
-
-    chart.datum(data)
-        .transition()
-        .duration(1000)
-        .attr('d', line);
-
-}
 
 // Transitions should hide the previous scene and the scene after
 /**
