@@ -24,7 +24,7 @@
 
 }
 
-.visual{
+.visualization{
     grid-column: 2/-1;
     position: relative;
 }
@@ -95,6 +95,10 @@
     z-index: 2;
 }  
 
+#viz-title {
+    text-align: center;
+    right: 50%;
+}
 
 .annotations.card{
     border-radius: 10px;
