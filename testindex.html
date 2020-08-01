@@ -1,104 +1,147 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<style>
+  .axis text {
+    font: 10px sans-serif;
+  }
 
-<style type="text/css">
-/* 13. Basic Styling with CSS */
-
-/* Style the lines by removing the fill and applying a stroke */
-.line {
+  .axis line,
+  .axis path {
     fill: none;
-    stroke: #ffab00;
-    stroke-width: 3;
-}
-  
-.overlay {
-  fill: none;
-  pointer-events: all;
-}
-
-/* Style the dots by assigning a fill and stroke */
-.dot {
-    fill: #ffab00;
-    stroke: #fff;
-}
-  
-  .focus circle {
-  fill: none;
-  stroke: steelblue;
-}
-
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
 </style>
-<!-- Body tag is where we will append our SVG and SVG objects-->
+
 <body>
+  <script src="//d3js.org/d3.v4.min.js"></script>
+  <script>
+
+    var dispatch = d3.dispatch("load", "statechange");
+
+    var groups = [
+      "Under 5 Years",
+      "5 to 13 Years",
+      "14 to 17 Years",
+      "18 to 24 Years",
+      "25 to 44 Years",
+      "45 to 64 Years",
+      "65 Years and Over"
+    ];
+
+    d3.csv("http://127.0.0.1:5500/USTradeWar/rawdata/testdata.csv", type, function (error, states) {
+      if (error) throw error;
+      var stateById = d3.map();
+      states.forEach(function (d) { stateById.set(d.id, d); });
+      dispatch.call("load", this, stateById); // passes this stateById as an arguement to any listeners
+      dispatch.call("statechange", this, stateById.get("CA"));
+    });
+
+    // A drop-down menu for selecting a state; uses the "menu" namespace.
+    dispatch.on("load.menu", function (stateById) {
+      // creates a statechange event containing the value/state and the necessary info
+
+      var select = d3.select("body")
+        .append("div")
+        .append("select")
+        .on("change", function () { dispatch.call("statechange", this, stateById.get(this.value)); });
+
+      // updates the text?
+      select.selectAll("option")
+        .data(stateById.values())
+        .enter().append("option")
+        .attr("value", function (d) { return d.id; })
+        .text(function (d) { return d.id; });
+
+      dispatch.on("statechange.menu", function (state) {
+        select.property("value", state.id);
+      });
+    });
+
+    // A bar chart to show total population; uses the "bar" namespace.
+    dispatch.on("load.bar", function (stateById) {
+      var margin = { top: 20, right: 20, bottom: 30, left: 40 },
+        width = 80 - margin.left - margin.right,
+        height = 460 - margin.top - margin.bottom;
+
+      var y = d3.scaleLinear()
+        .domain([0, d3.max(stateById.values(), function (d) { return d.total; })])
+        .rangeRound([height, 0])
+        .nice();
+
+      var yAxis = d3.axisLeft(y)
+        .tickFormat(d3.format(".2s"));
+
+      var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+
+      var rect = svg.append("rect")
+        .attr("x", 4)
+        .attr("width", width - 4)
+        .attr("y", height)
+        .attr("height", 0)
+        .style("fill", "#aaa");
+
+      dispatch.on("statechange.bar", function (d) {
+        rect.transition()
+          .attr("y", y(d.total))
+          .attr("height", y(0) - y(d.total));
+      });
+    });
+
+    // A pie chart to show population by age group; uses the "pie" namespace.
+    dispatch.on("load.pie", function (stateById) {
+      var width = 880,
+        height = 460,
+        radius = Math.min(width, height) / 2;
+
+      var color = d3.scaleOrdinal()
+        .domain(groups)
+        .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+      var arc = d3.arc()
+        .outerRadius(radius - 10)
+        .innerRadius(radius - 70);
+
+      var pie = d3.pie()
+        .sort(null);
+
+      var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+      var path = svg.selectAll("path")
+        .data(groups)
+        .enter().append("path")
+        .style("fill", color)
+        .each(function () { this._current = { startAngle: 0, endAngle: 0 }; });
+
+      dispatch.on("statechange.pie", function (d) {
+        path.data(pie.value(function (g) { return d[g]; })(groups)).transition()
+          .attrTween("d", function (d) {
+            var interpolate = d3.interpolate(this._current, d);
+            this._current = interpolate(0);
+            return function (t) {
+              return arc(interpolate(t));
+            };
+          });
+      });
+    });
+
+    // Coerce population counts to numbers and compute total per state.
+    function type(d) {
+      d.total = d3.sum(groups, function (k) { return d[k] = +d[k]; });
+      return d;
+    }
+
+  </script>
 </body>
-
-<!-- Load in the d3 library -->
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script>
-
-// 2. Use the margin convention practice 
-var margin = {top: 50, right: 50, bottom: 50, left: 50}
-  , width = window.innerWidth - margin.left - margin.right // Use the window's width 
-  , height = window.innerHeight - margin.top - margin.bottom; // Use the window's height
-
-// The number of datapoints
-var n = 21;
-
-// 5. X scale will use the index of our data
-var xScale = d3.scaleLinear()
-    .domain([0, n-1]) // input
-    .range([0, width]); // output
-
-// 6. Y scale will use the randomly generate number 
-var yScale = d3.scaleLinear()
-    .domain([0, 1]) // input 
-    .range([height, 0]); // output 
-
-// 7. d3's line generator
-var line = d3.line()
-    .x(function(d, i) { return xScale(i); }) // set the x values for the line generator
-    .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
-    .curve(d3.curveMonotoneX) // apply smoothing to the line
-
-// 8. An array of objects of length N. Each object has key -> value pair, the key being "y" and the value is a random number
-var dataset = d3.range(n).map(function(d) { return {"y": d3.randomUniform(1)() } })
-
-// 1. Add the SVG to the page and employ #2
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-// 3. Call the x axis in a group tag
-svg.append("g")
-    .attr("class", "x axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
-
-// 4. Call the y axis in a group tag
-svg.append("g")
-    .attr("class", "y axis")
-    .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
-
-// 9. Append the path, bind the data, and call the line generator 
-svg.append("path")
-    .datum(dataset) // 10. Binds data to the line 
-    .attr("class", "line") // Assign a class for styling 
-    .attr("d", line); // 11. Calls the line generator 
-
-// 12. Appends a circle for each datapoint 
-svg.selectAll(".dot")
-    .data(dataset)
-  .enter().append("circle") // Uses the enter().append() method
-    .attr("class", "dot") // Assign a class for styling
-    .attr("cx", function(d, i) { return xScale(i) })
-    .attr("cy", function(d) { return yScale(d.y) })
-    .attr("r", 5)
-      .on("mouseover", function(a, b, c) { 
-  			console.log(a) 
-        this.attr('class', 'focus')
-		})
-      .on("mouseout", function() {  })
-</script>
-

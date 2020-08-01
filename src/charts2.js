@@ -19,8 +19,9 @@ var xScales = d3.scaleTime()
     .range([0, width]);
 var yScales = d3.scaleLinear()
     .range([height, 0]);
-
-
+var colorScale = d3.scaleOrdinal()
+    .domain(["negative", "positive"])
+    .range(d3.schemeSet2)
 
 // domains for scales
 var xOverview = [new Date("01/01/2002"), new Date("01/01/2020")];
@@ -55,6 +56,10 @@ var monthlyData;
 // Annotations
 var annotations = []
 
+// Dispatch updates
+var dispatch = d3.dispatch("statechange");
+
+// misc functions
 function wrap(text, width) {
     text.each(function () {
         var text = d3.select(this),
@@ -110,11 +115,11 @@ function updateAxes(svg, x, y) {
 
     svg.select(".x-axis")
         .transition(200)
-        .call(xAxes); 
+        .call(xAxes);
 
     svg.select(".y-axis")
         .transition(200)
-        .call(yAxes); 
+        .call(yAxes);
 }
 
 
@@ -180,8 +185,9 @@ async function init() {
     // move querying data to here?
     // and make data global
     // Setsup the visualizations
-    annualData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/Exports-Imports-China-Year.csv", function (d) {
+    annualData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/US-ChinaTrade-Annual.csv", function (d) {
         return {
+            commodity: d.Commodity,
             time: yearDate(d.Time),
             exports: parseInt(d['Total Exports Value ($US)']),
             imports: parseInt(d['Customs Import Value (Gen) ($US)']),
@@ -191,8 +197,6 @@ async function init() {
 
     yYear = [0, d3.max(annualData, function (d) { return d.imports; })];
 
-    //y.domain(yYear);
-    //monthlyData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/test3.csv", function (d) {
     monthlyData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/US-ChinaTradeV3.csv", function (d) {
         return {
             commodity: d.Commodity,
@@ -212,6 +216,8 @@ async function init() {
     var dataArray = Object.values(d2);
     var commoditiesList = Object.keys(d2);
 
+    // precursor selects
+    // Adds event for when state changes
     d3.select("#selectButton")
         .selectAll('commodities')
         .data(commoditiesList)
@@ -219,11 +225,24 @@ async function init() {
         .append('option')
         .text(function (d) { return d; }) // text showed in the menu
         .attr("value", function (d) { return d; })
+    
+    // add a dispatch notifiying of change
+    d3.select("#selectButton")
+        .on("change", function(){ 
+            dispatch.call("statechange", this, this.value);
+    });
+
+    dispatch.on("statechange.line", function () {
+        console.log(this.value);
+    })
+
 
     var svg = d3.select(".container").select("svg")
         .append("g")
         .attr("class", "slide-viz") // this classification does nothing atm?
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // draw scene 1
 
     drawChart1(svg, annualData);
     //drawChart1(svg, monthlyData);
@@ -231,17 +250,14 @@ async function init() {
     //drawChart2(svg, dataArray);
 }
 
+
+
 /**
  * Chart1 takes place using annual data of the US Trade deficit
  * Scenes 1 and 2 take place here
  */
 
 async function drawChart1(svg, data) {
-    
-    // Set Scales
-    xScales.domain(xOverview);
-    yScales.domain(yYear);
-    drawAxes(svg, xScales, yScales);
     //Draw line imports
 
     /**
@@ -251,7 +267,7 @@ async function drawChart1(svg, data) {
     var tooltip = d3.select(".tooltip")
         .style("opacity", 0)
 
-
+    var filtered = data.filter(function (d) { return d.commodity == "All Commodities"; })
     var mouseover = function (d, i) {
         tooltip
             .style("opacity", 1)
@@ -271,6 +287,12 @@ async function drawChart1(svg, data) {
     var scene1 = svg.append("g")
         .attr("class", "scene1")
         .attr("opacity", 1);
+
+    // Set Scales
+    xScales.domain(xOverview);
+    yScales.domain(yYear);
+    drawAxes(scene1, xScales, yScales);
+
     /*
     scene1.selectAll("path")
         .data(data)
@@ -283,10 +305,16 @@ async function drawChart1(svg, data) {
     */
 
     scene1.append("path")
-        .datum(data)
+        .datum(filtered)
         .attr("class", "line")
         .attr("d", balanceLine)
         .attr("stroke", colorScheme["deficit"]);
+    
+    dispatch.on("statechange.scene1", function(commodity){
+        var scene1Line = scene1.select(".line");
+        var filteredData = annualData.filter(function (d) { return d.commodity == commodity })
+        updateLineChart(scene1.select(".line"), filteredData, balanceLine);
+    })
     /*
     scene1.selectAll("deficit-points")
         .data(data)
@@ -495,9 +523,15 @@ function createAnnotations() {
     //annotateArea(svg, annotations[1]);
 }
 
-function updateChart(chart, selected) {
+// dispatchs
+
+function updateLineChart(chart, data, line) {
     //Get current chart and refilter
-    var data;
+
+    chart.datum(data)
+        .transition()
+        .duration(1000)
+        .attr('d', line);
 
 }
 
