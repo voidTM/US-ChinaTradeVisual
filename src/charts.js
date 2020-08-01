@@ -256,7 +256,10 @@ async function init() {
 
     // draw scene 1
 
-    drawChart1(svg, annualData);
+    drawScene1(svg, annualData);
+    drawScene2(svg, annualData);
+    //drawScene3(svg, monthlyData);
+    //drawScene4(svg, monthlyData);
     setScene2();
     //drawChart1(svg, monthlyData);
     //drawChart1(svg, dataArray);
@@ -266,11 +269,10 @@ async function init() {
 
 
 /**
- * Chart1 takes place using annual data of the US Trade deficit
  * Scenes 1 and 2 take place here
  */
 
-async function drawChart1(svg, data) {
+async function drawScene1(svg, data) {
     //Draw line imports
 
     /**
@@ -306,16 +308,6 @@ async function drawChart1(svg, data) {
     yScales.domain(yYear);
     drawAxes(scene1, xScales, yScales);
 
-    /*
-    scene1.selectAll("path")
-        .data(data)
-        .enter()
-        .append("path")
-        .attr("class", "line")
-        .attr("d", balanceLine)
-        .attr("stroke", colorScheme["deficit"])
-        .attr("opacity", 0);
-    */
 
     scene1.append("path")
         .datum(filtered)
@@ -340,12 +332,16 @@ async function drawChart1(svg, data) {
     // Filter in post?
     // A selection filter
     // d3 filter only operates upon a selection of existing variables.
+}
 
 
+function drawScene2(svg, data){
+
+    var filtered = data.filter(function (d) { return d.commodity == "All Commodities"; })
     // scene 2 data
     var scene2 = svg.append("g")
         .attr("class", "scene2")
-        .attr("opacity", 0);
+        .attr("visibility", "hidden");
 
     drawAxes(scene2, xScales, yScales);
 
@@ -475,7 +471,7 @@ function setScene1() {
     d3.selectAll(".scene1")
         .transition()
         .duration(800)
-        .attr("opacity", 1);
+        .attr("visibility", "visible");
 
     // Hide
     d3.selectAll(".scene2").selectAll(".line.imports")
@@ -490,7 +486,7 @@ function setScene1() {
 
     d3.selectAll(".scene2")
         .transition()
-        .attr("opacity", 0)
+        .attr("visiblity", "invisible")
         .duration(800);
 
     d3.select("#selectButton")
@@ -504,12 +500,12 @@ function setScene2() {
     d3.selectAll(".scene1")
         .transition()
         .duration(400)
-        .attr("opacity", 0);
+        .attr("visibility", "hidden");
 
     d3.selectAll(".scene2")
         .transition()
-        .attr("opacity", 1)
-        .duration(800)
+        .attr("visibility", "visible")
+        .duration(800);
 
     d3.selectAll(".scene2").selectAll(".line.imports")
         .transition()
@@ -529,6 +525,7 @@ function setScene2() {
 }
 
 function scene3() {
+
     d3.selectAll(".scene2")
         .transition()
         .attr("opacity", 0)
@@ -537,5 +534,12 @@ function scene3() {
         .transition()
         .attr("opacity", 1)
         .duration(800)
+
+    d3.selectAll(".scene4")
+    .transition()
+    .attr("opacity", 0)
+    .duration(800)
+
+    currScene = 3;
 }
 
