@@ -19,9 +19,7 @@ var xScales = d3.scaleTime()
     .range([0, width]);
 var yScales = d3.scaleLinear()
     .range([height, 0]);
-var colorScale = d3.scaleOrdinal()
-    .domain(["negative", "positive"])
-    .range(d3.schemeSet2)
+
 
 // domains for scales
 var xOverview = [new Date("01/01/2002"), new Date("01/01/2020")];
@@ -29,7 +27,7 @@ var yYear;
 var yMonth;
 var yTrump;
 var xTrump = [new Date("01/01/2016"), new Date("01/01/2020")];
-
+var yPercent = [0,1];
 
 // Scene 1 and 2 lines
 var balanceLine = d3.line()
@@ -44,6 +42,10 @@ var exportsLine = d3.line()
     .x(function (d) { return xScales(d.time); })
     .y(function (d) { return yScales(d.exports); })
 
+var hideLine = d3.line()
+    .x(function (d) { return xScales(d.time); })
+    .y(function (d) { return 0; })
+
 
 // Date time format parsers
 var yearDate = d3.timeParse("%Y");
@@ -57,7 +59,7 @@ var monthlyData;
 var annotations = []
 
 // Dispatch updates
-var dispatch = d3.dispatch("statechange");
+var dispatch = d3.dispatch("statechange", "scenechange");
 
 // misc functions
 function wrap(text, width) {
@@ -103,7 +105,7 @@ function drawAxes(svg, x, y) {
         .call(yAxes); // Create an axis component with d3.axisLeft
 }
 
-// updates the axes
+//update functions
 function updateAxes(svg, x, y) {
 
     var xAxes = d3.axisBottom(x).ticks(10);
@@ -131,6 +133,14 @@ function updateLineChart(chart, data, line) {
         .duration(1000)
         .attr('d', line);
 
+}
+
+// Fetchs the current scene and updates the title
+function updateVizTitle() {
+    var sceneTitles = ["Imports from China", "Annual Trade Deficit",
+        "Annual Balance By Commodity", "Monthly Balance By Commodity", "Monthly Balance By Commodity"]
+    d3.select("#viz-title")
+        .html(sceneTitles[currScene]);
 }
 
 /**
@@ -213,10 +223,11 @@ async function init() {
             commodity: d.Commodity,
             time: monthYear(d.Time),
             month: d.Time,
-            exports: parseInt(d['Total Exports Value ($US)']),
-            imports: parseInt(d['Customs Import Value (Gen) ($US)']),
-            balance: parseInt(d['Balance ($US)']),
-            deficit: -parseInt(d['Balance ($US)'])
+            year: d.Year,
+            exports: parseInt(d['Total Exports Value ($US)']) || 0,
+            imports: parseInt(d['Customs Import Value (Gen) ($US)']) || 0,
+            balance: parseInt(d['Balance ($US)']) || 0,
+            deficit: -parseInt(d['Balance ($US)']) || 0
         }
     });
 
@@ -258,9 +269,8 @@ async function init() {
 
     drawScene1(svg, annualData);
     drawScene2(svg, annualData);
-    drawScene3(svg, monthlyData);
+    drawScene3(svg, monthlyData); // Breakdown by month
     //drawScene4(svg, monthlyData);
-    setScene2();
     //drawChart1(svg, monthlyData);
     //drawChart1(svg, dataArray);
     //drawChart2(svg, dataArray);
@@ -301,7 +311,8 @@ async function drawScene1(svg, data) {
     // Draw Scene1 data
     var scene1 = svg.append("g")
         .attr("class", "scene1")
-        .attr("visibility", "visible");
+        .attr("visibility", "visible")
+        .style("opacity", 1);
 
     // Set Scales
     xScales.domain(xOverview);
@@ -335,14 +346,17 @@ async function drawScene1(svg, data) {
 }
 
 
-function drawScene2(svg, data){
+function drawScene2(svg, data) {
 
     var filtered = data.filter(function (d) { return d.commodity == "All Commodities"; })
     // scene 2 data
     var scene2 = svg.append("g")
         .attr("class", "scene2")
-        .attr("visibility", "hidden");
+        .attr("visibility", "hidden")
+        .style("opacity", 0);
 
+    xScales.domain(xOverview);
+    yScales.domain(yYear);
     drawAxes(scene2, xScales, yScales);
 
     scene2.append("path")
@@ -401,39 +415,59 @@ function drawScene2(svg, data){
 
 function drawScene3(svg, data) {
 
-    //drawAxes(svg, xMonth, yMonth);
 
     var scene3 = svg.append("g")
         .attr("class", "scene3")
-        .attr("visibility", "hidden");
-    
+        .attr("visibility", "hidden")
+        .style("opacity", 0);
+
     xScales.domain(xTrump);
     yScales.domain(yMonth);
 
-    var filtered = data.filter(function (d) { return d.commodity == "All Commodities"; })
+    var filtered = data.filter(function (d) {
+        return (d.commodity == "All Commodities") && (d.year > 2015);
+    })
 
     drawAxes(scene3, xScales, yScales)
 
     console.log(data);
-    scene3.selectAll("path")
-        .append("path")
+    scene3.append("path")
         .datum(filtered)
         .attr("d", importsLine)
         .attr("class", "line imports")
+        .attr("stroke", colorScheme["imports"])
         .on("mouseover", function (d) { console.log(d); })
-    
 
+    scene3.append("path")
+        .datum(filtered)
+        .attr("class", "line exports")
+        .attr("d", exportsLine)
+        .attr("stroke", colorScheme["exports"]);
+
+    dispatch.on("statechange.scene3", function (commodity) {
+
+        var s3exports = scene3.select(".line.exports");
+        var s3imports = scene3.select(".line.imports");
+        var filteredData = data.filter(function (d) {
+            return (d.commodity == commodity) && (d.year > 2015);
+        });
+        yScales.domain([0, d3.max(filteredData, function (d) { return Math.max(d.imports, d.exports); })]); // out of wack currently
+        updateAxes(scene3, xScales, yScales);
+        updateLineChart(s3exports, filteredData, exportsLine);
+        updateLineChart(s3imports, filteredData, importsLine);
+
+    })
     /*
-    scene3.selectAll("points")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("fill", "red")
-        .attr("stroke", "none")
-        .attr("cx", function (d) { return })
-        .attr("cy", function (d) { return yMonthly(d.imports) })
-        .attr("r", 5);
-    */
+scene3.selectAll("points")
+    .data(data)
+    .enter()
+    .append("circle")
+    .attr("fill", "red")
+    .attr("stroke", "none")
+    .attr("cx", function (d) { return })
+    .attr("cy", function (d) { return yMonthly(d.imports) })
+    .attr("r", 5);
+*/
 }
 
 
@@ -468,11 +502,15 @@ function createAnnotations() {
  * Hides scene2
  */
 function setScene1() {
+    // swap scales
+    xScales.domain(xOverview);
+    yScales.domain(yYear);
 
     d3.selectAll(".scene1")
         .transition()
         .duration(800)
-        .attr("visibility", "visible");
+        .attr("visibility", "visible")
+        .style("opacity", 1);
 
     // Hide
     d3.selectAll(".scene2").selectAll(".line.imports")
@@ -487,25 +525,32 @@ function setScene1() {
 
     d3.selectAll(".scene2")
         .transition()
-        .attr("visiblity", "invisible")
+        .attr("visibility", "hidden")
         .duration(800);
 
     d3.select("#selectButton")
-        .attr("visiblity", "invisible");
+        .attr("visibility", "hidden");
 
 }
 // transition from scene 1 to 2
 // hides scene1
 // hides scene3
 function setScene2() {
+
+    // swap scales
+    xScales.domain(xOverview);
+    yScales.domain(yYear);
+
     d3.selectAll(".scene1")
         .transition()
         .duration(400)
+        .style("opacity", 0)
         .attr("visibility", "hidden");
 
     d3.selectAll(".scene2")
         .transition()
         .attr("visibility", "visible")
+        .style("opacity", 1)
         .duration(800);
 
     d3.selectAll(".scene2").selectAll(".line.imports")
@@ -518,8 +563,13 @@ function setScene2() {
         .duration(800)
         .attr('d', exportsLine);
 
+    d3.selectAll(".scene3")
+        .transition()
+        .duration(800)
+        .attr("visibility", "hidden");
+
     d3.select("#selectButton")
-        .attr("visiblity", "visible");
+        .attr("visibility", "visible");
 
     currScene = 2;
 }
@@ -529,21 +579,28 @@ function setScene2() {
 // hides scene4
 
 function setScene3() {
+    // Set Scales
+    xScales.domain(xTrump);
+    yScales.domain(yMonth);
 
     d3.selectAll(".scene2")
         .transition()
-        .attr("visibility", "hidden")
-        .duration(800);
+        .duration(800)
+        .style("opacity", 0)
+        .attr("visibility", "hidden");
 
     d3.selectAll(".scene3")
         .transition()
-        .attr("visiblity", "visible")
         .duration(800)
+        .style("opacity", 1)
+        .attr("visibility", "visible");
+
 
     d3.selectAll(".scene4")
-    .transition()
-    .attr("visibility", "hidden")
-    .duration(800);
+        .transition()
+        .duration(800)
+        .style("opacity", 0)
+        .attr("visibility", "hidden");
 
     currScene = 3;
 }
