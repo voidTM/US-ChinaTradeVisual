@@ -210,7 +210,7 @@ async function init() {
     // and make data global
     // Setsup the visualizations
 
-    percentData = await d3.csv(".data/US-ChinaTradeRatio.csv", function (d) {
+    percentData = await d3.csv("./data/US-ChinaTradeRatio.csv", function (d) {
         return {
             commodity: d.Commodity,
             time: yearDate(d.Time),
