@@ -683,8 +683,8 @@ function drawTooltip() {
 
     tooltip.html("tooltip")
         .style('display', 'block')
-        .style('left', d3.event.pageX + 20)
-        .style('top', d3.event.pageY - 20)
+        .style('left', d3.event.pageX + 1 + "px")
+        .style('top', d3.event.pageY - 1 + "px")
         .selectAll()
         .data(dataset)
         .enter()

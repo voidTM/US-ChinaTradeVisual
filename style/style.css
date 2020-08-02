@@ -90,7 +90,7 @@
 /*
     Styling for inside the visual
 /**/
-.tooltip {
+#tooltip {
     position: absolute;
     text-align: justify;
     text-justify: auto;
