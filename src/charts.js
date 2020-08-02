@@ -667,7 +667,7 @@ function drawTooltip() {
 
     if (currScene == 2) {
         x = new Date(y, 0, 1);
-        data = annualData.filter(function (d) {
+        dataset = annualData.filter(function (d) {
             return (d.commodity == currFilter && xScales(x) == xScales(d.time));
         });
     }
@@ -681,14 +681,11 @@ function drawTooltip() {
         .datum(lineData)
         .attr("d", verticalLine);
 
-    tooltip.html("tooltip")
+    tooltip
         .style('display', 'block')
         .style('left', d3.event.pageX + 1 + "px")
         .style('top', d3.event.pageY - 1 + "px")
-        .selectAll()
         .data(dataset)
-        .enter()
-        .append('div')
         .html(d => d.strtime + "<br> imports: $" + d.imports + "<br> exports: $" + d.exports);
 }
 
@@ -708,13 +705,13 @@ function setScene1() {
     // Swap sidebar text
 
     d3.selectAll(".slide-info")
-        .attr("class", "slide-info inactive")
+        .attr("class", "slide-info inactive");
 
-    d3.selectAll("#slide1-1")
-        .attr("class", "slide-info")
+    d3.select("#slide1-1")
+        .attr("class", "slide-info");
 
-    d3.selectAll("#slide1-2")
-        .attr("class", "slide-info")
+    d3.select("#slide1-2")
+        .attr("class", "slide-info");
 
 
     d3.selectAll(".scene1")
