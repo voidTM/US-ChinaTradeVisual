@@ -603,6 +603,23 @@ function drawScene4(svg, data) {
         .style("font-size", 14)
         .call(wrap, 75);
 
+    annotationLine(annotations, new Date("9/24/2018"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("9/24/2018")))
+        .attr("y", -20)
+        .attr("dy", 0)
+        .text("US Imposed $200 bn in tariffs")
+        .style("font-size", 14)
+        .call(wrap, 75);
+
+    annotationLine(annotations, new Date("05/15/2019"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("05/15/2019")))
+        .attr("y", -20)
+        .attr("dy", 0)
+        .text("Huawei Banned")
+        .style("font-size", 14)
+        .call(wrap, 75);
 
     scene4.append("path")
         .datum(filtered)
