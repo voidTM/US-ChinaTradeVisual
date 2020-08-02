@@ -3,55 +3,102 @@
 
 <head>
     <script src='https://d3js.org/d3.v5.min.js'></script>
-    <script src='src/charts2.js'></script>
+    <script src='src/charts.js'></script>
     <link rel="stylesheet" href="style/chart-style.css" type="text/css">
     <link rel="stylesheet" href="style/style.css" type="text/css">
 </head>
 
 <body onload=init()>
     <div id="header">
-        <h1>US Trade Deficit Visualized</h1>
+        <h1>US Trade with China</h1>
     </div>
-    <div class="slidebar"></div>
+    <div id="tooltip" style="display: none;"></div>
+
     <div class="container">
-        <div class="slides">
-            <section class="slide-info" id="slide1">
+        <div id="sections">
+            <div>
+                <button class="buttonNav" id="backButton" onclick="changeScene(-1)" disabled=true>
+                    Back
+                </button>
+            </div>
+            </section>
+            <section class="slide-info" id="slide1-1">
                 <div class="title"> Annual US Trade Deficit with China</div>
                 <p>
-                    In the past two decades the US Trade Deficit with China
-                    has soared.
-                    By 2017 this deficit had ballooned to $375 billion and accounts for 
-                    47% of the US Trade Deficit 
+                    Since 2009 China has accounted for more than 40% of the US trade deficit.
                 </p>
 
             </section>
-            <section class="slide-info" id="slide2">
-                <div class="title"> An Increase in Imports</div>
+            <section class="slide-info inactive" id="slide2-1">
+                <div class="title"> Increase in Imports</div>
                 <p>
-                    This had largely been fueled by an exponential increase in imports.
-                    While on the other hand imports have only incrased by X%
+                    Imports from China have increased by about $400 billion
+                    While on the other hand exports to China have only increased by about $100 billion
+                </p>
+                <br>
+                <div class="title"> Largest Trade Deficit </div>
+                <p>
+                    The trade deficit with China peaked in 2018 at $419 billion
                 </p>
             </section>
-            <section class="slide-info" id="slide3">
-                <div class="title"> Major Imports by products </div>
+            <section class="slide-info inactive" id="slide3-1">
+                <div class="title"> Holiday Season Imports </div>
                 <p>
-                    In particular there has been a large demand for electronic goods such as smartphones.
+                    US imports the most goods from China in the fourth quarter,
+                    particularly around October and November.
+                </p>
+                <br>
+                <div class="title"> March Vacation </div>
+                <p>
+                    March sees the least imports due to factories shutting down for Chinese New Years in China.
                 </p>
             </section>
-            <section class="slide-info" id="slide4">
-                <div class="title"> Effects of the Trade War </div>
+            <section class="slide-info inactive" id="slide4-1">
+                <div class="title"> A Trade War Was China </div>
                 <p>
-                    Since the start of the trade war.
+                    Starting in 2019 there has been a noticeable decrease in imports from China
+                    Though there has been a similar decrease
                 </p>
             </section>
         </div>
-        <div id="viz-title">Title Goes Here</div>
-        <select id="selectButton"></select>
+
         <div class="visualization">
-            <div class="tooltip"></div>
-            <svg width=1000 height=500></svg>
+            <h2 id="viz-title">US Annual Trade Deficit</h4>
+                <select id="selectButton"></select>
+                <svg width=1000 height=500></svg>
         </div>
-        <div class="legend">
+
+        <div class="sidebar" id="rightbar">
+            <div>
+                <button class="buttonNav" id="nextButton" onclick="changeScene(1)">
+                    Next
+                </button>
+            </div>
+            <section class="slide-info inactive" id="slide1-2">
+                <div class="title"> Major Imports from China </div>
+                <p>
+                    At the height of the recession in 2009 there is a noticeable spike in 
+                    trade
+                </p>
+            </section>
+            <section class="slide-info inactive" id="slide2-2">
+                <div class="title"> Major Imports from China </div>
+                <p>
+                    Computer and Electronics <br>
+                    Electronic Appliances & Equipment <br>
+                    Machinery <br>
+                    Apparel & Accessories <br>
+                </p>
+                <div class="title"> Major Exports to China </div>
+                <p>
+                    Agricultural Products<br>
+                    Transportation Equipment<br>
+                    Waste & Scrap
+                    Forestry Products<br>
+                    Oil & Gas<br>
+                    Mineral & Ores<br>
+                </p>
+            </section>
 
         </div>
     </div>

@@ -292,7 +292,7 @@ async function init() {
         .attr('height', height)
         .attr('opacity', 0);
 
-    
+
     svg.on('mousemove', drawTooltip)
         .on('mouseout', removeTooltip);
 
@@ -689,7 +689,7 @@ function drawTooltip() {
         .data(dataset)
         .enter()
         .append('div')
-        .html(d => d.strtime +"<br> imports: $" + d.imports + "<br> exports: $" + d.exports);
+        .html(d => d.strtime + "<br> imports: $" + d.imports + "<br> exports: $" + d.exports);
 }
 
 
@@ -710,8 +710,12 @@ function setScene1() {
     d3.selectAll(".slide-info")
         .attr("class", "slide-info inactive")
 
-    d3.selectAll("#slide1")
+    d3.selectAll("#slide1-1")
         .attr("class", "slide-info")
+
+    d3.selectAll("#slide1-2")
+        .attr("class", "slide-info")
+
 
     d3.selectAll(".scene1")
         .transition()
@@ -719,18 +723,6 @@ function setScene1() {
         .style("visibility", "visible")
         .style("opacity", 1);
 
-    // fancy Line transitions
-    /*
-    d3.selectAll(".scene2").selectAll(".line.imports")
-        .transition()
-        .duration(800)
-        .attr('d', balanceLine);
-
-    d3.selectAll(".scene2").selectAll(".line.exports")
-        .transition()
-        .duration(800)
-        .attr('d', balanceLine);
-    */
     d3.selectAll(".scene2")
         .transition()
         .duration(800)
@@ -757,10 +749,13 @@ function setScene2() {
     yScales.domain(yS2); // number too large for individual products
 
     d3.selectAll(".slide-info")
-        .attr("class", "slide-info inactive")
+        .attr("class", "slide-info inactive");
 
-    d3.selectAll("#slide2")
-        .attr("class", "slide-info")
+    d3.selectAll("#slide2-1")
+        .attr("class", "slide-info");
+
+    d3.selectAll("#slide2-2")
+        .attr("class", "slide-info");
 
     d3.selectAll(".scene1")
         .transition()
@@ -815,7 +810,10 @@ function setScene3() {
     d3.selectAll(".slide-info")
         .attr("class", "slide-info inactive")
 
-    d3.selectAll("#slide3")
+    d3.selectAll("#slide3-1")
+        .attr("class", "slide-info")
+
+    d3.selectAll("#slide3-2")
         .attr("class", "slide-info")
 
     // hide previous scenes
@@ -865,7 +863,7 @@ function setScene4() {
     d3.selectAll(".slide-info")
         .attr("class", "slide-info inactive")
 
-    d3.selectAll("#slide4")
+    d3.selectAll("#slide4-1")
         .attr("class", "slide-info")
 
     d3.selectAll(".scene3")
