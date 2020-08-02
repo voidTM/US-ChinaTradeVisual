@@ -210,7 +210,7 @@ async function init() {
     // and make data global
     // Setsup the visualizations
 
-    percentData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/US-ChinaTradeRatio.csv", function (d) {
+    percentData = await d3.csv(".data/US-ChinaTradeRatio.csv", function (d) {
         return {
             commodity: d.Commodity,
             time: yearDate(d.Time),
@@ -222,7 +222,7 @@ async function init() {
 
 
     // used in Scene 2
-    annualData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/US-ChinaTrade-Annual.csv", function (d) {
+    annualData = await d3.csv("./data/US-ChinaTrade-Annual.csv", function (d) {
         return {
             commodity: d.Commodity,
             time: yearDate(d.Time),
@@ -237,7 +237,7 @@ async function init() {
     yS1 = [0, d3.max(annualData, function (d) { return d.imports; })];
     yS2 = [0, d3.max(annualData, function (d) { return d.imports; })];
     // used in scene 3 and 4
-    monthlyData = await d3.csv("http://127.0.0.1:5500/USTradeWar/data/US-ChinaTradeV3.csv", function (d) {
+    monthlyData = await d3.csv("./data/US-ChinaTradeV3.csv", function (d) {
         return {
             commodity: d.Commodity,
             time: monthYear(d.Time),
@@ -251,7 +251,6 @@ async function init() {
     });
 
     yMonth = [0, d3.max(monthlyData, function (d) { return d.imports; })]
-    //y.domain(yMonth)
 
     var d2 = groupBy(monthlyData, "commodity");
     var dataArray = Object.values(d2);
@@ -464,13 +463,13 @@ function drawScene2(svg, data) {
     scene2.append("path")
         .datum(filtered)
         .attr("class", "line imports")
-        .attr("d", balanceLine)
+        .attr("d", importsLine)
         .attr("stroke", colorScheme["imports"]);
 
     scene2.append("path")
         .datum(filtered)
         .attr("class", "line exports")
-        .attr("d", balanceLine)
+        .attr("d", exportsLine)
         .attr("stroke", colorScheme["exports"]);
 
     dispatch.on("statechange.scene2", function (commodity) {
