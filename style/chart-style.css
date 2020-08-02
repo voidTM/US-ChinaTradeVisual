@@ -6,22 +6,16 @@
     stroke-width: 1.5;
 }
 
-.imports .line{
-  stroke: rgb(223, 63, 63)
+.annotations .line{
+  stroke-dasharray: 10;
+  stroke-width: 1.5;
+  stroke: green;
 }
 
-.imports.bar{
-  stroke: black;
-  fill: rgb(223, 63, 63)
+.area{
+  stroke-width: 0;
 }
 
-.balance .line{
-  stroke: blueviolet
-}
-
-.exports .line{
-  stroke: green
-}
 
 .x-axis.bar{
   font-size: small;
@@ -33,7 +27,8 @@
 .y-axis .tick{
   stroke-opacity: 0.3;
   stroke-width: 1;
-  color: grey;
+  stroke: slategray;
+
 }
 
 .line.neutral{

@@ -1,6 +1,6 @@
 
 
-var margin = { top: 10, right: 50, bottom: 50, left: 100 }
+var margin = { top: 50, right: 50, bottom: 50, left: 100 }
     , width = 1000 - margin.right - margin.left
     , height = 500 - margin.top - margin.bottom;
 
@@ -42,9 +42,9 @@ var exportsLine = d3.line()
     .x(function (d) { return xScales(d.time); })
     .y(function (d) { return yScales(d.exports); })
 
-var hideLine = d3.line()
-    .x(function (d) { return xScales(d.time); })
-    .y(function (d) { return 0; })
+var verticalLine = d3.line()
+    .x(function (d) { return xScales(d[0]); })
+    .y(function (d) { return d[1]; })
 
 
 // Date time format parsers
@@ -56,13 +56,13 @@ var annualData;
 var monthlyData;
 var percentData;
 
-// Annotations
-var annotations = []
 
 // Dispatch updates
 var dispatch = d3.dispatch("statechange", "scenechange");
 
 // misc functions
+
+// wraps text in SVG as needed
 function wrap(text, width) {
     text.each(function () {
         var text = d3.select(this),
@@ -72,8 +72,9 @@ function wrap(text, width) {
             lineNumber = 0,
             lineHeight = 1.1, // ems
             y = text.attr("y"),
-            dy = parseFloat(text.attr("dy")),
-            tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+            x = text.attr("x")
+        dy = parseFloat(text.attr("dy")),
+            tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
         while (word = words.pop()) {
             line.push(word);
             tspan.text(line.join(" "));
@@ -81,11 +82,26 @@ function wrap(text, width) {
                 line.pop();
                 tspan.text(line.join(" "));
                 line = [word];
-                tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
             }
         }
     });
 }
+
+/**
+ * Creates a dotted line for annotations
+ */
+function annotationLine(svg, x) {
+
+    var data = [
+        [x, 0],
+        [x, height]]
+    svg.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("d", verticalLine);
+}
+
 
 function drawLineAxes(svg, x, y) {
 
@@ -138,8 +154,8 @@ function updateLineChart(chart, data, line) {
 
 // Fetchs the current scene and updates the title
 function updateVizTitle(sceneNumber) {
-    var sceneTitles = ["Imports from China",
-        "Annual Trade Deficit With China",
+    var sceneTitles = ["",
+        "US Annual Trade Deficit",
         "Annual Imports and Exports by Commodity",
         "Monthly Imports and Exports by Commodity",
         "Imports and Exports Under Trump Presidency"]
@@ -185,26 +201,6 @@ function aggregateData(data, key) {
 }
 
 
-function annotateArea(svg, note) {
-    t = svg.append("g")
-        .attr("class", "annotation")
-        .attr("transform", "translate(" + note.x + "," + note.y + ")");
-
-    t.append("rect")
-        .attr("class", "rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", note.width) // 3 years
-        .attr("height", height);
-
-    t.append("text")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("dy", 1)
-        .text(note.label)
-        .call(wrap, note.width)
-}
-
 async function init() {
     // move querying data to here?
     // and make data global
@@ -216,8 +212,7 @@ async function init() {
             time: yearDate(d.Time),
             exports: parseFloat(d['Total Exports Value (%)']),
             imports: parseFloat(d['Customs Import Value (Gen) (%)']),
-            balance: parseFloat(d['Balance (%)']),
-            deficit: -parseFloat(d['Balance (%)'])
+            deficit: parseFloat(d['Balance (%)'])
         }
     });
 
@@ -290,7 +285,6 @@ async function init() {
     // draw scene 1
 
     drawScene1(svg, percentData);
-    //drawScene1(svg, annualData);
     drawScene2(svg, annualData);
     drawScene3(svg, monthlyData); // Breakdown by month
     drawScene4(svg, monthlyData);
@@ -319,6 +313,28 @@ function drawScene1(svg, data) {
         .ticks(10)
         .tickSize(-width);
 
+    var areaBelow = d3.area()
+        .x(function (d) { return xScales(d.time); })
+        .y0(height)
+        .y1(function (d) { return yScales(d.deficit); });
+
+    var areaAbove = d3.area()
+        .x(function (d) { return xScales(d.time); })
+        .y0(function (d) { return yScales(d.deficit); })
+        .y1(0);
+
+
+    scene1.append("path")
+        .datum(data)
+        .attr("class", "area")
+        .attr("d", areaAbove)
+        .style("fill", "lightsteelblue");
+
+    scene1.append("path")
+        .datum(data)
+        .attr("class", "area")
+        .attr("d", areaBelow)
+        .style("fill", "lightcoral");
 
     scene1.append("g")
         .attr("class", "x-axis")
@@ -334,53 +350,48 @@ function drawScene1(svg, data) {
         .datum(data)
         .attr("class", "line")
         .attr("d", balanceLine)
-        .attr("stroke", colorScheme["imports"]);
+        .style("stroke", colorScheme["imports"])
+        .style("stroke-width", 2);
 
-}
+    //add annotations for Scene1
 
-function drawScene0(svg, data) {
-    //Draw line imports
-
-    /**
-     * Tooltip functions
-     */
-    //var overview = data.filter(function (d) { return d.commodity == "All Commodities"; });
-    var tooltip = d3.select(".tooltip")
-        .style("opacity", 0)
-
-    var filtered = data.filter(function (d) { return d.commodity == "All Commodities"; })
-    var mouseover = function (d, i) {
-        tooltip
-            .style("opacity", 1)
-            .html(d.month + " Deficit: <br>$ " + (d.deficit / 1000000000).toFixed(2) + " bn")
-            //Tooltip is center bottom of data point
-            .style("left", ((d3.event.pageX - 50) + "px"))
-            .style("top", ((d3.event.pageY + 10) + "px"));
-
-    };
-
-    var mouseleave = function (d, i) {
-        tooltip
-            .style("opacity", 0);
-    };
-
-    // Draw Scene1 data
-    var scene1 = svg.append("g")
-        .attr("class", "scene1")
-        .style("visibility", "visible")
-        .style("opacity", 1);
-
-    // Set Scales
-    xScales.domain(xOverview);
-    yScales.domain(yS1);
-    drawLineAxes(scene1, xScales, yScales);
+    var annotations = scene1
+        .append("g")
+        .attr("class", "annotations");
 
 
-    scene1.append("path")
-        .datum(filtered)
-        .attr("class", "line")
-        .attr("d", balanceLine)
-        .attr("stroke", colorScheme["deficit"]);
+    annotations.append("text")
+        .attr("x", 700)
+        .attr("y", height - 50)
+        .attr("dy", 1)
+        .text("China")
+        .style("font-size", 40);
+
+    annotations.append("text")
+        .attr("x", 10)
+        .attr("y", 75)
+        .attr("dy", 1)
+        .text("Other Countries")
+        .style("font-size", 40);
+
+    annotationLine(annotations, new Date("12/01/2007"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("12/01/2007")))
+        .attr("y", -35)
+        .attr("dy", 0)
+        .text("Recession Start")
+        .style("font-size", 14)
+        .call(wrap, 50);
+
+    annotationLine(annotations, new Date("06/01/2009"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("06/01/2009")))
+        .attr("y", -35)
+        .attr("dy", 0)
+        .text("Recession End")
+        .style("font-size", 14)
+        .call(wrap, 50);
+
 }
 
 
@@ -397,6 +408,39 @@ function drawScene2(svg, data) {
     yScales.domain(yS2);
     drawLineAxes(scene2, xScales, yScales);
 
+    // Add annotations
+    var annotations = scene2
+        .append("g")
+        .attr("class", "annotations");
+
+    annotationLine(annotations, new Date("12/01/2007"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("12/01/2007")))
+        .attr("y", -35)
+        .attr("dy", 0)
+        .text("Recession Start")
+        .style("font-size", 14)
+        .call(wrap, 50);
+
+    annotationLine(annotations, new Date("06/01/2009"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("06/01/2009")))
+        .attr("y", -35)
+        .attr("dy", 0)
+        .text("Recession End")
+        .style("font-size", 14)
+        .call(wrap, 50);
+
+    annotationLine(annotations, new Date("01/01/2018"));
+    annotations.append("text")
+        .attr("x", 5 + xScales(new Date("01/01/2018")))
+        .attr("y", -40)
+        .attr("dy", 0)
+        .text("Trade Deficit with China Reaches $419 billion")
+        .style("font-size", 14)
+        .call(wrap, 100);
+
+    // draw lines
     scene2.append("path")
         .datum(filtered)
         .attr("class", "line imports")
@@ -423,6 +467,7 @@ function drawScene2(svg, data) {
         updateLineChart(s2imports, filteredData, importsLine);
 
     })
+
 }
 
 
@@ -471,6 +516,8 @@ function drawScene3(svg, data) {
         updateLineChart(s3imports, filteredData, importsLine);
 
     })
+
+
 }
 
 
@@ -521,31 +568,6 @@ function drawScene4(svg, data) {
 
 }
 
-function createAnnotations() {
-    var notes = svg.append("g")
-        .attr("class", "annotation");
-
-    annotations.push({
-        label: "Financial Recession",
-        y: 0,
-        x: xOverview(new Date("12/01/2007")), //position the x based on an x scale
-        width: xOverview(new Date("1/01/2010")) - xOverview(new Date("12/01/2007")),
-        validScenes: [1, 2, 3]
-    })
-
-    annotations.push({
-        label: "US Trade War with China",
-        y: 0,
-        x: xOverview(new Date("01/01/2018")), //position the x based on an x scale
-        width: xOverview(new Date("1/01/2005")),
-        validScenes: [2, 3]
-    })
-
-    annotateArea(svg, annotations[0]);
-    //annotateArea(svg, annotations[1]);
-}
-
-
 
 // Transitions should hide the previous scene and the scene after
 /**
@@ -556,6 +578,14 @@ function setScene1() {
     // swap scales
     xScales.domain(xOverview);
     yScales.domain(yS1);
+
+    // Swap sidebar text
+
+    d3.selectAll(".slide-info")
+        .attr("class", "slide-info inactive")
+
+    d3.selectAll("#slide1")
+        .attr("class", "slide-info")
 
     d3.selectAll(".scene1")
         .transition()
@@ -597,6 +627,12 @@ function setScene2() {
     // swap scales
     xScales.domain(xOverview);
     yScales.domain(yS2); // number too large for individual products
+
+    d3.selectAll(".slide-info")
+        .attr("class", "slide-info inactive")
+
+    d3.selectAll("#slide2")
+        .attr("class", "slide-info")
 
     d3.selectAll(".scene1")
         .transition()
@@ -648,6 +684,12 @@ function setScene3() {
     xScales.domain(xOverview);
     yScales.domain(yMonth);
 
+    d3.selectAll(".slide-info")
+        .attr("class", "slide-info inactive")
+
+    d3.selectAll("#slide3")
+        .attr("class", "slide-info")
+
     // hide previous scenes
     d3.selectAll(".scene2")
         .transition()
@@ -692,6 +734,12 @@ function setScene4() {
     xScales.domain(xTrump);
     yScales.domain(yMonth);
 
+    d3.selectAll(".slide-info")
+        .attr("class", "slide-info inactive")
+
+    d3.selectAll("#slide4")
+        .attr("class", "slide-info")
+
     d3.selectAll(".scene3")
         .transition()
         .duration(800)
@@ -710,7 +758,6 @@ function setScene4() {
         .style("visibility", "visible");
 
 }
-
 
 //Get the next scenes number then call the necessary functions to set that scene
 function changeScene(move) {

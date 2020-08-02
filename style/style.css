@@ -72,6 +72,9 @@
     margin-bottom: 100px;
 }
 
+.slide-info.inactive{
+    display: none;
+}
 
 .slidebar{
     position: fixed;
