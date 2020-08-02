@@ -12,13 +12,18 @@
     <div id="header">
         <h1>US Trade with China</h1>
     </div>
-    <div class="slidebar"></div>
     <div class="container">
-        <div class="slides">
+        <div id="sections">
+            <div>
+                <button class="buttonNav" id="backButton" onclick="changeScene(-1)" disabled=true>
+                    Back
+                </button>
+            </div>
+
             <section class="slide-info" id="slide0">
                 <div class="title"> Major Trading Partners</div>
                 <p>
-                    Since Joining the WTO in 2002 
+                    Since Joining the WTO in 2002
                 </p>
 
             </section>
@@ -52,16 +57,24 @@
             <section class="slide-info" id="slide5">
                 <div class="title"> Tariffs </div>
                 <p>
-                    Starting in 2019 there has been a noticeable decrease in imports from China 
+                    Starting in 2019 there has been a noticeable decrease in imports from China
                 </p>
             </section>
         </div>
 
         <div class="visualization">
-            <h4 id="viz-title">US Annual Trade Deficit With China</h4>
-            <select id="selectButton"></select>
-            <div class="tooltip" style="opacity:0"></div>
-            <svg width=1000 height=500></svg>
+            <h2 id="viz-title">US Annual Trade Deficit With China</h4>
+                <select id="selectButton"></select>
+                <div class="tooltip" style="opacity:0"></div>
+                <svg width=1000 height=500></svg>
+        </div>
+
+        <div class="sidebar" id="rightbar">
+            <div>
+                <button class="buttonNav" id="nextButton" onclick="changeScene(1)">
+                    Next
+                </button>
+            </div>
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 
-/* styling for the Charts */
+/* styling for the visualization */
 
 .line {
     fill: none;
@@ -40,10 +40,6 @@
   stroke-opacity: 0.2;
 }
 
-
-.slide{
-  display: grid
-}
 
 
 .overlay {

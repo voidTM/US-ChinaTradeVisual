@@ -27,7 +27,7 @@ var yYear;
 var yMonth;
 var yTrump;
 var xTrump = [new Date("01/01/2016"), new Date("01/01/2020")];
-var yPercent = [0,1];
+var yPercent = [0, 1];
 
 // Scene 1 and 2 lines
 var balanceLine = d3.line()
@@ -136,11 +136,11 @@ function updateLineChart(chart, data, line) {
 }
 
 // Fetchs the current scene and updates the title
-function updateVizTitle() {
+function updateVizTitle(sceneNumber) {
     var sceneTitles = ["Imports from China", "Annual Trade Deficit",
         "Annual Balance By Commodity", "Monthly Balance By Commodity", "Monthly Balance By Commodity"]
     d3.select("#viz-title")
-        .html(sceneTitles[currScene]);
+        .html(sceneTitles[sceneNumber]);
 }
 
 /**
@@ -241,7 +241,7 @@ async function init() {
     // precursor selects
     // Adds event for when state changes
     d3.select("#selectButton")
-        .attr("visibility", "hidden")
+        .style("visibility", "hidden")
         .selectAll('commodities')
         .data(commoditiesList)
         .enter()
@@ -255,6 +255,8 @@ async function init() {
             dispatch.call("statechange", this, this.value);
         });
 
+
+    // Test function
     dispatch.on("statechange.line", function () {
         console.log(this.value);
     })
@@ -271,9 +273,6 @@ async function init() {
     drawScene2(svg, annualData);
     drawScene3(svg, monthlyData); // Breakdown by month
     //drawScene4(svg, monthlyData);
-    //drawChart1(svg, monthlyData);
-    //drawChart1(svg, dataArray);
-    //drawChart2(svg, dataArray);
 }
 
 
@@ -282,7 +281,7 @@ async function init() {
  * Scenes 1 and 2 take place here
  */
 
-async function drawScene1(svg, data) {
+function drawScene1(svg, data) {
     //Draw line imports
 
     /**
@@ -311,7 +310,7 @@ async function drawScene1(svg, data) {
     // Draw Scene1 data
     var scene1 = svg.append("g")
         .attr("class", "scene1")
-        .attr("visibility", "visible")
+        .style("visibility", "visible")
         .style("opacity", 1);
 
     // Set Scales
@@ -325,24 +324,6 @@ async function drawScene1(svg, data) {
         .attr("class", "line")
         .attr("d", balanceLine)
         .attr("stroke", colorScheme["deficit"]);
-
-
-    /*
-    scene1.selectAll("deficit-points")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("class", "datapoint")
-        .attr("fill", colorScheme["deficit"])
-        .attr("cx", function (d) { return x1(d.time); })
-        .attr("cy", function (d) { return yAnnual(d.deficit); })
-        .attr("r", 5)
-        .on("mouseover", mouseover)
-    */
-
-    // Filter in post?
-    // A selection filter
-    // d3 filter only operates upon a selection of existing variables.
 }
 
 
@@ -352,7 +333,7 @@ function drawScene2(svg, data) {
     // scene 2 data
     var scene2 = svg.append("g")
         .attr("class", "scene2")
-        .attr("visibility", "hidden")
+        .style("visibility", "hidden")
         .style("opacity", 0);
 
     xScales.domain(xOverview);
@@ -373,7 +354,6 @@ function drawScene2(svg, data) {
 
     dispatch.on("statechange.scene2", function (commodity) {
         //checks for right scene
-        //if (currScene == 2)
 
         var s2exports = scene2.select(".line.exports");
         var s2imports = scene2.select(".line.imports");
@@ -384,48 +364,20 @@ function drawScene2(svg, data) {
         updateLineChart(s2imports, filteredData, importsLine);
 
     })
-
-    /*
-    scene2.selectAll("import-points")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("fill", colorScheme["imports"])
-        .attr("stroke", "none")
-        .attr("cx", function (d) { return xAnnual(yearDate(d.time)) })
-        .attr("cy", function (d) { return yAnnual(d.imports) })
-        .attr("r", 5)
-
-    scene2.selectAll("export-points")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("fill", colorScheme["exports"])
-        .attr("stroke", "none")
-        .attr("cx", function (d) { return xAnnual(yearDate(d.time)) })
-        .attr("cy", function (d) { return yAnnual(d.exports) })
-        .attr("r", 5)
-
-
-    svg.on("mouseleave", mouseleave);
-    */
 }
 
 
-
 function drawScene3(svg, data) {
-
-
     var scene3 = svg.append("g")
         .attr("class", "scene3")
-        .attr("visibility", "hidden")
+        .style("visibility", "hidden")
         .style("opacity", 0);
 
-    xScales.domain(xTrump);
+    xScales.domain(xOverview);
     yScales.domain(yMonth);
 
     var filtered = data.filter(function (d) {
-        return (d.commodity == "All Commodities") && (d.year > 2015);
+        return (d.commodity == "All Commodities");
     })
 
     drawAxes(scene3, xScales, yScales)
@@ -449,7 +401,7 @@ function drawScene3(svg, data) {
         var s3exports = scene3.select(".line.exports");
         var s3imports = scene3.select(".line.imports");
         var filteredData = data.filter(function (d) {
-            return (d.commodity == commodity) && (d.year > 2015);
+            return (d.commodity == commodity);
         });
         yScales.domain([0, d3.max(filteredData, function (d) { return Math.max(d.imports, d.exports); })]); // out of wack currently
         updateAxes(scene3, xScales, yScales);
@@ -457,19 +409,53 @@ function drawScene3(svg, data) {
         updateLineChart(s3imports, filteredData, importsLine);
 
     })
-    /*
-scene3.selectAll("points")
-    .data(data)
-    .enter()
-    .append("circle")
-    .attr("fill", "red")
-    .attr("stroke", "none")
-    .attr("cx", function (d) { return })
-    .attr("cy", function (d) { return yMonthly(d.imports) })
-    .attr("r", 5);
-*/
 }
 
+
+function drawScene4(svg, data) {
+    var scene4 = svg.append("g")
+        .attr("class", "scene4")
+        .style("visibility", "hidden")
+        .style("opacity", 0);
+
+    xScales.domain(xTrump);
+    yScales.domain(yMonth);
+    // By Default draw all commodities
+    var filtered = data.filter(function (d) {
+        return (d.commodity == "All Commodities");
+    })
+
+    drawAxes(scene4, xScales, yScales)
+
+    console.log(data);
+    scene4.append("path")
+        .datum(filtered)
+        .attr("d", importsLine)
+        .attr("class", "line imports")
+        .attr("stroke", colorScheme["imports"])
+        .on("mouseover", function (d) { console.log(d); })
+
+    scene4.append("path")
+        .datum(filtered)
+        .attr("class", "line exports")
+        .attr("d", exportsLine)
+        .attr("stroke", colorScheme["exports"]);
+
+    dispatch.on("statechange.scene4", function (commodity) {
+
+        var s4exports = scene4.select(".line.exports");
+        var s4imports = scene4.select(".line.imports");
+        var filteredData = data.filter(function (d) {
+            return (d.commodity == commodity) && (d.year > 2015);
+        });
+        yScales.domain([0, d3.max(filteredData, function (d) { return Math.max(d.imports, d.exports); })]); // out of wack currently
+        updateAxes(scene4, xScales, yScales);
+        updateLineChart(s4exports, filteredData, exportsLine);
+        updateLineChart(s4imports, filteredData, importsLine);
+
+    })
+
+}
 
 function createAnnotations() {
     var notes = svg.append("g")
@@ -496,6 +482,7 @@ function createAnnotations() {
 }
 
 
+
 // Transitions should hide the previous scene and the scene after
 /**
  * Shows scene1
@@ -508,8 +495,8 @@ function setScene1() {
 
     d3.selectAll(".scene1")
         .transition()
-        .duration(800)
-        .attr("visibility", "visible")
+        .duration(400)
+        .style("visibility", "visible")
         .style("opacity", 1);
 
     // Hide
@@ -525,11 +512,17 @@ function setScene1() {
 
     d3.selectAll(".scene2")
         .transition()
-        .attr("visibility", "hidden")
-        .duration(800);
+        .duration(800)
+        .style("opacity", 0) //fade out animation
+        .transition()
+        .style("visibility", "hidden");
 
     d3.select("#selectButton")
-        .attr("visibility", "hidden");
+        .style("visibility", "hidden");
+
+    d3.select("#backButton")
+        .attr("disabled", true);
+
 
 }
 // transition from scene 1 to 2
@@ -543,13 +536,13 @@ function setScene2() {
 
     d3.selectAll(".scene1")
         .transition()
-        .duration(400)
+        .duration(800)
         .style("opacity", 0)
-        .attr("visibility", "hidden");
+        .style("visibility", "hidden");
 
     d3.selectAll(".scene2")
         .transition()
-        .attr("visibility", "visible")
+        .style("visibility", "visible")
         .style("opacity", 1)
         .duration(800);
 
@@ -566,42 +559,102 @@ function setScene2() {
     d3.selectAll(".scene3")
         .transition()
         .duration(800)
-        .attr("visibility", "hidden");
+        .style("visibility", "hidden");
 
     d3.select("#selectButton")
-        .attr("visibility", "visible");
+        .style("visibility", "visible");
 
-    currScene = 2;
 }
 
-// transition from scene 1 to 2
-// hides scene2
-// hides scene4
-
+/**
+ * Show: Scene 3
+ * Hides Scene 2, Scene 4
+ * Scene 3 should be from 2002-2020 showing monthly data
+ */
 function setScene3() {
     // Set Scales
-    xScales.domain(xTrump);
+    xScales.domain(xOverview);
     yScales.domain(yMonth);
 
     d3.selectAll(".scene2")
         .transition()
         .duration(800)
         .style("opacity", 0)
-        .attr("visibility", "hidden");
+        .transition()
+        .style("visibility", "hidden");
 
     d3.selectAll(".scene3")
         .transition()
         .duration(800)
         .style("opacity", 1)
-        .attr("visibility", "visible");
+        .transition()
+        .style("visibility", "visible");
 
 
     d3.selectAll(".scene4")
         .transition()
         .duration(800)
-        .style("opacity", 0)
-        .attr("visibility", "hidden");
+        .style("opacity", 0)        
+        .transition()
+        .style("visibility", "hidden");
 
-    currScene = 3;
 }
 
+/**
+ * Show: Scene 4
+ * Hides Scene 3
+ * Scene 4 should be from 2016-2020 showing monthly data
+ */
+function setScene4() {
+    xScales.domain(xTrump);
+    yScales.domain(yMonth);
+
+    d3.selectAll(".scene3")
+        .transition()
+        .duration(800)
+        .style("opacity", 0)
+        .transition()
+        .style("visibility", "hidden");
+
+    d3.selectAll(".scene4")
+        .transition()
+        .duration(800)
+        .style("opacity", 1)
+        .transition()
+        .style("visibility", "visible");
+
+}
+
+
+//Get the next scenes number then call the necessary functions to set that scene
+function changeScene(move) {
+    var s = {
+        1: setScene1,
+        2: setScene2,
+        3: setScene3,
+        4: setScene4,
+    }
+
+    // update current scene and make sure theres no out of bounds
+    currScene = (currScene + move + 5) % 5;
+
+    updateVizTitle(currScene);
+
+    //update buttons
+
+    if (currScene == 1) {
+        d3.select("#backButton")
+            .attr("disabled", true);
+    } else if (currScene == 4) {
+        d3.select("#nextButton")
+            .attr("disabled", true);
+    } else {
+        d3.select("#backButton")
+            .attr("disabled", null);
+        d3.select("#nextButton")
+            .attr("disabled", null);
+
+    }
+
+    s[currScene]();
+}
