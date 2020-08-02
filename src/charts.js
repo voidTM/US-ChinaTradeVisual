@@ -13,7 +13,7 @@ const colorScheme = {
 
 var currScene = 1;
 var prevScene = -1;
-
+var currFilter; // Current option filter
 // Scales
 var xScales = d3.scaleTime()
     .range([0, width]);
@@ -252,6 +252,7 @@ async function init() {
     // add a dispatch notifiying of change
     d3.select("#selectButton")
         .on("change", function () {
+            currFilter = this.value;
             dispatch.call("statechange", this, this.value);
         });
 
@@ -272,7 +273,7 @@ async function init() {
     drawScene1(svg, annualData);
     drawScene2(svg, annualData);
     drawScene3(svg, monthlyData); // Breakdown by month
-    //drawScene4(svg, monthlyData);
+    drawScene4(svg, monthlyData);
 }
 
 
@@ -358,6 +359,7 @@ function drawScene2(svg, data) {
         var s2exports = scene2.select(".line.exports");
         var s2imports = scene2.select(".line.imports");
         var filteredData = annualData.filter(function (d) { return d.commodity == commodity });
+        xScales.domain(xOverview);
         yScales.domain([0, d3.max(filteredData, function (d) { return Math.max(d.imports, d.exports); })]); // out of wack currently
         updateAxes(scene2, xScales, yScales);
         updateLineChart(s2exports, filteredData, exportsLine);
@@ -400,9 +402,11 @@ function drawScene3(svg, data) {
 
         var s3exports = scene3.select(".line.exports");
         var s3imports = scene3.select(".line.imports");
-        var filteredData = data.filter(function (d) {
+        var filteredData = monthlyData.filter(function (d) {
             return (d.commodity == commodity);
         });
+
+        xScales.domain(xOverview);
         yScales.domain([0, d3.max(filteredData, function (d) { return Math.max(d.imports, d.exports); })]); // out of wack currently
         updateAxes(scene3, xScales, yScales);
         updateLineChart(s3exports, filteredData, exportsLine);
@@ -422,7 +426,7 @@ function drawScene4(svg, data) {
     yScales.domain(yMonth);
     // By Default draw all commodities
     var filtered = data.filter(function (d) {
-        return (d.commodity == "All Commodities");
+        return (d.commodity == "All Commodities") && (d.year > 2015);
     })
 
     drawAxes(scene4, xScales, yScales)
@@ -445,15 +449,17 @@ function drawScene4(svg, data) {
 
         var s4exports = scene4.select(".line.exports");
         var s4imports = scene4.select(".line.imports");
-        var filteredData = data.filter(function (d) {
+        var filteredData = monthlyData.filter(function (d) {
             return (d.commodity == commodity) && (d.year > 2015);
         });
+        xScales.domain(xTrump);
         yScales.domain([0, d3.max(filteredData, function (d) { return Math.max(d.imports, d.exports); })]); // out of wack currently
         updateAxes(scene4, xScales, yScales);
         updateLineChart(s4exports, filteredData, exportsLine);
         updateLineChart(s4imports, filteredData, importsLine);
 
     })
+
 
 }
 
@@ -464,16 +470,16 @@ function createAnnotations() {
     annotations.push({
         label: "Financial Recession",
         y: 0,
-        x: xAnnual(new Date("12/01/2007")), //position the x based on an x scale
-        width: xAnnual(new Date("1/01/2010")) - xAnnual(new Date("12/01/2007")),
+        x: xOverview(new Date("12/01/2007")), //position the x based on an x scale
+        width: xOverview(new Date("1/01/2010")) - xOverview(new Date("12/01/2007")),
         validScenes: [1, 2, 3]
     })
 
     annotations.push({
         label: "US Trade War with China",
         y: 0,
-        x: xAnnual(new Date("01/01/2018")), //position the x based on an x scale
-        width: xAnnual(new Date("1/01/2005")),
+        x: xOverview(new Date("01/01/2018")), //position the x based on an x scale
+        width: xOverview(new Date("1/01/2005")),
         validScenes: [2, 3]
     })
 
@@ -532,7 +538,7 @@ function setScene2() {
 
     // swap scales
     xScales.domain(xOverview);
-    yScales.domain(yYear);
+    yScales.domain(yYear); // number too large for individual products
 
     d3.selectAll(".scene1")
         .transition()
