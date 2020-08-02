@@ -57,10 +57,14 @@ var monthlyData;
 var percentData;
 
 
+
 // Dispatch updates
 var dispatch = d3.dispatch("statechange", "scenechange");
 
+
 // misc functions
+
+
 
 // wraps text in SVG as needed
 function wrap(text, width) {
@@ -222,6 +226,7 @@ async function init() {
         return {
             commodity: d.Commodity,
             time: yearDate(d.Time),
+            strtime: d.Time,
             exports: parseInt(d['Total Exports Value ($US)']),
             imports: parseInt(d['Customs Import Value (Gen) ($US)']),
             balance: parseInt(d['Balance ($US)']),
@@ -236,7 +241,7 @@ async function init() {
         return {
             commodity: d.Commodity,
             time: monthYear(d.Time),
-            month: d.Time,
+            strtime: d.Time,
             year: d.Year,
             exports: parseInt(d['Total Exports Value ($US)']) || 0,
             imports: parseInt(d['Customs Import Value (Gen) ($US)']) || 0,
@@ -251,6 +256,7 @@ async function init() {
     var d2 = groupBy(monthlyData, "commodity");
     var dataArray = Object.values(d2);
     var commoditiesList = Object.keys(d2);
+    //commoditiesList.sort();
 
     // precursor selects
     // Adds event for when state changes
@@ -276,14 +282,28 @@ async function init() {
         console.log(this.value);
     })
 
-
     var svg = d3.select(".container").select("svg")
         .append("g")
         .attr("class", "slide-viz") // this classification does nothing atm?
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // draw scene 1
+    svg.append('rect')
+        .attr('width', width)
+        .attr('height', height)
+        .attr('opacity', 0);
 
+    
+    svg.on('mousemove', drawTooltip)
+        .on('mouseout', removeTooltip);
+
+
+    svg.append('path')
+        .datum([[0, 0], [0, height]])
+        .attr("id", "tooltipLine")
+        .attr("d", verticalLine);
+
+
+    // draw scenes
     drawScene1(svg, percentData);
     drawScene2(svg, annualData);
     drawScene3(svg, monthlyData); // Breakdown by month
@@ -468,6 +488,7 @@ function drawScene2(svg, data) {
 
     })
 
+
 }
 
 
@@ -486,7 +507,39 @@ function drawScene3(svg, data) {
 
     drawLineAxes(scene3, xScales, yScales)
 
-    console.log(data);
+    // Add annotations
+    var annotations = scene3
+        .append("g")
+        .attr("class", "annotations");
+
+    annotationLine(annotations, new Date("12/01/2007"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("12/01/2007")))
+        .attr("y", -35)
+        .attr("dy", 0)
+        .text("Recession Start")
+        .style("font-size", 14)
+        .call(wrap, 50);
+
+    annotationLine(annotations, new Date("06/01/2009"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("06/01/2009")))
+        .attr("y", -35)
+        .attr("dy", 0)
+        .text("Recession End")
+        .style("font-size", 14)
+        .call(wrap, 50);
+
+    annotationLine(annotations, new Date("01/01/2018"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("01/01/2018")))
+        .attr("y", -35)
+        .attr("dy", 0)
+        .text("Start of Trade War")
+        .style("font-size", 14)
+        .call(wrap, 50);
+
+
     scene3.append("path")
         .datum(filtered)
         .attr("d", importsLine)
@@ -536,7 +589,21 @@ function drawScene4(svg, data) {
 
     drawLineAxes(scene4, xScales, yScales)
 
-    console.log(data);
+    // Add annotations
+    var annotations = scene4
+        .append("g")
+        .attr("class", "annotations");
+
+    annotationLine(annotations, new Date("01/22/2018"));
+    annotations.append("text")
+        .attr("x", xScales(new Date("01/22/2018")))
+        .attr("y", -20)
+        .attr("dy", 0)
+        .text("Trade War Start")
+        .style("font-size", 14)
+        .call(wrap, 75);
+
+
     scene4.append("path")
         .datum(filtered)
         .attr("d", importsLine)
@@ -568,6 +635,65 @@ function drawScene4(svg, data) {
 
 }
 
+// Tooltip functionality
+
+function removeTooltip() {
+    var tooltip = d3.select('#tooltip');
+    var tooltipLine = d3.select("#tooltipLine");
+
+    if (tooltip) tooltip.style('display', 'none');
+    if (tooltipLine) tooltipLine.style('stroke', 'none');
+}
+
+function drawTooltip() {
+
+    if (currScene == 1) {
+        return;
+    }
+
+    var tooltip = d3.select('#tooltip');
+    var tooltipLine = d3.select("#tooltipLine");
+
+    var xDate = xScales.invert(d3.mouse(this)[0]);
+
+    //move to nearest date point
+    var m = xDate.getMonth();
+    var y = xDate.getFullYear();
+    var x = new Date(y, m, 1);
+
+    var dataset = monthlyData.filter(function (d) {
+        return (d.commodity == currFilter && xScales(x) == xScales(d.time));
+    });
+
+    if (currScene == 2) {
+        x = new Date(y, 0, 1);
+        data = annualData.filter(function (d) {
+            return (d.commodity == currFilter && xScales(x) == xScales(d.time));
+        });
+    }
+
+    var lineData = [
+        [x, 0],
+        [x, height]];
+
+
+    tooltipLine.style('stroke', 'black')
+        .datum(lineData)
+        .attr("d", verticalLine);
+
+    tooltip.html("tooltip")
+        .style('display', 'block')
+        .style('left', d3.event.pageX + 20)
+        .style('top', d3.event.pageY - 20)
+        .selectAll()
+        .data(dataset)
+        .enter()
+        .append('div')
+        .html(d => d.strtime +"<br> imports: $" + d.imports + "<br> exports: $" + d.exports);
+}
+
+
+
 
 // Transitions should hide the previous scene and the scene after
 /**
@@ -593,7 +719,8 @@ function setScene1() {
         .style("visibility", "visible")
         .style("opacity", 1);
 
-    // Hide
+    // fancy Line transitions
+    /*
     d3.selectAll(".scene2").selectAll(".line.imports")
         .transition()
         .duration(800)
@@ -603,7 +730,7 @@ function setScene1() {
         .transition()
         .duration(800)
         .attr('d', balanceLine);
-
+    */
     d3.selectAll(".scene2")
         .transition()
         .duration(800)
@@ -619,6 +746,7 @@ function setScene1() {
 
 
 }
+
 // transition from scene 1 to 2
 // hides scene1
 // hides scene3
